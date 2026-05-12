@@ -1,0 +1,21 @@
+@use "variable" as *;
+// =====================================
+// BaseStyle
+// =====================================
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-gothic;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $color-text-main;
+  background-color: $color-bg-main;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
