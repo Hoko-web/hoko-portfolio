@@ -1,0 +1,7 @@
+# MacOS
+.DS_Store
+
+#Editor
+.vscode
+
+CLAUDE.md
