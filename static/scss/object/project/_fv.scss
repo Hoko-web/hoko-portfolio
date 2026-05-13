@@ -1,0 +1,88 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-fv {
+  min-height: 100svh;
+  background-image: url("../img/fv-bg.svg");
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.p-fv__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.p-fv__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-fv__logo {
+  font-family: $font-en;
+  font-weight: 900;
+  font-size: 74px;
+  line-height: 1;
+}
+
+.p-fv__text {
+  font-family: $font-en;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.p-fv__catch {
+  font-size: 36px;
+  margin-top: 32px;
+  letter-spacing: 0.03em;
+}
+
+.p-fv__sub {
+  font-size: 18px;
+  margin-top: 8px;
+  color: $color-text-sub;
+  letter-spacing: 0.03em;
+}
+
+.p-fv__scroll {
+  position: absolute;
+  right: 24px;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.p-fv__scroll-text {
+  font-family: $font-en;
+  letter-spacing: 0.1em;
+  margin: 0 12px;
+  letter-spacing: 0.01em;
+}
+
+.p-fv__scroll-line {
+  display: block;
+  width: 1px;
+  height: 120px;
+  background-color: $color-text-main;
+  animation: scrollLine 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(100% 0 0 0);
+  }
+}
