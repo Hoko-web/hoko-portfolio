@@ -14,5 +14,70 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- ===================================== -->
+    <!-- header -->
+    <!-- ===================================== -->
+    <header class="p-header">
+      <div class="p-header__inner">
+        <a href="#top" class="p-header__logo" aria-label="トップへ戻る">Hoko</a>
+        <!-- Nav(pc) -->
+        <nav class="p-header__nav" aria-label="グローバルナビ">
+          <ul class="p-header__nav-list">
+            <li class="p-header__nav-item">
+              <a class="p-header__nav-link" href="#about">About</a>
+            </li>
+            <li class="p-header__nav-item">
+              <a class="p-header__nav-link" href="#services">Service</a>
+            </li>
+            <li class="p-header__nav-item">
+              <a class="p-header__nav-link" href="#works">Works</a>
+            </li>
+            <li class="p-header__nav-item">
+              <a class="p-header__nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Hamburger(sp) -->
+        <button
+          class="p-header__hamburger js-hamburger"
+          type="button"
+          aria-expanded="false"
+          aria-label="メニューを開く"
+        >
+          <span class="p-header__hamburger-bar"></span>
+          <span class="p-header__hamburger-bar"></span>
+        </button>
+        <!-- Drawer(sp) -->
+        <nav class="p-header__drawer js-drawer" aria-label="ドロワーナビ">
+          <ul class="p-header__drawer-list">
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#about">About</a>
+            </li>
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#services">Service</a>
+            </li>
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#works">Works</a>
+            </li>
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="p-fv">
+        <div class="p-fv__inner">
+          <p class="p-fv__logo">Hoko</p>
+          <h1 class="p-fv__catch">ここにテキストが入ります</h1>
+          <p class="p-fv__sub">
+            ここにテキストが入りますここにテキストが入りますここにテキストが入ります
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

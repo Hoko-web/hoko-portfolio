@@ -1,0 +1,171 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  z-index: 100;
+  background-color: $color-bg-main;
+}
+
+.p-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.p-header__logo {
+  font-family: $font-en;
+  font-weight: 900;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: text-shadow 0.3s ease;
+
+  &:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+// =====================================
+// Nav(pc)
+// =====================================
+.p-header__nav {
+  display: none;
+
+  @include mq(pc) {
+    display: block;
+    height: 100%;
+  }
+}
+
+.p-header__nav-list {
+  display: flex;
+  gap: 24px;
+  height: 100%;
+}
+
+.p-header__nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+  font-family: $font-en;
+  letter-spacing: -0.02em;
+  transition: text-shadow 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-text-main;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    &::after {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+}
+// =====================================
+// Hamburger(sp)
+// =====================================
+.p-header__hamburger {
+  position: relative;
+  width: 28px;
+  height: 16px;
+  z-index: 120;
+  cursor: pointer;
+
+  &.is-open {
+    .p-header__hamburger-bar {
+      &:nth-child(1) {
+        top: 8px;
+        transform: rotate(30deg);
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+        transform: rotate(-30deg);
+      }
+    }
+  }
+
+  @include mq(pc) {
+    display: none;
+  }
+}
+
+.p-header__hamburger-bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $color-text-main;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+
+  &:nth-child(1) {
+    top: 4px;
+  }
+
+  &:nth-child(2) {
+    top: 12px;
+  }
+}
+// =====================================
+// Drawer(sp)
+// =====================================
+.p-header__drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-bg-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 110;
+
+  &.is-open {
+    opacity: 1;
+  }
+
+  @include mq(pc) {
+    display: none;
+  }
+}
+
+.p-header__drawer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+
+.p-header__drawer-link {
+  display: block;
+  padding: 8px 24px;
+  font-family: $font-en;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  transition: opacity 0.3s ease;
+}
