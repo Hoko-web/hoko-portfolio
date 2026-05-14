@@ -382,7 +382,7 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.4;
   color: #1a1a1a;
   background-color: #fff;
 }
@@ -391,6 +391,38 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.c-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+@media (min-width: 1024px) {
+  .c-heading {
+    gap: 48px;
+  }
+}
+.c-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.c-heading__title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 1024px) {
+  .c-heading__title {
+    font-size: 42px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
 }
 
 .p-header {
@@ -447,8 +479,8 @@ img {
   align-items: center;
   height: 100%;
   padding: 0 8px;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.02em;
+  font-family: "Shippori Mincho", serif;
+  letter-spacing: 0.01em;
   transition: text-shadow 0.3s ease;
 }
 .p-header__nav-link::after {
@@ -518,16 +550,16 @@ img {
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 110;
 }
 .p-header__drawer.is-open {
   opacity: 1;
+  visibility: visible;
 }
 @media (min-width: 1024px) {
   .p-header__drawer {
     display: none;
-    visibility: visible;
   }
 }
 
@@ -541,9 +573,9 @@ img {
 .p-header__drawer-link {
   display: block;
   padding: 8px 24px;
-  font-family: "Inter", sans-serif;
+  font-family: "Shippori Mincho", serif;
   font-size: 24px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   transition: opacity 0.3s ease;
 }
 
@@ -574,51 +606,86 @@ img {
   font-weight: 900;
   font-size: 74px;
   line-height: 1;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 1024px) {
+  .p-fv__logo {
+    font-size: 100px;
+    letter-spacing: -0.03em;
+  }
 }
 
 .p-fv__text {
-  font-family: "Inter", sans-serif;
+  font-family: "Shippori Mincho", serif;
   font-size: 18px;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+@media (min-width: 1024px) {
+  .p-fv__text {
+    font-size: 22px;
+  }
 }
 
 .p-fv__catch {
-  font-size: 36px;
-  margin-top: 32px;
-  letter-spacing: 0.03em;
+  font-size: 26px;
+  margin-top: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media (min-width: 1024px) {
+  .p-fv__catch {
+    font-size: 36px;
+    margin-top: 32px;
+    line-height: 1.7;
+    letter-spacing: 0.08em;
+  }
 }
 
 .p-fv__sub {
-  font-size: 18px;
   margin-top: 8px;
   color: #666666;
-  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+@media (min-width: 1024px) {
+  .p-fv__sub {
+    font-size: 18px;
+    letter-spacing: 0.03em;
+  }
 }
 
 .p-fv__scroll {
   position: absolute;
   right: 24px;
-  top: 100%;
+  top: 120%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
+@media (min-width: 1024px) {
+  .p-fv__scroll {
+    top: 100%;
+  }
+}
 
 .p-fv__scroll-text {
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.1em;
-  margin: 0 12px;
+  font-family: "Shippori Mincho", serif;
   letter-spacing: 0.01em;
 }
 
 .p-fv__scroll-line {
   display: block;
   width: 1px;
-  height: 120px;
+  height: 100px;
   background-color: #1a1a1a;
-  animation: scrollLine 2.5s ease-in-out infinite;
+  animation: scrollLine 3s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .p-fv__scroll-line {
+    height: 120px;
+  }
 }
 
 @keyframes scrollLine {
@@ -630,5 +697,154 @@ img {
   }
   100% {
     clip-path: inset(100% 0 0 0);
+  }
+}
+.p-about {
+  padding: 64px 0;
+  background-color: #fff;
+}
+@media (min-width: 1024px) {
+  .p-about {
+    padding: 96px 0;
+  }
+}
+
+.p-about__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.p-about__profile {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .p-about__profile {
+    margin-top: 64px;
+    flex-direction: row;
+    gap: 120px;
+  }
+}
+
+.p-about__photo {
+  width: 100%;
+  max-width: 200px;
+}
+@media (min-width: 768px) {
+  .p-about__photo {
+    max-width: 400px;
+  }
+}
+
+.p-about__intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-about__text {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+@media (min-width: 1024px) {
+  .p-about__text {
+    font-size: 16px;
+  }
+}
+.p-about__text + .p-about__text {
+  margin-top: 8px;
+}
+@media (min-width: 1024px) {
+  .p-about__text + .p-about__text {
+    margin-top: 14px;
+  }
+}
+
+.p-about__action {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  gap: 24px;
+}
+@media (min-width: 1024px) {
+  .p-about__action {
+    margin-top: 80px;
+    gap: 32px;
+  }
+}
+
+.p-about__arrows {
+  display: flex;
+}
+
+.p-about__arrow {
+  display: block;
+  width: 24px;
+  height: auto;
+  animation: arrowWave 1s ease-in-out infinite;
+}
+@media (min-width: 1024px) {
+  .p-about__arrow {
+    width: 34px;
+  }
+}
+
+.p-about__arrows--left .p-about__arrow {
+  transform: rotate(90deg);
+}
+.p-about__arrows--left .p-about__arrow:nth-child(1) {
+  animation-delay: 0s;
+}
+.p-about__arrows--left .p-about__arrow:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.p-about__arrows--left .p-about__arrow:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.p-about__arrows--right .p-about__arrow {
+  transform: rotate(-90deg);
+}
+.p-about__arrows--right .p-about__arrow:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.p-about__arrows--right .p-about__arrow:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.p-about__arrows--right .p-about__arrow:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes arrowWave {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.p-about__more {
+  align-self: flex-end;
+  display: inline-flex;
+  line-height: 1;
+  padding: 8px 16px 10px;
+  font-family: "Shippori Mincho", serif;
+  border: 1px solid #1a1a1a;
+}
+@media (min-width: 1024px) {
+  .p-about__more {
+    font-size: 24px;
+    padding: 10px 42px 13px;
+    transition: box-shadow 0.3s ease, text-shadow 0.3s ease;
+  }
+  .p-about__more:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
 }

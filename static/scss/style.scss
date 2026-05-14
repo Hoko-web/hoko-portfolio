@@ -5,7 +5,13 @@
 @use "foundation/base";
 
 // =====================================
+// Component
+// =====================================
+@use "object/component/heading";
+
+// =====================================
 //Object
 // =====================================
 @use "object/project/header";
 @use "object/project/fv";
+@use "object/project/about";
