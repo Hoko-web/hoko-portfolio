@@ -57,8 +57,8 @@
   align-items: center;
   height: 100%;
   padding: 0 8px;
-  font-family: $font-en;
-  letter-spacing: -0.02em;
+  font-family: $font-mincho;
+  letter-spacing: 0.01em;
   transition: text-shadow 0.3s ease;
 
   &::after {
@@ -143,16 +143,18 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   z-index: 110;
 
   &.is-open {
     opacity: 1;
+    visibility: visible;
   }
 
   @include mq(pc) {
     display: none;
-    visibility: visible;
   }
 }
 
@@ -166,8 +168,8 @@
 .p-header__drawer-link {
   display: block;
   padding: 8px 24px;
-  font-family: $font-en;
+  font-family: $font-mincho;
   font-size: 24px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   transition: opacity 0.3s ease;
 }

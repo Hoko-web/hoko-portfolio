@@ -28,51 +28,80 @@
   font-weight: 900;
   font-size: 74px;
   line-height: 1;
+  letter-spacing: -0.02em;
+
+  @include mq(pc) {
+    font-size: 100px;
+    letter-spacing: -0.03em;
+  }
 }
 
 .p-fv__text {
-  font-family: $font-en;
+  font-family: $font-mincho;
   font-size: 18px;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
+  line-height: 1;
+
+  @include mq(pc) {
+    font-size: 22px;
+  }
 }
 
 .p-fv__catch {
-  font-size: 36px;
-  margin-top: 32px;
-  letter-spacing: 0.03em;
+  font-size: 26px;
+  margin-top: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+
+  @include mq(pc) {
+    font-size: 36px;
+    margin-top: 32px;
+    line-height: 1.7;
+    letter-spacing: 0.08em;
+  }
 }
 
 .p-fv__sub {
-  font-size: 18px;
   margin-top: 8px;
   color: $color-text-sub;
-  letter-spacing: 0.03em;
+  line-height: 1.7;
+
+  @include mq(pc) {
+    font-size: 18px;
+    letter-spacing: 0.03em;
+  }
 }
 
 .p-fv__scroll {
   position: absolute;
   right: 24px;
-  top: 100%;
+  top: 120%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
+
+  @include mq(pc) {
+    top: 100%;
+  }
 }
 
 .p-fv__scroll-text {
-  font-family: $font-en;
-  letter-spacing: 0.1em;
-  margin: 0 12px;
+  font-family: $font-mincho;
   letter-spacing: 0.01em;
 }
 
 .p-fv__scroll-line {
   display: block;
   width: 1px;
-  height: 120px;
+  height: 100px;
   background-color: $color-text-main;
-  animation: scrollLine 2.5s ease-in-out infinite;
+  animation: scrollLine 3s ease-in-out infinite;
+
+  @include mq(tb) {
+    height: 120px;
+  }
 }
 
 @keyframes scrollLine {
