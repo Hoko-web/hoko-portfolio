@@ -46,6 +46,15 @@
   box-shadow:
     0 0 30px 0 rgba(0, 0, 0, 0.03),
     0 5px 30px 0 rgba(20, 43, 78, 0.2);
+
+  @include mq(pc) {
+    &:hover {
+      .p-works__thumb img {
+        transform: translateY(-8px);
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
 }
 
 .p-works__link {
@@ -60,12 +69,18 @@
   background-image: url("../img/fv-bg.svg");
   background-repeat: repeat;
   background-position: center;
-  overflow: hidden;
+  overflow: visible;
 
   img {
     display: block;
     width: 100%;
     height: auto;
+
+    @include mq(pc) {
+      transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+    }
   }
 }
 
