@@ -18,6 +18,12 @@
   }
 }
 
+.c-heading--no-line {
+  &::after {
+    display: none;
+  }
+}
+
 .c-heading__title {
   font-family: $font-mincho;
   font-size: 26px;
