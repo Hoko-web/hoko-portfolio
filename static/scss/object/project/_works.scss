@@ -1,0 +1,133 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-works {
+  padding: 64px 0;
+  background-color: $color-bg-main;
+
+  @include mq(pc) {
+    padding: 96px 0;
+  }
+}
+
+.p-works__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.p-works__wrapper {
+  margin-top: 40px;
+
+  @include mq(pc) {
+    margin-top: 64px;
+  }
+}
+
+.p-works__list {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+
+  @include mq(tb) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(pc) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.p-works__card {
+  background-color: $color-bg-main;
+  max-width: 350px;
+  margin: 0 auto;
+  box-shadow:
+    0 0 30px 0 rgba(0, 0, 0, 0.03),
+    0 5px 30px 0 rgba(20, 43, 78, 0.2);
+}
+
+.p-works__link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px;
+}
+
+.p-works__thumb {
+  width: 100%;
+  background-image: url("../img/fv-bg.svg");
+  background-repeat: repeat;
+  background-position: center;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.p-works__category {
+  font-size: 12px;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  color: $color-text-sub;
+  margin-top: 8px;
+
+  @include mq(pc) {
+    font-size: 14px;
+  }
+}
+
+.p-works__title {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  margin: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @include mq(pc) {
+    font-size: 18px;
+    letter-spacing: 0.03em;
+  }
+}
+
+.p-works__tags {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 8px;
+}
+
+.p-works__tag {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-family: $font-en;
+  color: $color-text-sub;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  padding: 0 12px;
+  border: 1px solid $color-border;
+  white-space: nowrap;
+
+  @include mq(pc) {
+    font-size: 14px;
+  }
+}
+
+.p-works__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 48px;
+
+  @include mq(pc) {
+    margin-top: 64px;
+    gap: 32px;
+  }
+}

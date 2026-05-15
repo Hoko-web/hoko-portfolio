@@ -28,10 +28,10 @@
               <a class="p-header__nav-link" href="#about">About</a>
             </li>
             <li class="p-header__nav-item">
-              <a class="p-header__nav-link" href="#services">Service</a>
+              <a class="p-header__nav-link" href="#works">Works</a>
             </li>
             <li class="p-header__nav-item">
-              <a class="p-header__nav-link" href="#works">Works</a>
+              <a class="p-header__nav-link" href="#skills">Skills</a>
             </li>
             <li class="p-header__nav-item">
               <a class="p-header__nav-link" href="#contact">Contact</a>
@@ -55,10 +55,10 @@
               <a class="p-header__drawer-link" href="#about">About</a>
             </li>
             <li class="p-header__drawer-item">
-              <a class="p-header__drawer-link" href="#services">Service</a>
+              <a class="p-header__drawer-link" href="#works">Works</a>
             </li>
             <li class="p-header__drawer-item">
-              <a class="p-header__drawer-link" href="#works">Works</a>
+              <a class="p-header__drawer-link" href="#skills">Skills</a>
             </li>
             <li class="p-header__drawer-item">
               <a class="p-header__drawer-link" href="#contact">Contact</a>
@@ -95,7 +95,7 @@
       <section class="p-about" id="about">
         <div class="p-about__inner">
           <div class="c-heading">
-            <h2 class="c-heading__title">About Me</h2>
+            <h2 class="c-heading__title">About</h2>
           </div>
 
           <div class="p-about__profile">
@@ -108,6 +108,7 @@
               />
             </div>
             <div class="p-about__intro">
+              <h3 class="p-about__name-en">Hiromasa Hokotate</h3>
               <p class="p-about__text">
                 ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります
               </p>
@@ -116,47 +117,146 @@
               </p>
 
               <div class="p-about__action">
-                <div
-                  class="p-about__arrows p-about__arrows--left"
-                  aria-hidden="true"
-                >
+                <div class="c-arrows c-arrows--left" aria-hidden="true">
                   <img
                     src="./img/more-arrow.svg"
                     alt=""
-                    class="p-about__arrow"
+                    class="c-arrows__item"
                   />
                   <img
                     src="./img/more-arrow.svg"
                     alt=""
-                    class="p-about__arrow"
+                    class="c-arrows__item"
                   />
                   <img
                     src="./img/more-arrow.svg"
                     alt=""
-                    class="p-about__arrow"
+                    class="c-arrows__item"
                   />
                 </div>
-                <a href="" class="p-about__more">More</a>
-                <div
-                  class="p-about__arrows p-about__arrows--right"
-                  aria-hidden="true"
-                >
+                <a href="" class="c-btn p-about__more">More</a>
+                <div class="c-arrows c-arrows--right" aria-hidden="true">
                   <img
                     src="./img/more-arrow.svg"
                     alt=""
-                    class="p-about__arrow"
+                    class="c-arrows__item"
                   />
                   <img
                     src="./img/more-arrow.svg"
                     alt=""
-                    class="p-about__arrow"
+                    class="c-arrows__item"
                   />
                   <img
                     src="./img/more-arrow.svg"
                     alt=""
-                    class="p-about__arrow"
+                    class="c-arrows__item"
                   />
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===================================== -->
+      <!-- Works -->
+      <!-- ===================================== -->
+      <section class="p-works" id="works">
+        <div class="p-works__inner">
+          <div class="c-heading">
+            <h2 class="c-heading__title">Works</h2>
+          </div>
+
+          <div class="p-works__wrapper">
+            <ul class="p-works__list">
+              <li class="p-works__item">
+                <article class="p-works__card">
+                  <a href="#" class="p-works__link" target="_blank">
+                    <div class="p-works__thumb">
+                      <img
+                        src="./img/daymaga-mockup.png"
+                        alt="daymagaのモックアップ"
+                        width="800"
+                        height="533"
+                      />
+                    </div>
+                    <p class="p-works__category">WordPress</p>
+                    <h3 class="p-works__title">
+                      DayMaga様 | コーポレートサイト
+                    </h3>
+                    <ul class="p-works__tags">
+                      <li class="p-works__tag">HTML</li>
+                      <li class="p-works__tag">SCSS</li>
+                      <li class="p-works__tag">PHP</li>
+                      <li class="p-works__tag">JavaScript</li>
+                    </ul>
+                  </a>
+                </article>
+              </li>
+
+              <li class="p-works__item">
+                <article class="p-works__card">
+                  <a href="#" class="p-works__link" target="_blank">
+                    <div class="p-works__thumb">
+                      <img
+                        src="./img/hokoportfolio-mockup.png"
+                        alt="HokoPortfolioのモックアップ"
+                        width="800"
+                        height="533"
+                      />
+                    </div>
+                    <p class="p-works__category">WordPress</p>
+                    <h3 class="p-works__title">Hoko | ポートフォリオサイト</h3>
+                    <ul class="p-works__tags">
+                      <li class="p-works__tag">HTML</li>
+                      <li class="p-works__tag">SCSS</li>
+                      <li class="p-works__tag">PHP</li>
+                      <li class="p-works__tag">JavaScript</li>
+                    </ul>
+                  </a>
+                </article>
+              </li>
+
+              <li class="p-works__item">
+                <article class="p-works__card">
+                  <a
+                    href="#"
+                    class="p-works__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div class="p-works__thumb">
+                      <img
+                        src="./img/hellocore-mockup.png"
+                        alt="pilatesroomはろこあのモックアップ"
+                        width="800"
+                        height="533"
+                      />
+                    </div>
+                    <p class="p-works__category">WordPress</p>
+                    <h3 class="p-works__title">
+                      pilatesroom はろこあ様 | ランディングページ
+                    </h3>
+                    <ul class="p-works__tags">
+                      <li class="p-works__tag">HTML</li>
+                      <li class="p-works__tag">SCSS</li>
+                      <li class="p-works__tag">JavaScript</li>
+                    </ul>
+                  </a>
+                </article>
+              </li>
+            </ul>
+
+            <div class="p-works__action">
+              <div class="c-arrows c-arrows--left" aria-hidden="true">
+                <img src="./img/more-arrow.svg" alt="" class="c-arrows__item" />
+                <img src="./img/more-arrow.svg" alt="" class="c-arrows__item" />
+                <img src="./img/more-arrow.svg" alt="" class="c-arrows__item" />
+              </div>
+              <a href="#" class="c-btn p-works__more">More</a>
+              <div class="c-arrows c-arrows--right" aria-hidden="true">
+                <img src="./img/more-arrow.svg" alt="" class="c-arrows__item" />
+                <img src="./img/more-arrow.svg" alt="" class="c-arrows__item" />
+                <img src="./img/more-arrow.svg" alt="" class="c-arrows__item" />
               </div>
             </div>
           </div>

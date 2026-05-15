@@ -1,0 +1,25 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.c-btn {
+  display: inline-block;
+  padding: 8px 16px 10px;
+  font-family: $font-mincho;
+  font-weight: 500;
+  line-height: 1;
+  color: $color-text-sub;
+  border: 1px solid $color-text-sub;
+
+  @include mq(pc) {
+    font-size: 24px;
+    padding: 10px 42px 13px;
+    transition:
+      box-shadow 0.3s ease,
+      text-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
