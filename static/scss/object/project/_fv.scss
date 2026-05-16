@@ -54,6 +54,7 @@
   margin-top: 24px;
   line-height: 1.5;
   letter-spacing: 0.05em;
+  font-family: $font-mincho;
 
   @include mq(pc) {
     font-size: 36px;
@@ -64,7 +65,7 @@
 }
 
 .p-fv__sub {
-  margin-top: 8px;
+  margin-top: 12px;
   color: $color-text-sub;
   line-height: 1.7;
 

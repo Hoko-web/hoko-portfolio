@@ -393,6 +393,12 @@ img {
   display: block;
 }
 
+@media (min-width: 768px) {
+  .u-sp {
+    display: none;
+  }
+}
+
 .c-heading {
   display: flex;
   align-items: center;
@@ -710,6 +716,7 @@ img {
   margin-top: 24px;
   line-height: 1.5;
   letter-spacing: 0.05em;
+  font-family: "Shippori Mincho", serif;
 }
 @media (min-width: 1024px) {
   .p-fv__catch {
@@ -721,7 +728,7 @@ img {
 }
 
 .p-fv__sub {
-  margin-top: 8px;
+  margin-top: 12px;
   color: #666666;
   line-height: 1.7;
 }
