@@ -1,0 +1,52 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-contact {
+  padding: 64px 0;
+  background-color: $color-bg-main;
+
+  @include mq(pc) {
+    padding: 96px 0;
+  }
+}
+
+.p-contact__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.p-contact__wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include mq(pc) {
+    margin-top: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.p-contact__text {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+
+  @include mq(pc) {
+    font-size: 16px;
+  }
+}
+
+.p-contact__more {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+
+  @include mq(pc) {
+    margin: 0;
+  }
+}

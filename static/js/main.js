@@ -7,4 +7,9 @@ if (hamburger && drawer) {
     hamburger.classList.toggle("is-open");
     drawer.classList.toggle("is-open");
   });
+
+  drawer.addEventListener("click", () => {
+    hamburger.classList.remove("is-open");
+    drawer.classList.remove("is-open");
+  });
 }

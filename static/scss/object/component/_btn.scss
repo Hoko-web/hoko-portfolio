@@ -3,16 +3,17 @@
 
 .c-btn {
   display: inline-block;
-  padding: 8px 16px 10px;
+  padding: 8px 32px 10px;
   font-family: $font-mincho;
   font-weight: 500;
   line-height: 1;
   color: $color-text-sub;
+  background-color: $color-bg-sub;
   border: 1px solid $color-text-sub;
 
   @include mq(pc) {
     font-size: 24px;
-    padding: 10px 42px 13px;
+    padding: 10px 48px 13px;
     transition:
       box-shadow 0.3s ease,
       text-shadow 0.3s ease;
