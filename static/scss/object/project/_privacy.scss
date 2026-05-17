@@ -1,0 +1,107 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-privacy {
+  padding: 96px 0 64px;
+  background-color: $color-bg-main;
+
+  @include mq(pc) {
+    padding: 128px 0 96px;
+  }
+}
+
+.p-privacy__inner {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.p-privacy__title {
+  font-family: $font-mincho;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+
+  @include mq(pc) {
+    font-size: 48px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+}
+
+.p-privacy__intro {
+  margin-top: 32px;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+
+  @include mq(pc) {
+    margin-top: 48px;
+    font-size: 16px;
+  }
+}
+
+.p-privacy__article {
+  margin-top: 40px;
+
+  @include mq(pc) {
+    margin-top: 56px;
+  }
+}
+
+.p-privacy__article-title {
+  font-family: $font-mincho;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $color-border;
+
+  @include mq(pc) {
+    font-size: 24px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    padding-bottom: 12px;
+  }
+}
+
+.p-privacy__article-text {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: $color-text-sub;
+
+  @include mq(pc) {
+    margin-top: 28px;
+    font-size: 16px;
+  }
+}
+
+.p-privacy__article-list {
+  margin-top: 16px;
+  padding-left: 24px;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: $color-text-sub;
+  list-style: disc;
+
+  @include mq(pc) {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}
+
+.p-privacy__back {
+  display: block;
+  width: fit-content;
+  margin: 48px auto 0;
+
+  @include mq(pc) {
+    margin: 64px auto 0;
+  }
+}
