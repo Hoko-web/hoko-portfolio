@@ -4,11 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hoko Portfolio</title>
+    <meta
+      name="description"
+      content="Hokoのポートフォリオサイトです。Web制作・LPコーディング・WordPress構築を承ります。『見えない不具合を逃さない』目で、レスポンシブ・表示速度・保守性まで丁寧に仕上げます。"
+    />
+    <!-- TODO: 本番デプロイ前に OGP 画像 / favicon を用意してから有効化 -->
+    <!--
+    <meta property="og:title" content="Hoko Portfolio" />
+    <meta property="og:description" content="..." />
+    <meta property="og:image" content="https://.../ogp.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://..." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" ... />
+    -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -21,23 +36,62 @@
     <header class="p-header">
       <div class="p-header__inner">
         <a href="#top" class="p-header__logo" aria-label="トップへ戻る">Hoko</a>
-        <!-- Nav(pc) -->
-        <nav class="p-header__nav" aria-label="グローバルナビ">
-          <ul class="p-header__nav-list">
-            <li class="p-header__nav-item">
-              <a class="p-header__nav-link" href="#about">About</a>
+        <!-- Menus(pc) -->
+        <div class="p-header__menus">
+          <!-- SNS(pc) -->
+          <ul class="c-sns p-header__sns" aria-label="SNS・連絡先">
+            <li class="c-sns__item">
+              <!-- TODO: Xアカウント開設後に URL 差し替え -->
+              <a
+                href="#"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                <img src="./img/icon-x.svg" alt="" class="c-sns__icon" />
+              </a>
             </li>
-            <li class="p-header__nav-item">
-              <a class="p-header__nav-link" href="#works">Works</a>
+            <li class="c-sns__item">
+              <a
+                href="https://github.com/Hoko-web"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <img src="./img/icon-github.svg" alt="" class="c-sns__icon" />
+              </a>
             </li>
-            <li class="p-header__nav-item">
-              <a class="p-header__nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="p-header__nav-item">
-              <a class="p-header__nav-link" href="#contact">Contact</a>
+            <li class="c-sns__item">
+              <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
+              <a
+                href="#"
+                class="c-sns__link"
+                aria-label="メール"
+              >
+                <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
+              </a>
             </li>
           </ul>
-        </nav>
+          <!-- Nav(pc) -->
+          <nav class="p-header__nav" aria-label="グローバルナビ">
+            <ul class="p-header__nav-list">
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#about">About</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#works">Works</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <!-- Hamburger(sp) -->
         <button
           class="p-header__hamburger js-hamburger"
@@ -62,6 +116,41 @@
             </li>
             <li class="p-header__drawer-item">
               <a class="p-header__drawer-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <ul class="c-sns" aria-label="SNS・連絡先">
+            <li class="c-sns__item">
+              <!-- TODO: Xアカウント開設後に URL 差し替え -->
+              <a
+                href="#"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                <img src="./img/icon-x.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <a
+                href="https://github.com/Hoko-web"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <img src="./img/icon-github.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
+              <a
+                href="#"
+                class="c-sns__link"
+                aria-label="メール"
+              >
+                <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
+              </a>
             </li>
           </ul>
         </nav>
@@ -107,6 +196,8 @@
                 alt="Hokoの写真"
                 width="400"
                 height="400"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="p-about__intro">
@@ -136,7 +227,7 @@
                     class="c-arrows__item"
                   />
                 </div>
-                <a href="" class="c-btn p-about__more">More</a>
+                <a href="#" class="c-btn p-about__more">More</a>
                 <div class="c-arrows c-arrows--right" aria-hidden="true">
                   <img
                     src="./img/more-arrow.svg"
@@ -175,8 +266,6 @@
                   <a
                     href="#"
                     class="p-works__link"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <div class="p-works__thumb">
                       <img
@@ -184,6 +273,8 @@
                         alt="daymagaのモックアップ"
                         width="800"
                         height="533"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <p class="p-works__category">WordPress</p>
@@ -205,8 +296,6 @@
                   <a
                     href="#"
                     class="p-works__link"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <div class="p-works__thumb">
                       <img
@@ -214,6 +303,8 @@
                         alt="HokoPortfolioのモックアップ"
                         width="800"
                         height="533"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <p class="p-works__category">WordPress</p>
@@ -233,8 +324,6 @@
                   <a
                     href="#"
                     class="p-works__link"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <div class="p-works__thumb">
                       <img
@@ -242,6 +331,8 @@
                         alt="pilatesroomはろこあのモックアップ"
                         width="800"
                         height="533"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <p class="p-works__category">LP</p>
@@ -310,7 +401,7 @@
                   >
                 </h3>
                 <p class="p-skills__item-text">
-                  モバイルファースト設計、3段階のブレイクポイント、各実機での表示確認。可読性と保守性の両面を意識し、どの幅でも崩れないレイアウトを組みます。
+                  モバイルファースト設計、複数段階のブレイクポイント、各実機での表示確認。可読性と保守性の両面を意識し、どの幅でも崩れないレイアウトを組みます。
                 </p>
               </li>
               <li class="p-skills__item">
@@ -414,44 +505,38 @@
               </li>
             </ul>
           </nav>
-          <ul class="p-footer__sns" aria-label="SNS・連絡先">
-            <li class="p-footer__sns-item">
+          <ul class="c-sns" aria-label="SNS・連絡先">
+            <li class="c-sns__item">
+              <!-- TODO: Xアカウント開設後に URL 差し替え -->
               <a
-                href="https://x.com/"
-                class="p-footer__sns-link"
+                href="#"
+                class="c-sns__link"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X"
               >
-                <img src="./img/icon-x.svg" alt="" class="p-footer__sns-icon" />
+                <img src="./img/icon-x.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
-            <li class="p-footer__sns-item">
+            <li class="c-sns__item">
               <a
                 href="https://github.com/Hoko-web"
-                class="p-footer__sns-link"
+                class="c-sns__link"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <img
-                  src="./img/icon-github.svg"
-                  alt=""
-                  class="p-footer__sns-icon"
-                />
+                <img src="./img/icon-github.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
-            <li class="p-footer__sns-item">
+            <li class="c-sns__item">
+              <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
               <a
-                href="mailto:xxx@xxx.com"
-                class="p-footer__sns-link"
+                href="#"
+                class="c-sns__link"
                 aria-label="メール"
               >
-                <img
-                  src="./img/icon-mail.svg"
-                  alt=""
-                  class="p-footer__sns-icon"
-                />
+                <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
           </ul>
