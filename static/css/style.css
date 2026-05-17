@@ -934,6 +934,15 @@ img {
   }
 }
 
+.p-works--archive {
+  padding: 96px 0;
+}
+@media (min-width: 1024px) {
+  .p-works--archive {
+    padding: 128px 0;
+  }
+}
+
 .p-works__inner {
   width: 100%;
   max-width: 1200px;
