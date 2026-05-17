@@ -21,7 +21,7 @@
 }
 
 .p-404__number {
-  font-family: $font-en;
+  font-family: $font-mincho;
   font-weight: 700;
   font-size: 100px;
   line-height: 1;
@@ -35,7 +35,6 @@
 
 .p-404__message {
   margin-top: 32px;
-  font-family: $font-mincho;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.01em;
@@ -43,9 +42,9 @@
 
   @include mq(pc) {
     margin-top: 48px;
-    font-size: 20px;
-    line-height: 1.9;
-    letter-spacing: 0.04em;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
   }
 }
 
