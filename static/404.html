@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Not Found | Hoko Portfolio</title>
+    <meta
+      name="description"
+      content="Hokoのポートフォリオサイトです。Web制作・LPコーディング・WordPress構築を承ります。『見えない不具合を逃さない』目で、レスポンシブ・表示速度・保守性まで丁寧に仕上げます。"
+    />
+    <!-- TODO: 本番デプロイ前に OGP 画像 / favicon を用意してから有効化 -->
+    <!--
+    <meta property="og:title" content="Hoko Portfolio" />
+    <meta property="og:description" content="..." />
+    <meta property="og:image" content="https://.../ogp.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://..." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" ... />
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- ===================================== -->
+    <!-- header -->
+    <!-- ===================================== -->
+    <header class="p-header">
+      <div class="p-header__inner">
+        <a href="#top" class="p-header__logo" aria-label="トップへ戻る">Hoko</a>
+        <!-- Menus(pc) -->
+        <div class="p-header__menus">
+          <!-- SNS(pc) -->
+          <ul class="c-sns p-header__sns" aria-label="SNS・連絡先">
+            <li class="c-sns__item">
+              <!-- TODO: Xアカウント開設後に URL 差し替え -->
+              <a
+                href="#"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                <img src="./img/icon-x.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <a
+                href="https://github.com/Hoko-web"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <img src="./img/icon-github.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
+              <a href="#" class="c-sns__link" aria-label="メール">
+                <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+          </ul>
+          <!-- Nav(pc) -->
+          <nav class="p-header__nav" aria-label="グローバルナビ">
+            <ul class="p-header__nav-list">
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#about">About</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#works">Works</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="p-header__nav-item">
+                <a class="p-header__nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Hamburger(sp) -->
+        <button
+          class="p-header__hamburger js-hamburger"
+          type="button"
+          aria-expanded="false"
+          aria-label="メニューを開く"
+        >
+          <span class="p-header__hamburger-bar"></span>
+          <span class="p-header__hamburger-bar"></span>
+        </button>
+        <!-- Drawer(sp) -->
+        <nav class="p-header__drawer js-drawer" aria-label="ドロワーナビ">
+          <ul class="p-header__drawer-list">
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#about">About</a>
+            </li>
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#works">Works</a>
+            </li>
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#skills">Skills</a>
+            </li>
+            <li class="p-header__drawer-item">
+              <a class="p-header__drawer-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <ul class="c-sns" aria-label="SNS・連絡先">
+            <li class="c-sns__item">
+              <!-- TODO: Xアカウント開設後に URL 差し替え -->
+              <a
+                href="#"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                <img src="./img/icon-x.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <a
+                href="https://github.com/Hoko-web"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <img src="./img/icon-github.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
+              <a href="#" class="c-sns__link" aria-label="メール">
+                <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- TODO: 404 ページのコンテンツを実装（ページが見つかりません・トップ戻り） -->
+    </main>
+
+    <!-- ===================================== -->
+    <!-- Footer -->
+    <!-- ===================================== -->
+    <footer class="p-footer">
+      <div class="p-footer__inner">
+        <div class="p-footer__head">
+          <a href="#top" class="p-footer__logo" aria-label="トップへ戻る"
+            >Hoko</a
+          >
+          <p class="p-footer__text">Portfolio</p>
+        </div>
+
+        <div class="p-footer__menus">
+          <nav class="p-footer__nav" aria-label="フッターナビ">
+            <ul class="p-footer__nav-list">
+              <li class="p-footer__nav-item">
+                <a class="p-footer__nav-link" href="#about">About</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a class="p-footer__nav-link" href="#works">Works</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a class="p-footer__nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a class="p-footer__nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="c-sns" aria-label="SNS・連絡先">
+            <li class="c-sns__item">
+              <!-- TODO: Xアカウント開設後に URL 差し替え -->
+              <a
+                href="#"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                <img src="./img/icon-x.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <a
+                href="https://github.com/Hoko-web"
+                class="c-sns__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <img src="./img/icon-github.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+            <li class="c-sns__item">
+              <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
+              <a href="#" class="c-sns__link" aria-label="メール">
+                <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
+              </a>
+            </li>
+          </ul>
+
+          <a href="#" class="p-footer__privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="p-footer__bottom">
+        <p class="p-footer__copyright">
+          © 2026 Hiromasa Hokotate All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
