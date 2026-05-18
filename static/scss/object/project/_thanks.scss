@@ -2,10 +2,10 @@
 @use "../../foundation/mixin" as *;
 
 .p-thanks {
-  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100svh;
   padding: 64px 24px;
   background-color: $color-bg-main;
 

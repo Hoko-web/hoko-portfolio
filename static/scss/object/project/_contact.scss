@@ -18,16 +18,16 @@
 }
 
 .p-contact__wrapper {
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-top: 40px;
 
   @include mq(pc) {
-    margin-top: 64px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 64px;
   }
 }
 

@@ -99,9 +99,9 @@
 // =====================================
 .p-header__hamburger {
   position: relative;
+  z-index: 120;
   width: 28px;
   height: 16px;
-  z-index: 120;
   cursor: pointer;
 
   &.is-open {
@@ -148,20 +148,20 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: $color-bg-sub;
+  z-index: 110;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 48px;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-bg-sub;
   opacity: 0;
   visibility: hidden;
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease;
-  z-index: 110;
 
   &.is-open {
     opacity: 1;

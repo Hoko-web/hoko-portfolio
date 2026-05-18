@@ -119,11 +119,11 @@
 }
 
 .p-works__tags {
-  margin-top: 8px;
   display: flex;
   flex-wrap: nowrap;
-  overflow: hidden;
   gap: 8px;
+  margin-top: 8px;
+  overflow: hidden;
 }
 
 .p-works__tag {
@@ -150,7 +150,7 @@
   margin-top: 48px;
 
   @include mq(pc) {
-    margin-top: 64px;
     gap: 32px;
+    margin-top: 64px;
   }
 }

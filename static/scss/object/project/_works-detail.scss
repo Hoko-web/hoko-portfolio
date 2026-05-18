@@ -1,0 +1,142 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-works-detail {
+  padding: 96px 0;
+  background-color: $color-bg-main;
+
+  @include mq(pc) {
+    padding: 128px 0;
+  }
+}
+
+.p-works-detail__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.p-works-detail__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include mq(pc) {
+    flex-direction: row;
+  }
+}
+
+.p-works-detail__thumb {
+  max-width: 450px;
+}
+
+.p-works-detail__hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-works-detail__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.p-works-detail__description {
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  margin-top: 12px;
+}
+
+.p-works-detail__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-works-detail__meta-label {
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-family: $font-mincho;
+  color: $color-text-sub;
+  margin-top: 12px;
+  border-bottom: 1px solid $color-border;
+}
+
+.p-works-detail__meta-value {
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  margin-top: 18px;
+}
+
+.p-works-detail__overview {
+  margin-top: 48px;
+}
+
+.p-works-detail__overview-body {
+  margin: 24px 0;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+
+  p + p {
+    margin-top: 12px;
+  }
+}
+
+.p-works-detail__points-list {
+  margin: 24px 0;
+}
+
+.p-works-detail__point-title {
+  display: inline;
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: $color-text-sub;
+  border-bottom: 2px solid $color-border;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.p-works-detail__point-text {
+  margin: 8px 0 12px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+}
+
+.p-works-detail__cta {
+  padding-top: 32px;
+}
+
+.p-works-detail__cta-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+}
+
+.p-works-detail__cta-text {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: $color-text-sub;
+  text-align: center;
+}
+
+.p-works-detail__cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.p-works-detail__back {
+  margin-top: 64px;
+  text-align: center;
+}

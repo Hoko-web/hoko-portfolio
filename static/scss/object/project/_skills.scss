@@ -111,15 +111,15 @@
 }
 
 .p-skills__marquee {
+  display: flex;
+  width: 100vw;
   margin-top: 56px;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  display: flex;
-  width: 100vw;
+  padding: 24px 0;
   overflow: hidden;
   background-color: $color-text-main;
   color: $color-bg-main;
-  padding: 24px 0;
 
   @include mq(pc) {
     margin-top: 64px;
@@ -128,9 +128,9 @@
 
 .p-skills__marquee-list {
   display: flex;
+  flex-shrink: 0;
   gap: 40px;
   padding-right: 40px;
-  flex-shrink: 0;
   white-space: nowrap;
   font-family: $font-en;
   font-size: 28px;

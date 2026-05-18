@@ -65,11 +65,7 @@
             </li>
             <li class="c-sns__item">
               <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
-              <a
-                href="#"
-                class="c-sns__link"
-                aria-label="メール"
-              >
+              <a href="#" class="c-sns__link" aria-label="メール">
                 <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
@@ -144,11 +140,7 @@
             </li>
             <li class="c-sns__item">
               <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
-              <a
-                href="#"
-                class="c-sns__link"
-                aria-label="メール"
-              >
+              <a href="#" class="c-sns__link" aria-label="メール">
                 <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
@@ -158,9 +150,126 @@
     </header>
 
     <main id="top">
-      <!-- TODO: Works 個別ページのコンテンツを実装 -->
-    </main>
+      <section class="p-works-detail">
+        <div class="p-works-detail__inner">
+          <div class="p-works-detail__hero">
+            <div class="p-works-detail__thumb">
+              <img
+                src="./img/daymaga-mockup.png"
+                alt="DayMagaのモックアップ"
+                width="800"
+                height="533"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="p-works-detail__hero-text">
+              <h1 class="p-works-detail__title">DayMaga</h1>
+              <p class="p-works-detail__description">
+                コンサルティングの専門情報メディア
+              </p>
+              <dl class="p-works-detail__meta">
+                <dt class="p-works-detail__meta-label">Client</dt>
+                <dd class="p-works-detail__meta-value">架空案件</dd>
+                <dt class="p-works-detail__meta-label">Role</dt>
+                <dd class="p-works-detail__meta-value">
+                  コーディング / WordPress化
+                </dd>
+                <dt class="p-works-detail__meta-label">Term</dt>
+                <dd class="p-works-detail__meta-value">２週間</dd>
+                <dt class="p-works-detail__meta-label">URL</dt>
+                <dd class="p-works-detail__meta-value">公開準備中</dd>
+              </dl>
+            </div>
+          </div>
 
+          <section class="p-works-detail__overview">
+            <div class="c-heading">
+              <h2 class="c-heading__title">Overview</h2>
+            </div>
+            <div class="p-works-detail__overview-body">
+              <p>
+                コンサルティング業界の専門情報メディアを想定した、WordPressカスタムテーマ。静的
+                HTML / SCSS / JSで組み立てた4ページ構成を、運用可能な
+                WordPressテーマへ移行しました。
+              </p>
+              <p>
+                「マルチデバイス対応・表示速度・保守性」の3軸を意識し、各実機サイズでの表示確認、画像のサイズ別配信、運用後の更新性まで考えて設計しています。
+              </p>
+              <p>
+                内部実装では FLOCSS による責務分割と、BEM
+                ベースの命名を採用。カスタム投稿タイプを使わず、標準投稿 +
+                カテゴリーで運用することで、管理画面の迷子を防ぐことを優先しました。
+              </p>
+            </div>
+          </section>
+
+          <section class="p-works-detail__points">
+            <div class="c-heading">
+              <h2 class="c-heading__title">Points</h2>
+            </div>
+            <div class="p-works-detail__points-list">
+              <div class="p-works-detail__point">
+                <h3 class="p-works-detail__point-title">
+                  各実機サイズでの表示確認
+                </h3>
+                <p class="p-works-detail__point-text">
+                  レスポンシブで「動けばOK」ではなく、iPhone SE / iPhone 14 Pro/
+                  iPad
+                  Miniなど複数の実機サイズで表示崩れを確認。中間サイズでも破綻しない設計を意識しました。
+                </p>
+              </div>
+              <div class="p-works-detail__point">
+                <h3 class="p-works-detail__point-title">
+                  長く運用しても破綻しないコード設計
+                </h3>
+                <p class="p-works-detail__point-text">
+                  時間が経ってからの修正でも、影響範囲が読みやすいコード構造を意識しました。半年後・1年後の修正にも対応しやすい設計を心がけています。
+                </p>
+              </div>
+              <div class="p-works-detail__point">
+                <h3 class="p-works-detail__point-title">
+                  他のプラグインと干渉しない安全な実装
+                </h3>
+                <p class="p-works-detail__point-text">
+                  将来 WordPress
+                  プラグインを追加しても、サイトの動きが壊れにくい書き方を採用しました。運用中のトラブルを未然に防ぐ意図です。
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="p-works-detail__cta">
+          <div class="p-works-detail__cta-view">
+            <p class="p-works-detail__cta-text">
+              実際のサイトはこちらからご覧いただけます。
+            </p>
+            <div class="p-works-detail__cta-actions">
+              <!-- TODO: 本案件は架空案件のため、デモサイト公開後に URL 差し替え -->
+              <a
+                href="#"
+                class="c-btn p-works-detail__cta-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Site</a
+              >
+              <!-- TODO: GitHub リポジトリ公開後に URL 差し替え -->
+              <a
+                href="#"
+                class="c-btn p-works-detail__cta-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View GitHub</a
+              >
+            </div>
+          </div>
+
+          <div class="p-works-detail__back">
+            <a href="#" class="c-btn p-works-detail__back-btn">Back</a>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- ===================================== -->
     <!-- Footer -->
     <!-- ===================================== -->
@@ -216,11 +325,7 @@
             </li>
             <li class="c-sns__item">
               <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
-              <a
-                href="#"
-                class="c-sns__link"
-                aria-label="メール"
-              >
+              <a href="#" class="c-sns__link" aria-label="メール">
                 <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
