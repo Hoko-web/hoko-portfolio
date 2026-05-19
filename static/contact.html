@@ -83,11 +83,7 @@
             </li>
             <li class="c-sns__item">
               <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
-              <a
-                href="#"
-                class="c-sns__link"
-                aria-label="メール"
-              >
+              <a href="#" class="c-sns__link" aria-label="メール">
                 <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
@@ -145,11 +141,7 @@
             </li>
             <li class="c-sns__item">
               <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
-              <a
-                href="#"
-                class="c-sns__link"
-                aria-label="メール"
-              >
+              <a href="#" class="c-sns__link" aria-label="メール">
                 <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
               </a>
             </li>
@@ -159,9 +151,172 @@
     </header>
 
     <main id="top">
-      <!-- TODO: Contact ページのコンテンツを実装（CF7 設置） -->
-    </main>
+      <!-- ===================================== -->
+      <!-- Contact -->
+      <!-- ===================================== -->
+      <section class="p-contact p-contact--page">
+        <div class="p-contact__inner">
+          <div class="c-heading">
+            <h1 class="c-heading__title">Contact</h1>
+          </div>
 
+          <div class="p-contact__body">
+            <p class="p-contact__text">
+              お仕事のご相談・ご依頼、その他お問い合わせはこちらよりお気軽にご連絡ください。
+            </p>
+
+            <!-- WordPress 移行時は Contact Form 7 のショートコードに置換 -->
+            <form class="p-contact__form" action="#" method="post" novalidate>
+              <!-- お名前（必須） -->
+              <div class="p-contact__field">
+                <label class="p-contact__label" for="cf-name">
+                  <span
+                    class="p-contact__badge p-contact__badge--required"
+                    aria-hidden="true"
+                    >必須</span
+                  >
+                  <span class="p-contact__label-text">お名前</span>
+                  <span class="u-visually-hidden">（必須項目）</span>
+                </label>
+                <input
+                  class="p-contact__input"
+                  type="text"
+                  id="cf-name"
+                  name="your-name"
+                  autocomplete="name"
+                  placeholder=""
+                  required
+                />
+              </div>
+
+              <!-- 会社名（任意） -->
+              <div class="p-contact__field">
+                <label class="p-contact__label" for="cf-company">
+                  <span
+                    class="p-contact__badge p-contact__badge--optional"
+                    aria-hidden="true"
+                    >任意</span
+                  >
+                  <span class="p-contact__label-text">会社名</span>
+                </label>
+                <input
+                  class="p-contact__input"
+                  type="text"
+                  id="cf-company"
+                  name="your-company"
+                  autocomplete="organization"
+                  placeholder=""
+                />
+              </div>
+
+              <!-- メールアドレス（必須） -->
+              <div class="p-contact__field">
+                <label class="p-contact__label" for="cf-email">
+                  <span
+                    class="p-contact__badge p-contact__badge--required"
+                    aria-hidden="true"
+                    >必須</span
+                  >
+                  <span class="p-contact__label-text">メールアドレス</span>
+                  <span class="u-visually-hidden">（必須項目）</span>
+                </label>
+                <input
+                  class="p-contact__input"
+                  type="email"
+                  id="cf-email"
+                  name="your-email"
+                  autocomplete="email"
+                  inputmode="email"
+                  placeholder=""
+                  required
+                />
+              </div>
+
+              <!-- お問い合わせ種別（必須） -->
+              <div class="p-contact__field">
+                <label class="p-contact__label" for="cf-subject">
+                  <span
+                    class="p-contact__badge p-contact__badge--required"
+                    aria-hidden="true"
+                    >必須</span
+                  >
+                  <span class="p-contact__label-text">お問い合わせ種別</span>
+                  <span class="u-visually-hidden">（必須項目）</span>
+                </label>
+                <div class="p-contact__select-wrap">
+                  <select
+                    class="p-contact__select"
+                    id="cf-subject"
+                    name="your-subject"
+                    required
+                  >
+                    <option value="" disabled selected>選択してください</option>
+                    <option value="制作のご相談">制作のご相談</option>
+                    <option value="お見積もり">お見積もり</option>
+                    <option value="その他">その他</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- お問い合わせ内容（必須） -->
+              <div class="p-contact__field">
+                <label class="p-contact__label" for="cf-message">
+                  <span
+                    class="p-contact__badge p-contact__badge--required"
+                    aria-hidden="true"
+                    >必須</span
+                  >
+                  <span class="p-contact__label-text">お問い合わせ内容</span>
+                  <span class="u-visually-hidden">（必須項目）</span>
+                </label>
+                <textarea
+                  class="p-contact__textarea"
+                  id="cf-message"
+                  name="your-message"
+                  rows="8"
+                  placeholder="ご相談内容・参考サイト・ご希望の納期・ご予算など、わかる範囲でお書きください。"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- プライバシーポリシー同意（必須） -->
+              <div class="p-contact__consent">
+                <input
+                  class="p-contact__consent-input"
+                  type="checkbox"
+                  id="cf-privacy"
+                  name="your-privacy"
+                  value="同意する"
+                  required
+                />
+                <label class="p-contact__consent-label" for="cf-privacy">
+                  <a
+                    class="p-contact__consent-link"
+                    href="privacy.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >プライバシーポリシー</a
+                  >に同意します
+                  <span
+                    class="p-contact__badge p-contact__badge--required"
+                    aria-hidden="true"
+                    >必須</span
+                  >
+                  <span class="u-visually-hidden">（必須項目）</span>
+                </label>
+              </div>
+
+              <!-- 送信ボタン -->
+              <div class="p-contact__actions">
+                <button class="c-btn p-contact__submit" type="submit">
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- ===================================== -->
     <!-- Footer -->
     <!-- ===================================== -->
@@ -217,11 +372,7 @@
             </li>
             <li class="c-sns__item">
               <!-- TODO: ビジネス用Gmail開設後に mailto: 差し替え -->
-              <a
-                href="#"
-                class="c-sns__link"
-                aria-label="メール"
-              >
+              <a href="#" class="c-sns__link" aria-label="メール">
                 <img src="./img/icon-mail.svg" alt="" class="c-sns__icon" />
               </a>
             </li>

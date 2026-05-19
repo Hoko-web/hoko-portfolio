@@ -4,7 +4,9 @@
 #Editor
 .vscode
 
-CLAUDE.md
-
 # Local notes
 markdown/
+
+# Claude Code
+.claude/
+CLAUDE.md
