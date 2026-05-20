@@ -1,6 +1,9 @@
 @use "../../foundation/variable" as *;
 @use "../../foundation/mixin" as *;
 
+// =====================================
+// Common
+// =====================================
 .p-works-detail {
   padding: 96px 0;
   background-color: $color-bg-main;
@@ -17,6 +20,9 @@
   margin: 0 auto;
 }
 
+// =====================================
+// Hero
+// =====================================
 .p-works-detail__hero {
   display: flex;
   flex-direction: column;
@@ -74,8 +80,8 @@
   letter-spacing: 0.01em;
   font-family: $font-mincho;
   color: $color-text-sub;
-  margin-top: 12px;
   border-bottom: 1px solid $color-border;
+  margin-top: 12px;
 
   @include mq(pc) {
     font-size: 18px;
@@ -93,6 +99,9 @@
   }
 }
 
+// =====================================
+// Overview
+// =====================================
 .p-works-detail__overview {
   margin-top: 48px;
 
@@ -120,6 +129,9 @@
   }
 }
 
+// =====================================
+// Points
+// =====================================
 .p-works-detail__points-list {
   margin: 24px 0;
 
@@ -155,6 +167,9 @@
   }
 }
 
+// =====================================
+// CTA
+// =====================================
 .p-works-detail__cta {
   padding-top: 32px;
 
@@ -197,6 +212,9 @@
   margin: 0 auto;
 }
 
+// =====================================
+// Back
+// =====================================
 .p-works-detail__back {
   margin-top: 64px;
   text-align: center;

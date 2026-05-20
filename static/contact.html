@@ -155,7 +155,7 @@
       <!-- Contact -->
       <!-- ===================================== -->
       <section class="p-contact p-contact--page">
-        <div class="p-contact__inner">
+        <div class="p-contact__inner p-contact__inner--page">
           <div class="c-heading">
             <h1 class="c-heading__title">Contact</h1>
           </div>
@@ -281,6 +281,11 @@
 
               <!-- プライバシーポリシー同意（必須） -->
               <div class="p-contact__consent">
+                <span
+                  class="p-contact__badge p-contact__badge--required"
+                  aria-hidden="true"
+                  >必須</span
+                >
                 <input
                   class="p-contact__consent-input"
                   type="checkbox"
@@ -297,11 +302,7 @@
                     rel="noopener noreferrer"
                     >プライバシーポリシー</a
                   >に同意します
-                  <span
-                    class="p-contact__badge p-contact__badge--required"
-                    aria-hidden="true"
-                    >必須</span
-                  >
+
                   <span class="u-visually-hidden">（必須項目）</span>
                 </label>
               </div>

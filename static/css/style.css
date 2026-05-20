@@ -860,7 +860,7 @@ img {
 @media (min-width: 768px) {
   .p-about__photo {
     max-width: 400px;
-    margin: 0;
+    margin: 0 auto;
   }
 }
 
@@ -924,6 +924,99 @@ img {
   align-self: flex-end;
 }
 
+.p-about--page {
+  padding: 96px 0 64px;
+  border-bottom: 1px solid #e0e0e0;
+}
+@media (min-width: 1024px) {
+  .p-about--page {
+    padding: 128px 0 96px;
+  }
+}
+
+.p-about__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 32px;
+}
+@media (min-width: 768px) {
+  .p-about__hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  .p-about__hero {
+    gap: 180px;
+  }
+}
+
+.p-about__description {
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  margin: 24px 0;
+}
+@media (min-width: 1024px) {
+  .p-about__description {
+    font-size: 18px;
+    margin: 40px 0;
+  }
+}
+.p-about__description + .p-about__description {
+  margin-top: 12px;
+}
+@media (min-width: 1024px) {
+  .p-about__description + .p-about__description {
+    margin-top: 16px;
+  }
+}
+
+.p-about__meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.p-about__meta-label {
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-family: "Shippori Mincho", serif;
+  color: #666666;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: 12px;
+}
+@media (min-width: 1024px) {
+  .p-about__meta-label {
+    font-size: 18px;
+  }
+}
+
+.p-about__meta-value {
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  margin-top: 18px;
+}
+@media (min-width: 1024px) {
+  .p-about__meta-value {
+    font-size: 20px;
+  }
+}
+
+.p-about__block {
+  margin-top: 48px;
+}
+@media (min-width: 1024px) {
+  .p-about__block {
+    margin-top: 64px;
+  }
+}
+
 .p-works {
   padding: 64px 0;
   background-color: #fff;
@@ -931,15 +1024,6 @@ img {
 @media (min-width: 1024px) {
   .p-works {
     padding: 96px 0;
-  }
-}
-
-.p-works--archive {
-  padding: 96px 0;
-}
-@media (min-width: 1024px) {
-  .p-works--archive {
-    padding: 128px 0;
   }
 }
 
@@ -1077,6 +1161,15 @@ img {
   .p-works__action {
     gap: 32px;
     margin-top: 64px;
+  }
+}
+
+.p-works--archive {
+  padding: 96px 0;
+}
+@media (min-width: 1024px) {
+  .p-works--archive {
+    padding: 128px 0;
   }
 }
 
@@ -1249,15 +1342,6 @@ img {
   }
 }
 
-.p-contact--page {
-  padding: 96px 0 64px;
-}
-@media (min-width: 1024px) {
-  .p-contact--page {
-    padding: 128px 0;
-  }
-}
-
 .p-contact__inner {
   width: 100%;
   max-width: 1200px;
@@ -1303,12 +1387,35 @@ img {
   }
 }
 
+.p-contact--page {
+  padding: 96px 0 64px;
+}
+@media (min-width: 1024px) {
+  .p-contact--page {
+    padding: 128px 0 96px;
+  }
+}
+
+.p-contact__inner--page {
+  max-width: 800px;
+}
+
 .p-contact__body {
-  padding: 32px 0;
+  padding-top: 24px;
+}
+@media (min-width: 1024px) {
+  .p-contact__body {
+    padding-top: 40px;
+  }
 }
 
 .p-contact__field {
-  margin-top: 24px;
+  margin-top: 32px;
+}
+@media (min-width: 1024px) {
+  .p-contact__field {
+    margin-top: 64px;
+  }
 }
 
 .p-contact__label {
@@ -1317,6 +1424,12 @@ img {
   gap: 8px;
   margin-bottom: 8px;
 }
+@media (min-width: 1024px) {
+  .p-contact__label {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}
 
 .p-contact__badge {
   display: inline-block;
@@ -1324,6 +1437,11 @@ img {
   padding: 2px 8px;
   line-height: 1.7;
   letter-spacing: 0.01em;
+}
+@media (min-width: 1024px) {
+  .p-contact__badge {
+    font-size: 14px;
+  }
 }
 
 .p-contact__badge--required {
@@ -1342,6 +1460,11 @@ img {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.01em;
+}
+@media (min-width: 1024px) {
+  .p-contact__label-text {
+    font-size: 16px;
+  }
 }
 
 .p-contact__input {
@@ -1364,13 +1487,17 @@ img {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 6px solid #666666;
+  border-top: 6px solid #1a1a1a;
 }
 
 .p-contact__select {
   width: 100%;
   padding: 12px 40px 12px 16px;
+  color: #666666;
   border: 1px solid #e0e0e0;
+}
+.p-contact__select:valid {
+  color: #1a1a1a;
 }
 
 .p-contact__textarea {
@@ -1380,6 +1507,16 @@ img {
   min-height: 200px;
   resize: vertical;
 }
+.p-contact__textarea::-moz-placeholder {
+  color: #666666;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+.p-contact__textarea::placeholder {
+  color: #666666;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
 
 .p-contact__consent {
   display: flex;
@@ -1387,6 +1524,12 @@ img {
   justify-content: center;
   gap: 8px;
   margin-top: 16px;
+}
+@media (min-width: 1024px) {
+  .p-contact__consent {
+    margin-top: 32px;
+    gap: 12px;
+  }
 }
 
 .p-contact__consent-input {
@@ -1404,17 +1547,37 @@ img {
   letter-spacing: 0.01em;
   cursor: pointer;
 }
+@media (min-width: 1024px) {
+  .p-contact__consent-label {
+    font-size: 16px;
+  }
+}
 
 .p-contact__consent-link {
   text-decoration: underline;
 }
 .p-contact__consent-link:hover {
+  color: #666666;
   text-decoration: none;
 }
 
 .p-contact__actions {
   margin-top: 24px;
   text-align: center;
+}
+@media (min-width: 1024px) {
+  .p-contact__actions {
+    margin-top: 64px;
+  }
+}
+
+.p-contact__input:focus,
+.p-contact__textarea:focus,
+.p-contact__select:focus,
+.p-contact__consent-input:focus,
+.p-contact__consent-link:focus {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
 }
 
 .p-footer {
@@ -1910,8 +2073,8 @@ img {
   letter-spacing: 0.01em;
   font-family: "Shippori Mincho", serif;
   color: #666666;
-  margin-top: 12px;
   border-bottom: 1px solid #e0e0e0;
+  margin-top: 12px;
 }
 @media (min-width: 1024px) {
   .p-works-detail__meta-label {
