@@ -1,0 +1,25 @@
+// =====================================
+// Font Family
+// =====================================
+$font-mincho: "Shippori Mincho", serif;
+$font-gothic: "Noto Sans JP", sans-serif;
+$font-en: "Inter", sans-serif;
+
+// =====================================
+// Colors
+// =====================================
+$color-text-main: #1a1a1a;
+$color-text-sub: #666666;
+
+$color-bg-main: #fff;
+$color-bg-sub: #fafafa;
+
+$color-border: #e0e0e0;
+
+// =====================================
+// BreakPoint
+// =====================================
+$breakpoints: (
+  tb: 768px,
+  pc: 1024px,
+);

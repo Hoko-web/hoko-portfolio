@@ -1,0 +1,39 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.c-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @include mq(pc) {
+    gap: 48px;
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: $color-border;
+  }
+}
+
+.c-heading--no-line {
+  &::after {
+    display: none;
+  }
+}
+
+.c-heading__title {
+  font-family: $font-mincho;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+
+  @include mq(pc) {
+    font-size: 42px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+}

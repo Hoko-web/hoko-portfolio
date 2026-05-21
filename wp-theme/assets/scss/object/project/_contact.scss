@@ -1,0 +1,266 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+// =====================================
+// Common
+// =====================================
+.p-contact {
+  padding: 64px 0;
+  background-color: $color-bg-main;
+
+  @include mq(pc) {
+    padding: 96px 0;
+  }
+}
+
+.p-contact__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+// =====================================
+// Section(top)
+// =====================================
+.p-contact__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+
+  @include mq(pc) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 64px;
+  }
+}
+
+.p-contact__text {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+
+  @include mq(pc) {
+    font-size: 16px;
+  }
+}
+
+.p-contact__more {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+
+  @include mq(pc) {
+    margin: 0;
+  }
+}
+
+// =====================================
+// Page
+// =====================================
+.p-contact--page {
+  padding: 96px 0 64px;
+
+  @include mq(pc) {
+    padding: 128px 0 96px;
+  }
+}
+
+.p-contact__inner--page {
+  max-width: 800px;
+}
+
+.p-contact__body {
+  padding-top: 24px;
+
+  @include mq(pc) {
+    padding-top: 40px;
+  }
+}
+
+// =====================================
+// Field
+// =====================================
+.p-contact__field {
+  margin-top: 32px;
+
+  @include mq(pc) {
+    margin-top: 64px;
+  }
+}
+
+.p-contact__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  @include mq(pc) {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.p-contact__badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+
+  @include mq(pc) {
+    font-size: 14px;
+  }
+}
+
+.p-contact__badge--required {
+  border: 1px solid $color-text-main;
+  background-color: $color-text-main;
+  color: $color-bg-main;
+}
+
+.p-contact__badge--optional {
+  border: 1px solid $color-text-main;
+  background-color: $color-bg-main;
+  color: $color-text-main;
+}
+
+.p-contact__label-text {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+
+  @include mq(pc) {
+    font-size: 16px;
+  }
+}
+
+// =====================================
+// Input
+// =====================================
+.p-contact__input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid $color-border;
+}
+
+// =====================================
+// Select
+// =====================================
+.p-contact__select-wrap {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid $color-text-main;
+  }
+}
+
+.p-contact__select {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  color: $color-text-sub;
+  border: 1px solid $color-border;
+
+  &:valid {
+    color: $color-text-main;
+  }
+}
+
+// =====================================
+// Textarea
+// =====================================
+.p-contact__textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid $color-border;
+  min-height: 200px;
+  resize: vertical;
+
+  &::placeholder {
+    color: $color-text-sub;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+}
+
+// =====================================
+// Consent
+// =====================================
+.p-contact__consent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+
+  @include mq(pc) {
+    margin-top: 32px;
+    gap: 12px;
+  }
+}
+
+.p-contact__consent-input {
+  appearance: auto;
+  -webkit-appearance: auto;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.p-contact__consent-label {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+
+  @include mq(pc) {
+    font-size: 16px;
+  }
+}
+
+.p-contact__consent-link {
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-text-sub;
+    text-decoration: none;
+  }
+}
+
+// =====================================
+// Actions
+// =====================================
+.p-contact__actions {
+  margin-top: 24px;
+  text-align: center;
+
+  @include mq(pc) {
+    margin-top: 64px;
+  }
+}
+
+// =====================================
+// Focus
+// =====================================
+.p-contact__input,
+.p-contact__textarea,
+.p-contact__select,
+.p-contact__consent-input,
+.p-contact__consent-link {
+  &:focus {
+    outline: 2px solid $color-text-main;
+    outline-offset: 2px;
+  }
+}

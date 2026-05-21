@@ -1,0 +1,67 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-thanks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 64px 24px;
+  background-color: $color-bg-main;
+
+  @include mq(pc) {
+    padding: 96px 24px;
+  }
+}
+
+.p-thanks__inner {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.p-thanks__title {
+  font-family: $font-mincho;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+
+  @include mq(pc) {
+    font-size: 100px;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+  }
+}
+
+.p-thanks__note {
+  margin-top: 32px;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: $color-text-sub;
+
+  @include mq(pc) {
+    margin-top: 48px;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  p + p {
+    margin-top: 8px;
+
+    @include mq(pc) {
+      margin-top: 12px;
+    }
+  }
+}
+
+.p-thanks__back {
+  display: inline-block;
+  margin-top: 48px;
+
+  @include mq(pc) {
+    margin-top: 64px;
+  }
+}

@@ -1,0 +1,119 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-fv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  background-image: url("../img/fv-bg.svg");
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.p-fv__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.p-fv__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-fv__logo {
+  font-family: $font-en;
+  font-weight: 900;
+  font-size: 74px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  @include mq(pc) {
+    font-size: 100px;
+    letter-spacing: -0.03em;
+  }
+}
+
+.p-fv__text {
+  font-family: $font-mincho;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+
+  @include mq(pc) {
+    font-size: 22px;
+  }
+}
+
+.p-fv__catch {
+  font-size: 26px;
+  margin-top: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  font-family: $font-mincho;
+
+  @include mq(pc) {
+    font-size: 36px;
+    margin-top: 32px;
+    line-height: 1.7;
+    letter-spacing: 0.08em;
+  }
+}
+
+.p-fv__sub {
+  margin-top: 12px;
+  color: $color-text-sub;
+  line-height: 1.7;
+
+  @include mq(pc) {
+    font-size: 18px;
+    letter-spacing: 0.03em;
+  }
+}
+
+.p-fv__scroll {
+  position: absolute;
+  right: 24px;
+  top: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  @include mq(pc) {
+    top: 100%;
+  }
+}
+
+.p-fv__scroll-text {
+  font-family: $font-mincho;
+  letter-spacing: 0.01em;
+}
+
+.p-fv__scroll-line {
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: $color-text-main;
+  animation: scrollLine 3s ease-in-out infinite;
+
+  @include mq(tb) {
+    height: 120px;
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(100% 0 0 0);
+  }
+}

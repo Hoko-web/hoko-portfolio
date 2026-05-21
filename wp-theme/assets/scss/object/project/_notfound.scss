@@ -1,0 +1,58 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 64px 24px;
+  background-color: $color-bg-main;
+
+  @include mq(pc) {
+    padding: 96px 24px;
+  }
+}
+
+.p-notfound__inner {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.p-notfound__number {
+  font-family: $font-mincho;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+
+  @include mq(pc) {
+    font-size: 200px;
+    letter-spacing: -0.05em;
+  }
+}
+
+.p-notfound__message {
+  margin-top: 32px;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: $color-text-sub;
+
+  @include mq(pc) {
+    margin-top: 48px;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+}
+
+.p-notfound__back {
+  display: inline-block;
+  margin-top: 48px;
+
+  @include mq(pc) {
+    margin-top: 64px;
+  }
+}
