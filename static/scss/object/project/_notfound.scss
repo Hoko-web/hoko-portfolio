@@ -1,7 +1,7 @@
 @use "../../foundation/variable" as *;
 @use "../../foundation/mixin" as *;
 
-.p-404 {
+.p-notfound {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,13 +14,13 @@
   }
 }
 
-.p-404__inner {
+.p-notfound__inner {
   width: 100%;
   max-width: 800px;
   text-align: center;
 }
 
-.p-404__number {
+.p-notfound__number {
   font-family: $font-mincho;
   font-weight: 700;
   font-size: 100px;
@@ -33,7 +33,7 @@
   }
 }
 
-.p-404__message {
+.p-notfound__message {
   margin-top: 32px;
   font-size: 14px;
   line-height: 1.7;
@@ -48,7 +48,7 @@
   }
 }
 
-.p-404__back {
+.p-notfound__back {
   display: inline-block;
   margin-top: 48px;
 

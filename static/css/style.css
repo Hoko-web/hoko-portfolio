@@ -1752,7 +1752,7 @@ img {
   }
 }
 
-.p-404 {
+.p-notfound {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1761,18 +1761,18 @@ img {
   background-color: #fff;
 }
 @media (min-width: 1024px) {
-  .p-404 {
+  .p-notfound {
     padding: 96px 24px;
   }
 }
 
-.p-404__inner {
+.p-notfound__inner {
   width: 100%;
   max-width: 800px;
   text-align: center;
 }
 
-.p-404__number {
+.p-notfound__number {
   font-family: "Shippori Mincho", serif;
   font-weight: 700;
   font-size: 100px;
@@ -1780,13 +1780,13 @@ img {
   letter-spacing: -0.04em;
 }
 @media (min-width: 1024px) {
-  .p-404__number {
+  .p-notfound__number {
     font-size: 200px;
     letter-spacing: -0.05em;
   }
 }
 
-.p-404__message {
+.p-notfound__message {
   margin-top: 32px;
   font-size: 14px;
   line-height: 1.7;
@@ -1794,7 +1794,7 @@ img {
   color: #666666;
 }
 @media (min-width: 1024px) {
-  .p-404__message {
+  .p-notfound__message {
     margin-top: 48px;
     font-size: 18px;
     line-height: 1.7;
@@ -1802,12 +1802,12 @@ img {
   }
 }
 
-.p-404__back {
+.p-notfound__back {
   display: inline-block;
   margin-top: 48px;
 }
 @media (min-width: 1024px) {
-  .p-404__back {
+  .p-notfound__back {
     margin-top: 64px;
   }
 }
