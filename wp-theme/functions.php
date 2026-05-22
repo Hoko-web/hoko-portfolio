@@ -75,3 +75,27 @@ function hoko_register_works() {
   ] );
 }
 add_action( 'init', 'hoko_register_works' );
+
+// =====================================
+// CF7設定
+// =====================================
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+// =====================================
+// CF7送信後リダイレクト
+// =====================================
+function hoko_redirect_to_thanks() {
+  if ( ! is_page( 'contact' ) ) {
+    return;
+  }
+
+  $thanks_url = esc_url( home_url( '/contact/thanks/' ) );
+  echo <<<EOD
+<script>
+  document.addEventListener( 'wpcf7mailsent', function () {
+    window.location = '{$thanks_url}';
+  });
+</script>
+EOD;
+}
+add_action( 'wp_footer', 'hoko_redirect_to_thanks' );
