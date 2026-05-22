@@ -35,3 +35,43 @@ function hoko_enqueue_assets() {
   wp_script_add_data( 'hoko-main', 'strategy', 'defer' );
 }
 add_action( 'wp_enqueue_scripts', 'hoko_enqueue_assets' );
+
+// =====================================
+// カスタム投稿タイプ　（works）タクソノミー登録
+// =====================================
+function hoko_register_works() {
+  register_post_type( 'works', [
+    'label'          => '制作実績',
+    'public'         => true,
+    'menu_position'  => 5,
+    'menu_icon'      => 'dashicons-portfolio',
+    'has_archive'    => true,
+    'supports'       => [ 'title', 'thumbnail', 'editor', 'page-attributes' ],
+    'rewrite'        => [
+      'slug'          =>  'works',
+      'with_front'    => false,
+    ],
+    'show_in_rest'   => true,
+  ] );
+
+  register_taxonomy( 'works_category', 'works', [
+    'label'          => 'カテゴリ',
+    'hierarchical'   => true,
+    'show_in_rest'   => true,
+    'rewrite'        => [
+      'slug'          => 'works-category',
+      'with_front'    => false,
+    ],
+  ] );
+
+  register_taxonomy( 'works_tag', 'works', [
+    'label'          => '使用技術',
+    'hierarchical'   => false,
+    'show_in_rest'   => true,
+    'rewrite'        => [
+      'slug'          => 'works-tag',
+      'with_front'    => false,
+    ],
+  ] );
+}
+add_action( 'init', 'hoko_register_works' );
