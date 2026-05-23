@@ -7,7 +7,7 @@
   <section class="p-works p-works--archive">
     <div class="p-works__inner">
       <div class="c-heading">
-        <h1 class="c-heading__title">Works</h1>
+        <h1 class="c-heading__title">All Works</h1>
       </div>
 
       <div class="p-works__wrapper">

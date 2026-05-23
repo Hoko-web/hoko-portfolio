@@ -108,11 +108,10 @@
 // Page
 // =====================================
 .p-about--page {
-  padding: 96px 0 64px;
-  border-bottom: 1px solid $color-border;
+  padding: 64px 0 0;
 
   @include mq(pc) {
-    padding: 128px 0 96px;
+    padding: 128px 0 0;
   }
 }
 
@@ -189,6 +188,6 @@
   margin-top: 48px;
 
   @include mq(pc) {
-    margin-top: 64px;
+    margin-top: 96px;
   }
 }
