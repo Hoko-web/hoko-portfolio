@@ -1,3 +1,8 @@
+<?php
+/**
+ * ヘッダー（全ページ共通）
+ */
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
   <head>
@@ -19,9 +24,6 @@
   </head>
 
   <body <?php body_class(); ?>>
-    <!-- ===================================== -->
-    <!-- header -->
-    <!-- ===================================== -->
     <header class="p-header">
       <div class="p-header__inner">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="p-header__logo" aria-label="トップへ戻る">Hoko</a>

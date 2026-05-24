@@ -1,8 +1,10 @@
+<?php
+/**
+ * トップページ（1ページLP構成）
+ */
+?>
 <?php get_header(); ?>
 
-<!-- ===================================== -->
-<!-- Topページ -->
-<!-- ===================================== -->
 <main id="top">
   <!-- ===================================== -->
   <!-- FV -->
@@ -114,12 +116,7 @@
         <ul class="p-works__list">
 
           <?php
-          $works_query = new WP_Query( [
-            'post_type'      => 'works',
-            'posts_per_page' => 4,
-            'orderby'        => 'menu_order',
-            'order'          => 'ASC',
-          ] );
+          $works_query = hoko_get_related_works();
 
           if ( $works_query->have_posts() ) :
             while ( $works_query->have_posts() ) :

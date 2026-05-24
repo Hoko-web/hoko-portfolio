@@ -1,3 +1,5 @@
-<?php get_header(); ?>
-
-<?php get_footer(); ?>
+<?php
+/**
+ * フォールバックテンプレ：404 ページを表示
+ */
+get_template_part( '404' );

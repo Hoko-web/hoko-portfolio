@@ -212,11 +212,26 @@
 }
 
 .p-contact__consent-input {
-  appearance: auto;
-  -webkit-appearance: auto;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
   width: 16px;
   height: 16px;
+  border: 1px solid $color-text-main;
+  background-color: #fff;
   cursor: pointer;
+
+  &:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    border-right: 1.5px solid $color-text-main;
+    border-bottom: 1.5px solid $color-text-main;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
 }
 
 .p-contact__consent-label {
@@ -232,10 +247,13 @@
 
 .p-contact__consent-link {
   text-decoration: underline;
+  text-decoration-color: $color-text-main;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 
   &:hover {
     color: $color-text-sub;
-    text-decoration: none;
+    text-decoration-color: $color-text-sub;
   }
 }
 

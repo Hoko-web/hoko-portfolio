@@ -1,6 +1,14 @@
+<?php
+/**
+ * Works 個別ページ
+ */
+?>
 <?php get_header(); ?>
 
 <main id="top">
+  <!-- ===================================== -->
+  <!-- Works Detail -->
+  <!-- ===================================== -->
   <section class="p-works-detail">
 
     <?php if ( have_posts() ) : 
@@ -86,14 +94,15 @@
           <?php endforeach; ?>
         </div>
       </section>
-
-
     </div>
-    <?php endwhile;
+    <?php endwhile; wp_reset_postdata();
     endif;
     ?>
   </section>
 
+  <!-- ===================================== -->
+  <!-- Works -->
+  <!-- ===================================== -->
   <section class="p-works" id="works">
     <div class="p-works__inner">
 
@@ -105,14 +114,8 @@
         <ul class="p-works__list">
 
           <?php
-          $works_query = new WP_Query( [
-            'post_type'      => 'works',
-            'posts_per_page' => 4,
-            'orderby'        => 'menu_order',
-            'order'          => 'ASC',
-            'post__not_in'   => [ get_the_ID() ],
-          ] );
-
+          $works_query = hoko_get_related_works( get_the_ID() ); 
+          
           if ( $works_query->have_posts() ) :
             while ( $works_query->have_posts() ) :
               $works_query->the_post();
@@ -169,6 +172,9 @@
     </div>
   </section>
 
+  <!-- ===================================== -->
+  <!-- Contact -->
+  <!-- ===================================== -->
   <section class="p-contact" id="contact">
     <div class="p-contact__inner">
       <div class="c-heading">

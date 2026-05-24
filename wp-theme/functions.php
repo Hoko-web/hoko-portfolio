@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-// =====================================
-// テーマ設定
-// =====================================
+/**
+ * テーマセットアップ（メニュー登録、テーマサポート）
+ */
 function hoko_setup() {
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
@@ -25,9 +25,9 @@ function hoko_setup() {
 }
 add_action( 'after_setup_theme', 'hoko_setup' );
 
-// =====================================
-// CSS JS 読み込み  
-// =====================================
+/**
+ * CSS / JS の読み込み
+ */
 function hoko_enqueue_assets() {
   wp_enqueue_style( 'hoko-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap', [], null );
   wp_enqueue_style( 'hoko-style', get_template_directory_uri() . '/assets/css/style.css', [], '1.0.0' );
@@ -36,9 +36,9 @@ function hoko_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'hoko_enqueue_assets' );
 
-// =====================================
-// カスタム投稿タイプ　（works）タクソノミー登録
-// =====================================
+/**
+ * カスタム投稿タイプ「works」と関連タクソノミーを登録
+ */
 function hoko_register_works() {
   register_post_type( 'works', [
     'label'          => '制作実績',
@@ -76,14 +76,17 @@ function hoko_register_works() {
 }
 add_action( 'init', 'hoko_register_works' );
 
-// =====================================
-// CF7設定
-// =====================================
-add_filter( 'wpcf7_autop_or_not', '__return_false' );
+/**
+ * CF7設定（autop無効化）
+ */
+function hoko_cf7_setup() {
+  add_filter( 'wpcf7_autop_or_not', '__return_false' );
+}
+add_action( 'init', 'hoko_cf7_setup' );
 
-// =====================================
-// CF7送信後リダイレクト
-// =====================================
+/**
+ * CF7送信完了時に Thanks ページへリダイレクト
+ */
 function hoko_redirect_to_thanks() {
   if ( ! is_page( 'contact' ) ) {
     return;
@@ -99,3 +102,62 @@ function hoko_redirect_to_thanks() {
 EOD;
 }
 add_action( 'wp_footer', 'hoko_redirect_to_thanks' );
+
+/**
+ * Works一覧の表示件数を6件に固定
+ */
+function hoko_works_archive_query( $query ) {
+  if ( is_admin() || ! $query->is_main_query() ) {
+    return;
+  }
+  if ( $query->is_post_type_archive( 'works' ) ) {
+    $query->set( 'posts_per_page', 6 );
+    $query->set( 'orderby', 'menu_order' );
+    $query->set( 'order', 'ASC' );
+  }
+}
+add_action( 'pre_get_posts', 'hoko_works_archive_query' );
+
+/**
+ * ページネーションを出力する
+ */
+function hoko_pagination( $args = [] ) {
+  $defaults = [
+    'type'               => 'array',
+    'mid_size'           => 1,
+    'end_size'           => 1,
+    'prev_text'          => 'Prev',
+    'next_text'          => 'Next',
+    'screen_reader_text' => 'ページネーション',
+  ];
+  $args  = wp_parse_args( $args, $defaults );
+  $links = paginate_links( $args );
+
+  if ( empty( $links ) ) {
+    return;
+  }
+
+  echo '<nav class="c-pagination" aria-label="' . esc_attr( $args['screen_reader_text'] ) . '">';
+  echo '<ul class="c-pagination__list">';
+  foreach ( $links as $link ) {
+    echo '<li class="c-pagination__item">' . $link . '</li>';
+  }
+  echo '</ul>';
+  echo '</nav>';
+}
+
+/**
+ * Worksセクション用のクエリを取得
+ */
+function hoko_get_related_works( $exclude_id = null ) {
+  $args = [
+    'post_type'      => 'works',
+    'posts_per_page' => 4,
+    'orderby'        => 'menu_order',
+    'order'          => 'ASC',
+  ];
+  if ( $exclude_id ) {
+    $args['post__not_in'] = [ $exclude_id ];
+  }
+  return new WP_Query( $args );
+}

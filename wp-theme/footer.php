@@ -1,3 +1,8 @@
+<?php
+/**
+ * フッター（全ページ共通）
+ */
+?>
     <footer class="p-footer">
       <div class="p-footer__inner">
         <div class="p-footer__head">
@@ -63,7 +68,7 @@
       </div>
       <div class="p-footer__bottom">
         <p class="p-footer__copyright">
-          © <?php echo date( 'Y' ); ?> Hiromasa Hokotate All rights reserved.
+          © <?php echo esc_html( wp_date( 'Y' ) ); ?> Hiromasa Hokotate All rights reserved.
         </p>
       </div>
     </footer>

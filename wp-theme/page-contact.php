@@ -1,9 +1,11 @@
+<?php
+/**
+ * Contact ページ（CF7フォーム設置）
+ */
+?>
 <?php get_header(); ?>
 
 <main id="top">
-  <!-- ===================================== -->
-  <!-- Contact -->
-  <!-- ===================================== -->
   <section class="p-contact p-contact--page">
     <div class="p-contact__inner p-contact__inner--page">
       <div class="c-heading">

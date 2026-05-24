@@ -1,6 +1,9 @@
 @use "../../foundation/variable" as *;
 @use "../../foundation/mixin" as *;
 
+// =====================================
+// Common
+// =====================================
 .p-footer {
   padding: 48px 0 16px;
   background-color: $color-bg-sub;
@@ -23,6 +26,9 @@
   }
 }
 
+// =====================================
+// Head
+// =====================================
 .p-footer__head {
   display: flex;
   justify-content: center;
@@ -65,6 +71,9 @@
   }
 }
 
+// =====================================
+// Menus
+// =====================================
 .p-footer__menus {
   display: flex;
   flex-direction: column;
@@ -141,6 +150,9 @@
   }
 }
 
+// =====================================
+// Bottom
+// =====================================
 .p-footer__bottom {
   display: flex;
   justify-content: center;

@@ -1,3 +1,8 @@
+<?php
+/**
+ * Privacy Policy ページ
+ */
+?>
 <?php get_header(); ?>
 
 <main id="top">

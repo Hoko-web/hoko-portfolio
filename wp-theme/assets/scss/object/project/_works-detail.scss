@@ -35,7 +35,7 @@
   }
 
   @include mq(pc) {
-    gap: 180px;
+    gap: 60px;
   }
 }
 
@@ -92,10 +92,40 @@
   font-size: 18px;
   line-height: 1.7;
   letter-spacing: 0.05em;
+  font-weight: 500;
   margin-top: 18px;
 
   @include mq(pc) {
     font-size: 20px;
+  }
+
+  a {
+    display: block;
+    text-decoration: underline;
+    text-decoration-color: $color-text-main;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    word-break: break-all;
+    transition: text-decoration-color 0.3s ease;
+
+    &::after {
+      content: "↗";
+      display: inline-block;
+      margin-left: 12px;
+      font-size: 14px;
+      padding: 4px;
+      border: 1px solid $color-text-main;
+      border-radius: 4px;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    @include mq(pc) {
+      &:hover {
+        color: $color-text-sub;
+        text-decoration-color: $color-text-sub;
+      }
+    }
   }
 }
 
@@ -173,49 +203,4 @@
     font-size: 18px;
     margin: 12px 0 16px;
   }
-}
-
-// =====================================
-// CTA
-// =====================================
-.p-works-detail__cta {
-  padding-top: 32px;
-
-  @include mq(pc) {
-    padding-top: 64px;
-  }
-}
-
-.p-works-detail__cta-view {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 40px 0;
-  border-top: 1px solid $color-border;
-  border-bottom: 1px solid $color-border;
-
-  @include mq(pc) {
-    padding: 64px 0;
-  }
-}
-
-.p-works-detail__cta-text {
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.05em;
-  color: $color-text-sub;
-  text-align: center;
-
-  @include mq(pc) {
-    font-size: 16px;
-  }
-}
-
-.p-works-detail__cta-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: fit-content;
-  margin: 0 auto;
 }

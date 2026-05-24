@@ -1,8 +1,13 @@
+<?php
+/**
+ * Thanks ページ（送信完了）
+ */
+?>
 <?php get_header(); ?>
 
 <main id="top">
   <!-- ===================================== -->
-  <!-- Thanksページ -->
+  <!-- Thanks -->
   <!-- ===================================== -->
   <section class="p-thanks">
     <div class="p-thanks__inner">
@@ -18,6 +23,9 @@
     </div>
   </section>
 
+  <!-- ===================================== -->
+  <!-- Works -->
+  <!-- ===================================== -->
   <section class="p-works" id="works">
     <div class="p-works__inner">
 
@@ -29,13 +37,8 @@
         <ul class="p-works__list">
 
           <?php
-          $works_query = new WP_Query( [
-            'post_type'      => 'works',
-            'posts_per_page' => 4,
-            'orderby'        => 'menu_order',
-            'order'          => 'ASC',
-          ] );
-
+          $works_query = hoko_get_related_works();
+          
           if ( $works_query->have_posts() ) :
             while ( $works_query->have_posts() ) :
               $works_query->the_post();

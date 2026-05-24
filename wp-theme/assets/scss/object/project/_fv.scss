@@ -1,6 +1,9 @@
 @use "../../foundation/variable" as *;
 @use "../../foundation/mixin" as *;
 
+// =====================================
+// Common
+// =====================================
 .p-fv {
   display: flex;
   flex-direction: column;
@@ -75,6 +78,9 @@
   }
 }
 
+// =====================================
+// Scroll
+// =====================================
 .p-fv__scroll {
   position: absolute;
   right: 24px;

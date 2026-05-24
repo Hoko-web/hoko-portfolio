@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -393,6 +394,16 @@ img {
   height: auto;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 .c-heading {
   display: flex;
   align-items: center;
@@ -529,6 +540,39 @@ img {
   .c-sns__icon {
     transition: transform 0.3s ease, filter 0.3s ease;
   }
+}
+
+.c-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+@media (min-width: 1024px) {
+  .c-pagination {
+    margin-top: 64px;
+  }
+}
+
+.c-pagination__list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.c-pagination .page-numbers {
+  color: #666666;
+  transition: color 0.3s ease;
+}
+@media (min-width: 1024px) {
+  .c-pagination .page-numbers:hover {
+    color: #1a1a1a;
+  }
+}
+
+.c-pagination .current {
+  color: #1a1a1a;
+  font-weight: 700;
 }
 
 .p-header {
@@ -999,6 +1043,7 @@ img {
   font-size: 18px;
   line-height: 1.7;
   letter-spacing: 0.05em;
+  font-weight: 500;
   margin-top: 18px;
 }
 @media (min-width: 1024px) {
@@ -1532,12 +1577,26 @@ img {
 }
 
 .p-contact__consent-input {
-  -moz-appearance: auto;
-       appearance: auto;
-  -webkit-appearance: auto;
+  position: relative;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
   width: 16px;
   height: 16px;
+  border: 1px solid #1a1a1a;
+  background-color: #fff;
   cursor: pointer;
+}
+.p-contact__consent-input:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  border-right: 1.5px solid #1a1a1a;
+  border-bottom: 1.5px solid #1a1a1a;
+  transform: translate(-50%, -60%) rotate(45deg);
 }
 
 .p-contact__consent-label {
@@ -1554,10 +1613,13 @@ img {
 
 .p-contact__consent-link {
   text-decoration: underline;
+  text-decoration-color: #1a1a1a;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 .p-contact__consent-link:hover {
   color: #666666;
-  text-decoration: none;
+  text-decoration-color: #666666;
 }
 
 .p-contact__actions {
@@ -2025,7 +2087,7 @@ img {
 }
 @media (min-width: 1024px) {
   .p-works-detail__hero {
-    gap: 180px;
+    gap: 60px;
   }
 }
 
@@ -2085,11 +2147,38 @@ img {
   font-size: 18px;
   line-height: 1.7;
   letter-spacing: 0.05em;
+  font-weight: 500;
   margin-top: 18px;
 }
 @media (min-width: 1024px) {
   .p-works-detail__meta-value {
     font-size: 20px;
+  }
+}
+.p-works-detail__meta-value a {
+  display: block;
+  text-decoration: underline;
+  text-decoration-color: #1a1a1a;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  word-break: break-all;
+  transition: text-decoration-color 0.3s ease;
+}
+.p-works-detail__meta-value a::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 14px;
+  padding: 4px;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+  vertical-align: middle;
+  line-height: 1;
+}
+@media (min-width: 1024px) {
+  .p-works-detail__meta-value a:hover {
+    color: #666666;
+    text-decoration-color: #666666;
   }
 }
 
@@ -2167,52 +2256,6 @@ img {
     font-size: 18px;
     margin: 12px 0 16px;
   }
-}
-
-.p-works-detail__cta {
-  padding-top: 32px;
-}
-@media (min-width: 1024px) {
-  .p-works-detail__cta {
-    padding-top: 64px;
-  }
-}
-
-.p-works-detail__cta-view {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 40px 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-}
-@media (min-width: 1024px) {
-  .p-works-detail__cta-view {
-    padding: 64px 0;
-  }
-}
-
-.p-works-detail__cta-text {
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.05em;
-  color: #666666;
-  text-align: center;
-}
-@media (min-width: 1024px) {
-  .p-works-detail__cta-text {
-    font-size: 16px;
-  }
-}
-
-.p-works-detail__cta-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
 }
 
 @media (min-width: 768px) {

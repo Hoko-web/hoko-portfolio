@@ -1,9 +1,14 @@
+<?php
+/**
+ * About ページ
+ */
+?>
 <?php get_header(); ?>
 
-<!-- ===================================== -->
-<!-- aboutページ -->
-<!-- ===================================== -->
 <main id="top">
+  <!-- ===================================== -->
+  <!-- About Me -->
+  <!-- ===================================== -->
   <section class="p-about p-about--page">
     <div class="p-about__inner">
       <div class="c-heading">
@@ -73,7 +78,10 @@
       </div>
     </div>
   </section>
-  
+
+  <!-- ===================================== -->
+  <!-- Works -->
+  <!-- ===================================== -->
   <section class="p-works" id="works">
     <div class="p-works__inner">
 
@@ -85,13 +93,8 @@
         <ul class="p-works__list">
 
           <?php
-          $works_query = new WP_Query( [
-            'post_type'      => 'works',
-            'posts_per_page' => 4,
-            'orderby'        => 'menu_order',
-            'order'          => 'ASC',
-          ] );
-
+          $works_query = hoko_get_related_works();
+          
           if ( $works_query->have_posts() ) :
             while ( $works_query->have_posts() ) :
               $works_query->the_post();

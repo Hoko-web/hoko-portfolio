@@ -1,0 +1,35 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.c-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+
+  @include mq(pc) {
+    margin-top: 64px;
+  }
+}
+
+.c-pagination__list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: $font-en;
+}
+
+.c-pagination .page-numbers {
+  color: $color-text-sub;
+  transition: color 0.3s ease;
+
+  @include mq(pc) {
+    &:hover {
+      color: $color-text-main;
+    }
+  }
+}
+
+.c-pagination .current {
+  color: $color-text-main;
+  font-weight: 700;
+}

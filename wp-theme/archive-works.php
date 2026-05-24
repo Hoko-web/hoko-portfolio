@@ -1,8 +1,10 @@
+<?php
+/**
+ * Works 一覧ページ（カスタム投稿タイプ archive）
+ */
+?>
 <?php get_header(); ?>
 
-<!-- ===================================== -->
-<!-- Works一覧ページ -->
-<!-- ===================================== -->
 <main id="top">
   <section class="p-works p-works--archive">
     <div class="p-works__inner">
@@ -50,6 +52,27 @@
           endif; 
           ?>
         </ul>
+
+        <?php hoko_pagination(); ?>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================== -->
+  <!-- Contact -->
+  <!-- ===================================== -->
+  <section class="p-contact" id="contact">
+    <div class="p-contact__inner">
+      <div class="c-heading">
+        <h2 class="c-heading__title">Contact</h2>
+      </div>
+
+      <div class="p-contact__wrapper">
+        <p class="p-contact__text">
+          ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。
+        </p>
+
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn p-contact__more">Contact</a>
       </div>
     </div>
   </section>
