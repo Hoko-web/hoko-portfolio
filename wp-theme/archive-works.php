@@ -25,9 +25,9 @@
             <article class="p-works__card">
               <a href="<?php the_permalink(); ?>" class="p-works__link">
                 <div class="p-works__thumb">
-                  <?php if (has_post_thumbnail() ) : ?>
+                  <?php if ( has_post_thumbnail() ) : ?>
                     <?php the_post_thumbnail( 'large', [
-                      'alt'            => esc_attr( get_the_title() . 'のモックアップ'),
+                      'alt'            => esc_attr( get_the_title() . 'のモックアップ' ),
                       'fetchpriority'  => 'high',
                       'decoding'       => 'async',
                     ] ); ?>
@@ -37,7 +37,7 @@
                   <p class="p-works__category"><?php echo esc_html( $categories[0]->name ); ?></p>
                 <?php endif; ?>
                 <h2 class="p-works__title"><?php the_title(); ?></h2>
-                <?php if ($tags && ! is_wp_error( $tags ) ) : ?>
+                <?php if ( $tags && ! is_wp_error( $tags ) ) : ?>
                   <ul class="p-works__tags">
                     <?php foreach ( $tags as $tag ) : ?>
                       <li class="p-works__tag"><?php echo esc_html( $tag->name ); ?></li>
