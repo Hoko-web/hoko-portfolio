@@ -20,7 +20,7 @@
         </h1>
         <p class="p-fv__sub">
           マルチデバイス対応、表示速度、保守性<br />
-          見えない部分まで手を抜かず、<br class="u-sp" />意図どおりに仕上げます。
+          見えない部分まで手を抜かず、<br class="u-sp" />意図通りに仕上げます。
         </p>
       </div>
       <div class="p-fv__scroll">
