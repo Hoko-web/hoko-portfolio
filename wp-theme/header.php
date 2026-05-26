@@ -76,6 +76,7 @@
               <a class="p-header__drawer-link" href="<?php echo esc_url( home_url( '/' ) . '#contact' ); ?>">Contact</a>
             </li>
           </ul>
+          <!-- SNS -->
           <?php get_template_part( 'template-parts/sns-list' ); ?>
         </nav>
       </div>

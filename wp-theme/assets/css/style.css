@@ -388,6 +388,10 @@ body {
   background-color: #fff;
 }
 
+body.is-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -669,7 +673,6 @@ img {
   z-index: 120;
   width: 28px;
   height: 16px;
-  cursor: pointer;
 }
 .p-header__hamburger.is-open .p-header__hamburger-bar:nth-child(1) {
   top: 8px;
@@ -1632,11 +1635,12 @@ img {
   }
 }
 
-.p-contact__input:focus,
-.p-contact__textarea:focus,
-.p-contact__select:focus,
-.p-contact__consent-input:focus,
-.p-contact__consent-link:focus {
+.p-contact__input:focus-visible,
+.p-contact__textarea:focus-visible,
+.p-contact__select:focus-visible,
+.p-contact__consent-input:focus-visible,
+.p-contact__consent-link:focus-visible,
+.p-contact__submit:focus-visible {
   outline: 2px solid #1a1a1a;
   outline-offset: 2px;
 }

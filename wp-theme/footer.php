@@ -29,6 +29,7 @@
               </li>
             </ul>
           </nav>
+          <!-- SNS -->
           <?php get_template_part( 'template-parts/sns-list' ); ?>
 
           <a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>" class="p-footer__privacy">Privacy Policy</a>

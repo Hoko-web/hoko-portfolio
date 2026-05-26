@@ -16,6 +16,13 @@ body {
   background-color: $color-bg-main;
 }
 
+// =====================================
+// Drawer 開閉時の背景スクロール固定
+// =====================================
+body.is-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;

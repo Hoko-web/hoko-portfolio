@@ -7,6 +7,7 @@
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("is-open");
       drawer.classList.toggle("is-open");
+      document.body.classList.toggle("is-open");
 
       const isOpen = hamburger.classList.contains("is-open");
       hamburger.setAttribute("aria-expanded", isOpen);
@@ -22,6 +23,7 @@
       link.addEventListener("click", () => {
         hamburger.classList.remove("is-open");
         drawer.classList.remove("is-open");
+        document.body.classList.remove("is-open");
 
         hamburger.setAttribute("aria-expanded", "false");
         hamburger.setAttribute("aria-label", "メニューを開く");
@@ -33,6 +35,7 @@
       if (e.target === drawer) {
         hamburger.classList.remove("is-open");
         drawer.classList.remove("is-open");
+        document.body.classList.remove("is-open");
 
         hamburger.setAttribute("aria-expanded", "false");
         hamburger.setAttribute("aria-label", "メニューを開く");
