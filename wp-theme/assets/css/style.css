@@ -1645,6 +1645,10 @@ img {
   outline-offset: 2px;
 }
 
+.wpcf7-spinner {
+  display: none;
+}
+
 .p-footer {
   padding: 48px 0 16px;
   background-color: #fafafa;
