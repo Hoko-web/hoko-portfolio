@@ -25,7 +25,7 @@
             ] ); ?>
           <?php else : ?>
             <img
-              src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/about-image.png' ); ?>"
+              src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/about-image.jpg' ); ?>"
               alt="Hokoの写真"
               width="400"
               height="400"
