@@ -47,7 +47,7 @@
               車いじり / 運動全般 / 歌うこと
             </dd>
             <dt class="p-about__meta-label">Dream</dt>
-            <dd class="p-about__meta-value">ポルシェを買う</dd>
+            <dd class="p-about__meta-value">ポルシェに乗る</dd>
           </dl>
         </div>
       </div>
