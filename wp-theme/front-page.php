@@ -43,10 +43,10 @@
       <div class="p-about__profile">
         <div class="p-about__photo">
           <img
-            src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/about-image.jpg' ); ?>"
+            src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/about-image.webp' ); ?>"
             alt="Hokoの写真"
-            width="400"
-            height="400"
+            width="800"
+            height="800"
             loading="lazy"
             decoding="async"
           />

@@ -36,6 +36,17 @@ function hoko_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'hoko_enqueue_assets' );
 
 /**
+ * 使用しない WordPress 標準スタイルを削除
+ */
+function hoko_dequeue_unused_styles() {
+  wp_dequeue_style( 'wp-block-library' );
+  wp_dequeue_style( 'wp-block-library-theme' );
+  wp_dequeue_style( 'classic-theme-styles' );
+  wp_dequeue_style( 'global-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'hoko_dequeue_unused_styles', 100 );
+
+/**
  * カスタム投稿タイプ「works」と関連タクソノミーを登録
  */
 function hoko_register_works() {
@@ -76,10 +87,11 @@ function hoko_register_works() {
 add_action( 'init', 'hoko_register_works' );
 
 /**
- * CF7設定（autop無効化）
+ * CF7設定（autop無効化、フロント側CSS停止）
  */
 function hoko_cf7_setup() {
   add_filter( 'wpcf7_autop_or_not', '__return_false' );
+  add_filter( 'wpcf7_load_css', '__return_false' );
 }
 add_action( 'init', 'hoko_cf7_setup' );
 
