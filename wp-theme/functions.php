@@ -87,13 +87,21 @@ function hoko_register_works() {
 add_action( 'init', 'hoko_register_works' );
 
 /**
- * CF7設定（autop無効化、フロント側CSS停止）
+ * CF7設定（autop無効化、フロント側CSS停止、Contact以外でJS無効化）
  */
 function hoko_cf7_setup() {
   add_filter( 'wpcf7_autop_or_not', '__return_false' );
   add_filter( 'wpcf7_load_css', '__return_false' );
+  add_filter( 'wpcf7_load_js', 'hoko_cf7_load_js_conditionally' );
 }
 add_action( 'init', 'hoko_cf7_setup' );
+
+/**
+ * Contact ページ以外では CF7 のJS を読み込まない
+ */
+function hoko_cf7_load_js_conditionally() {
+  return is_page( 'contact' );
+}
 
 /**
  * CF7送信完了時に Thanks ページへリダイレクト
