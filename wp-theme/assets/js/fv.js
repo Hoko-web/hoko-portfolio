@@ -4,6 +4,8 @@
 (() => {
   const canvas = document.querySelector(".js-fv-canvas");
   if (!canvas) return; // canvasが無いページでは何もしない
+  // 視差効果を減らす設定されている場合は粒子を出さず、DOMロゴを表示する
+  if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
 
   const ctx = canvas.getContext("2d"); // canvasを使うときに呼ぶ（２D用）　ctxにして使い回す
   // 設置値
