@@ -747,6 +747,7 @@ img {
 }
 
 .p-fv {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -756,8 +757,18 @@ img {
   background-position: center;
 }
 
+.p-fv__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .p-fv__inner {
   position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1200px;
   padding: 0 24px;
@@ -776,6 +787,9 @@ img {
   line-height: 1;
   letter-spacing: -0.02em;
 }
+.p-fv.is-active .p-fv__logo {
+  opacity: 0;
+}
 @media (min-width: 1024px) {
   .p-fv__logo {
     font-size: 100px;
@@ -789,6 +803,9 @@ img {
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1;
+}
+.p-fv.is-active .p-fv__text {
+  opacity: 0;
 }
 @media (min-width: 1024px) {
   .p-fv__text {

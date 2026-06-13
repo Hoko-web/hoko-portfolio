@@ -10,6 +10,7 @@
   <!-- FV -->
   <!-- ===================================== -->
   <section class="p-fv">
+    <canvas class="p-fv__canvas js-fv-canvas" aria-hidden="true"></canvas>
     <div class="p-fv__inner">
 
       <div class="p-fv__wrapper">

@@ -32,6 +32,11 @@ function hoko_enqueue_assets() {
   wp_enqueue_style( 'hoko-style', get_template_directory_uri() . '/assets/css/style.css', [], '1.0.0' );
   wp_enqueue_script( 'hoko-main', get_template_directory_uri() . '/assets/js/main.js', [], '1.0.0', true );
   wp_script_add_data( 'hoko-main', 'strategy', 'defer' );
+  // FVパーティクル
+  if ( is_front_page() ) {
+    wp_enqueue_script( 'hoko-fv', get_template_directory_uri() . '/assets/js/fv.js', [], '1.0.0', true );
+    wp_script_add_data( 'hoko-fv', 'strategy', 'defer' );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'hoko_enqueue_assets' );
 
