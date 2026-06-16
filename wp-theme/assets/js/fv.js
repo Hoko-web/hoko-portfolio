@@ -4,8 +4,10 @@
 (() => {
   const canvas = document.querySelector(".js-fv-canvas");
   if (!canvas) return; // canvasが無いページでは何もしない
-  // 視差効果を減らす設定されている場合は粒子を出さず、DOMロゴを表示する
-  if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  // 視差効果を減らす設定か？（trueなら静止表示にする）
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   const ctx = canvas.getContext("2d"); // canvasを使うときに呼ぶ（２D用）　ctxにして使い回す
   // 設置値
@@ -21,6 +23,8 @@
   let particles = []; // 粒子に位置を配列データとして持たせる
   let startTime = null; // 開始時刻。経過時間（elapsed）の計算に使う
   let refId = null; // ループ稼働中か？null=停止中
+  let viewW = 0; // 表示上の幅（CSS px）
+  let viewH = 0; // 表示上の高さ（CSS px）
   const mouse = { x: -9999, y: -9999 }; // カーソルの位置。初期値は画面外
 
   // カーソルが動いたら、その位置をmouseに書き込む
@@ -40,8 +44,8 @@
     // 画面に追加しないトレース用の　canvasを生成、文字描画とピクセル走査に使う
     const off = document.createElement("canvas");
     // 解像度を表示用canvasと揃える
-    off.width = canvas.width;
-    off.height = canvas.height;
+    off.width = viewW;
+    off.height = viewH;
     const offCtx = off.getContext("2d");
 
     // 文字サイズと配列位置の計算
@@ -86,13 +90,13 @@
   // 座標配列をもとに、全粒子の初期状態を作る関数
   function createParticles() {
     particles = samplePoints().map((point) => ({
-      x: Math.random() * canvas.width, // 初期位置はランダム
-      y: Math.random() * canvas.height, // 初期位置はランダム
+      x: Math.random() * viewW, // 初期位置はランダム
+      y: Math.random() * viewH, // 初期位置はランダム
       goalX: point.x, // 目標座標、初期化時に確定し、以降この値は変更しない
       goalY: point.y,
       delay: Math.random() * MAX_DELAY,
-      scatterX: (Math.random() - 0.5) * canvas.width, // 散開方向X
-      scatterY: (Math.random() - 0.5) * canvas.height,
+      scatterX: (Math.random() - 0.5) * viewW, // 散開方向X
+      scatterY: (Math.random() - 0.5) * viewH,
     }));
   }
 
@@ -122,7 +126,7 @@
 
   // 全消去　→ 再描画
   function draw(progress) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // 前フレームを消す
+    ctx.clearRect(0, 0, viewW, viewH); // 前フレームを消す
     ctx.globalAlpha = 1 - progress; // 3回が進むほど全体を透明に近づける
     ctx.fillStyle = COLOR;
     particles.forEach((p) => {
@@ -154,9 +158,24 @@
 
   // 初期化。load後フォント読み込み後に実行される開始処理
   function init() {
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    viewW = canvas.clientWidth;
+    viewH = canvas.clientHeight;
+    canvas.width = viewW * dpr;
+    canvas.height = viewH * dpr;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+
     createParticles();
+    // 視差効果を減らす設定：アニメしない。完成形を一回書いて終わり
+    if (reduceMotion) {
+      particles.forEach((p) => {
+        p.x = p.goalX; // 目標位置に即ドットをセット
+        p.y = p.goalY;
+      });
+      draw(0); // 1回だけ描画
+      return; // ループ・反発・分解・監視は始めない
+    }
     canvas.closest(".p-fv").classList.add("is-active");
     observer.observe(canvas);
   }

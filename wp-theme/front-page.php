@@ -12,18 +12,10 @@
   <section class="p-fv">
     <canvas class="p-fv__canvas js-fv-canvas" aria-hidden="true"></canvas>
     <div class="p-fv__inner">
-
-      <div class="p-fv__wrapper">
-        <p class="p-fv__logo">Hoko</p>
-        <p class="p-fv__text">Portfolio</p>
-        <h1 class="p-fv__catch">
-          職人気質で、<br class="u-sp" />細部まで丁寧に。
-        </h1>
-        <p class="p-fv__sub">
-          マルチデバイス対応、表示速度、保守性、<br />
-          見えない部分まで手を抜かず、<br class="u-sp" />意図通りに仕上げます。
-        </p>
-      </div>
+      <!-- <h1 class="p-fv__catch">
+        「職人気質で、<br class="u-sp" />細部まで丁寧に」
+      </h1>  -->
+    
       <div class="p-fv__scroll">
         <span class="p-fv__scroll-text">Scroll</span>
         <span class="p-fv__scroll-line"></span>

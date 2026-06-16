@@ -8,11 +8,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   min-height: 100svh;
+  padding-bottom: 170px;
   background-image: url("../img/fv-bg.svg");
   background-repeat: repeat;
   background-position: center;
+
+  @include mq(pc) {
+    padding-bottom: 200px;
+  }
 }
 
 .p-fv__canvas {
@@ -33,67 +38,16 @@
   margin: 0 auto;
 }
 
-.p-fv__wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.p-fv__logo {
-  font-family: $font-en;
-  font-weight: 900;
-  font-size: 74px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-
-  .p-fv.is-active & {
-    opacity: 0;
-  }
-
-  @include mq(pc) {
-    font-size: 100px;
-    letter-spacing: -0.03em;
-  }
-}
-
-.p-fv__text {
-  font-family: $font-mincho;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  line-height: 1;
-
-  .p-fv.is-active & {
-    opacity: 0;
-  }
-
-  @include mq(pc) {
-    font-size: 22px;
-  }
-}
-
 .p-fv__catch {
   font-size: 26px;
-  margin-top: 24px;
   line-height: 1.5;
   letter-spacing: 0.05em;
   font-family: $font-mincho;
 
   @include mq(pc) {
     font-size: 36px;
-    margin-top: 32px;
     line-height: 1.7;
     letter-spacing: 0.08em;
-  }
-}
-
-.p-fv__sub {
-  margin-top: 12px;
-  color: $color-text-sub;
-  line-height: 1.7;
-
-  @include mq(pc) {
-    font-size: 18px;
-    letter-spacing: 0.03em;
   }
 }
 
@@ -103,14 +57,14 @@
 .p-fv__scroll {
   position: absolute;
   right: 24px;
-  top: 120%;
+  top: -20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 
   @include mq(pc) {
-    top: 100%;
+    top: -70%;
   }
 }
 

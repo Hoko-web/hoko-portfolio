@@ -579,6 +579,58 @@ img {
   font-weight: 700;
 }
 
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body {
+    cursor: none;
+  }
+}
+.c-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+@media (hover: none) {
+  .c-cursor {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .c-cursor {
+    display: none;
+  }
+}
+
+.c-cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border: 1px solid #1a1a1a;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease;
+}
+.c-cursor__ring.is-hover {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+}
+
+.c-cursor__dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+}
+
 .p-header {
   position: fixed;
   top: 0;
@@ -750,11 +802,17 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   min-height: 100svh;
+  padding-bottom: 170px;
   background-image: url("../img/fv-bg.svg");
   background-repeat: repeat;
   background-position: center;
+}
+@media (min-width: 1024px) {
+  .p-fv {
+    padding-bottom: 200px;
+  }
 }
 
 .p-fv__canvas {
@@ -775,47 +833,8 @@ img {
   margin: 0 auto;
 }
 
-.p-fv__wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.p-fv__logo {
-  font-family: "Inter", sans-serif;
-  font-weight: 900;
-  font-size: 74px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-.p-fv.is-active .p-fv__logo {
-  opacity: 0;
-}
-@media (min-width: 1024px) {
-  .p-fv__logo {
-    font-size: 100px;
-    letter-spacing: -0.03em;
-  }
-}
-
-.p-fv__text {
-  font-family: "Shippori Mincho", serif;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  line-height: 1;
-}
-.p-fv.is-active .p-fv__text {
-  opacity: 0;
-}
-@media (min-width: 1024px) {
-  .p-fv__text {
-    font-size: 22px;
-  }
-}
-
 .p-fv__catch {
   font-size: 26px;
-  margin-top: 24px;
   line-height: 1.5;
   letter-spacing: 0.05em;
   font-family: "Shippori Mincho", serif;
@@ -823,28 +842,15 @@ img {
 @media (min-width: 1024px) {
   .p-fv__catch {
     font-size: 36px;
-    margin-top: 32px;
     line-height: 1.7;
     letter-spacing: 0.08em;
-  }
-}
-
-.p-fv__sub {
-  margin-top: 12px;
-  color: #666666;
-  line-height: 1.7;
-}
-@media (min-width: 1024px) {
-  .p-fv__sub {
-    font-size: 18px;
-    letter-spacing: 0.03em;
   }
 }
 
 .p-fv__scroll {
   position: absolute;
   right: 24px;
-  top: 120%;
+  top: -20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -852,7 +858,7 @@ img {
 }
 @media (min-width: 1024px) {
   .p-fv__scroll {
-    top: 100%;
+    top: -70%;
   }
 }
 
