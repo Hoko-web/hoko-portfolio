@@ -30,6 +30,11 @@
   </head>
 
   <body <?php body_class(); ?>>
+    <!-- カスタムカーソル -->
+    <div class="c-cursor js-cursor" aria-hidden="true">
+      <span class="c-cursor__ring js-cursor-ring"></span>
+      <span class="c-cursor__dot js-cursor-dot"></span>
+    </div>
     <header class="p-header">
       <div class="p-header__inner">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="p-header__logo" aria-label="トップへ戻る">Hoko</a>

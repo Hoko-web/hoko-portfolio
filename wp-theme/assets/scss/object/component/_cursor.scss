@@ -1,0 +1,56 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+// =====================================
+// カスタムカーソル
+// =====================================
+@media (hover: hover) {
+  body {
+    cursor: none;
+  }
+}
+
+.c-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+
+  @media (hover: none) {
+    display: none;
+  }
+}
+
+.c-cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border: 1px solid $color-text-main;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    margin 0.2s ease;
+
+  &.is-hover {
+    width: 56px;
+    height: 56px;
+    margin: -28px 0 0 -28px;
+  }
+}
+
+.c-cursor__dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  background-color: $color-text-main;
+  border-radius: 50%;
+}
