@@ -6,11 +6,15 @@
  */
 (() => {
   const root = document.documentElement;
-  if (!root.classList.contains("is-loading")) return;
+  if (!root.classList.contains("is-loading")) {
+    if (window.hokoFV) window.hokoFV.start("flyin");
+    return;
+  }
 
   const counter = document.querySelector(".js-loading-counter");
   const canvas = document.querySelector(".js-loading-canvas");
   const loadingEl = document.querySelector(".js-loading");
+  const fvCanvas = document.querySelector(".js-fv-canvas");
   const ctx = canvas.getContext("2d");
 
   const MIN_DISPLAY = 1600;
@@ -37,8 +41,8 @@
     // 画面に追加しないトレース用の　canvasを生成、文字描画とピクセル走査に使う
     const off = document.createElement("canvas");
     // 解像度を表示用canvasと揃える
-    off.width = viewW;
-    off.height = viewH;
+    off.width = fvCanvas ? fvCanvas.clientWidth : viewW;
+    off.height = fvCanvas ? fvCanvas.clientHeight : viewH;
     const offCtx = off.getContext("2d");
 
     // 文字サイズと配列位置の計算
@@ -91,7 +95,9 @@
 
   // 座標配列をもとに、全粒子の初期状態を作る関数
   function createParticles() {
-    particles = samplePoints().map((point) => ({
+    const points = samplePoints();
+    window.__hokoLogoPoints = points; // FV(assembled)へ同じ座標を渡して継ぎ目をゼロに
+    particles = points.map((point) => ({
       x: Math.random() * viewW,
       y: Math.random() * viewH,
       goalX: point.x,
@@ -138,15 +144,25 @@
   }
   let fadeStart = null;
 
-  document.fonts.ready.then(() => {
+  Promise.all([
+    document.fonts.load('800 100px "Shippori Mincho"'),
+    document.fonts.load('700 100px "Shippori Mincho"'),
+  ]).then(() => {
     fontsReady = true;
     setupCanvas();
     createParticles();
   });
 
   function finish() {
-    root.classList.remove("is-loading");
-    sessionStorage.setItem("loaderSeen", "1");
+    if (window.hokoFV) window.hokoFV.start("assembled");
+
+    requestAnimationFrame(() => {
+      loadingEl.style.opacity = "0";
+    });
+    setTimeout(() => {
+      root.classList.remove("is-loading");
+      sessionStorage.setItem("loaderSeen", "1");
+    }, 500);
   }
 
   let startTime = null;
@@ -191,6 +207,10 @@
     draw(active);
 
     if (ready && pct >= 100) {
+      particles.forEach((p) => {
+        p.x = p.goalX;
+        p.y = p.goalY;
+      });
       fadeStart = now;
     }
     requestAnimationFrame(tick);

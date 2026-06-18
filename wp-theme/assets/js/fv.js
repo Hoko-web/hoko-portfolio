@@ -89,17 +89,17 @@
 
   // 座標配列をもとに、全粒子の初期状態を作る関数
   function createParticles() {
-    particles = samplePoints().map((point) => ({
-      x: Math.random() * viewW, // 初期位置はランダム
-      y: Math.random() * viewH, // 初期位置はランダム
-      goalX: point.x, // 目標座標、初期化時に確定し、以降この値は変更しない
+    const points = window.__hokoLogoPoints || samplePoints();
+    particles = points.map((point) => ({
+      x: Math.random() * viewW,
+      y: Math.random() * viewH,
+      goalX: point.x,
       goalY: point.y,
       delay: Math.random() * MAX_DELAY,
-      scatterX: (Math.random() - 0.5) * viewW, // 散開方向X
+      scatterX: (Math.random() - 0.5) * viewW,
       scatterY: (Math.random() - 0.5) * viewH,
     }));
   }
-
   // 各粒子の座標を目標へ近づける
   // elapsed= 開始からの経過時間ms.progress= スクロールによる散開度（0〜１）
   function update(elapsed, progress) {
@@ -155,11 +155,6 @@
       refId = null;
     }
   });
-
-  // ローディング画面との連携
-  // mode "flyin" 通常通りランダム位置から収束 "assembled" 最初から完成位置
-  let currentMode = "flyin";
-
   // 初期化。load後フォント読み込み後に実行される開始処理 (mode)には”flyin""assembled"が入る
   function init(mode) {
     currentMode = mode || currentMode;
@@ -190,6 +185,7 @@
         p.delay = 0;
       });
     }
+    draw(0);
     canvas.closest(".p-fv").classList.add("is-active");
     observer.observe(canvas);
   }
@@ -209,10 +205,12 @@
   });
 
   window.hokoFV = {
-    // フォント読み込み完了を待ってからinit（待たないと別フォントの形で座標が確定してしまう）
     start(mode) {
-      document.fonts.ready.then(() => init(mode));
+      // ローダーと形を一致させるため、同じウェイトを確実に読み込んでから
+      Promise.all([
+        document.fonts.load('800 100px "Shippori Mincho"'),
+        document.fonts.load('700 100px "Shippori Mincho"'),
+      ]).then(() => init(mode));
     },
   };
-  window.hokoFV.start("flyin");
 })();

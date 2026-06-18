@@ -805,9 +805,6 @@ img {
   justify-content: flex-end;
   min-height: 100svh;
   padding-bottom: 170px;
-  background-image: url("../img/fv-bg.svg");
-  background-repeat: repeat;
-  background-position: center;
 }
 @media (min-width: 1024px) {
   .p-fv {
@@ -897,6 +894,7 @@ img {
   z-index: 10000;
   display: none;
   background-color: #1a1a1a;
+  transition: opacity 0.5s ease;
 }
 .is-loading .p-loading {
   display: block;

@@ -10,6 +10,7 @@
   z-index: 10000; // カーソル z-index:９９９９
   display: none;
   background-color: $color-text-main;
+  transition: opacity 0.5s ease;
 
   .is-loading & {
     // <html>にis-loadingが付いている間だけON
