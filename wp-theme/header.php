@@ -36,11 +36,6 @@
         if (seen || reduce) return;
         // ローディング画面ON
         document.documentElement.classList.add("is-loading");
-        // 読み込みが終わったら、ローディングを消し、「もう表示した」印を押す
-        window.addEventListener("load", () => {
-          document.documentElement.classList.remove("is-loading");
-          sessionStorage.setItem("loaderSeen", "1");
-        });
       })();
     </script>
     <?php endif; ?>
