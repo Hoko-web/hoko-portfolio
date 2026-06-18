@@ -156,8 +156,13 @@
     }
   });
 
-  // 初期化。load後フォント読み込み後に実行される開始処理
-  function init() {
+  // ローディング画面との連携
+  // mode "flyin" 通常通りランダム位置から収束 "assembled" 最初から完成位置
+  let currentMode = "flyin";
+
+  // 初期化。load後フォント読み込み後に実行される開始処理 (mode)には”flyin""assembled"が入る
+  function init(mode) {
+    currentMode = mode || currentMode;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     viewW = canvas.clientWidth;
     viewH = canvas.clientHeight;
@@ -167,7 +172,7 @@
     ctx.scale(dpr, dpr);
 
     createParticles();
-    // 視差効果を減らす設定：アニメしない。完成形を一回書いて終わり
+    // 視差効果を減らす設定：アニメしない。完成形を一回書いて終わり ローディング連携もしない
     if (reduceMotion) {
       particles.forEach((p) => {
         p.x = p.goalX; // 目標位置に即ドットをセット
@@ -175,6 +180,15 @@
       });
       draw(0); // 1回だけ描画
       return; // ループ・反発・分解・監視は始めない
+    }
+
+    // assembledモードの時はローディング画面が先にテキストを組み上げ済み
+    if (currentMode === "assembled") {
+      particles.forEach((p) => {
+        p.x = p.goalX;
+        p.y = p.goalY;
+        p.delay = 0;
+      });
     }
     canvas.closest(".p-fv").classList.add("is-active");
     observer.observe(canvas);
@@ -190,12 +204,15 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       startTime = null;
-      init();
+      init(currentMode); // 始めた時と同じモードで作り直す
     }, 200);
   });
 
-  window.addEventListener("load", () => {
+  window.hokoFV = {
     // フォント読み込み完了を待ってからinit（待たないと別フォントの形で座標が確定してしまう）
-    document.fonts.ready.then(init);
-  });
+    start(mode) {
+      document.fonts.ready.then(() => init(mode));
+    },
+  };
+  window.hokoFV.start("flyin");
 })();
