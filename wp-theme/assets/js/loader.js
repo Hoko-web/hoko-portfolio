@@ -10,10 +10,12 @@
 
   const counter = document.querySelector(".js-loading-counter");
   const canvas = document.querySelector(".js-loading-canvas");
+  const loadingEl = document.querySelector(".js-loading");
   const ctx = canvas.getContext("2d");
 
   const MIN_DISPLAY = 1600;
   const CONVERGE = 1000;
+  const FADE_DUR = 700;
   const MAX_WAIT = 7000;
   const MAX_PARTICLES = 4000;
   const DOT_SIZE = 2;
@@ -114,6 +116,28 @@
     });
   }
 
+  function lerpColor(from, to, t) {
+    const r = Math.round(from[0] + (to[0] - from[0]) * t);
+    const g = Math.round(from[1] + (to[1] - from[1]) * t);
+    const b = Math.round(from[2] + (to[2] - from[2]) * t);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  function drawFade(t) {
+    loadingEl.style.backgroundColor = lerpColor(
+      [26, 26, 26],
+      [255, 255, 255],
+      t,
+    );
+    ctx.clearRect(0, 0, viewW, viewH);
+    ctx.fillStyle = lerpColor([255, 255, 255], [26, 26, 26], t);
+    particles.forEach((p) => {
+      ctx.fillRect(p.x, p.y, DOT_SIZE, DOT_SIZE);
+    });
+    if (counter) counter.style.opacity = String(1 - t);
+  }
+  let fadeStart = null;
+
   document.fonts.ready.then(() => {
     fontsReady = true;
     setupCanvas();
@@ -130,6 +154,19 @@
 
   function tick(now) {
     if (startTime === null) startTime = now;
+
+    if (fadeStart !== null) {
+      const t = Math.min((now - fadeStart) / FADE_DUR, 1);
+      drawFade(t);
+      if (t >= 1) {
+        finish();
+        return;
+      }
+
+      requestAnimationFrame(tick);
+      return;
+    }
+
     const elapsed = now - startTime;
 
     const ready =
@@ -154,8 +191,7 @@
     draw(active);
 
     if (ready && pct >= 100) {
-      finish();
-      return;
+      fadeStart = now;
     }
     requestAnimationFrame(tick);
   }
