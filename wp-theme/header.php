@@ -26,6 +26,25 @@
     <meta property="og:url" content="<?php echo esc_url( home_url( add_query_arg( null, null ) ) ); ?>" /> 
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- ローディング画面 -->
+    <?php if ( is_front_page() ) : ?>
+    <script>
+      (() => {
+        // もう表示した？　/ 視差効果を減らす設定？　どちらかなら、ローディング画面出さない
+        const seen = sessionStorage.getItem("loaderSeen");
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (seen || reduce) return;
+        // ローディング画面ON
+        document.documentElement.classList.add("is-loading");
+        // 読み込みが終わったら、ローディングを消し、「もう表示した」印を押す
+        window.addEventListener("load", () => {
+          document.documentElement.classList.remove("is-loading");
+          sessionStorage.setItem("loaderSeen", "1");
+        });
+      })();
+    </script>
+    <?php endif; ?>
+
     <?php wp_head(); ?>
   </head>
 

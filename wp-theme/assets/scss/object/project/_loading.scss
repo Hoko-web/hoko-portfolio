@@ -1,0 +1,42 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+// =====================================
+// ローディング画面　（front-page・初回だけ表示）
+// =====================================
+.p-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10000; // カーソル z-index:９９９９
+  display: none;
+  background-color: $color-text-main;
+
+  .is-loading & {
+    // <html>にis-loadingが付いている間だけON
+    display: block;
+  }
+}
+
+.p-loading__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.p-loading__counter {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: $font-en;
+  font-size: 14px;
+  color: $color-bg-main;
+  font-variant-numeric: tabular-nums;
+
+  @include mq(tb) {
+    top: 40px;
+    right: 40px;
+    font-size: 16px;
+  }
+}

@@ -891,6 +891,42 @@ img {
     clip-path: inset(100% 0 0 0);
   }
 }
+.p-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  background-color: #1a1a1a;
+}
+.is-loading .p-loading {
+  display: block;
+}
+
+.p-loading__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.p-loading__counter {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+@media (min-width: 768px) {
+  .p-loading__counter {
+    top: 40px;
+    right: 40px;
+    font-size: 16px;
+  }
+}
+
 .p-about {
   padding: 64px 0;
   background-color: #fff;

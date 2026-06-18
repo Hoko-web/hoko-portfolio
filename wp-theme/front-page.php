@@ -5,6 +5,14 @@
 ?>
 <?php get_header(); ?>
 
+<!-- ===================================== -->
+<!-- Loading -->
+<!-- ===================================== -->
+<div class="p-loading js-loading" aria-hidden="true">
+  <canvas class="p-loading__canvas js-loading-canvas"></canvas>
+  <span class="p-loading__counter">0%</span>
+</div>
+
 <main id="top">
   <!-- ===================================== -->
   <!-- FV -->
