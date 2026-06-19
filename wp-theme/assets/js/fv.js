@@ -185,7 +185,6 @@
         p.delay = 0;
       });
     }
-    draw(0);
     canvas.closest(".p-fv").classList.add("is-active");
     observer.observe(canvas);
   }
