@@ -580,7 +580,9 @@ img {
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  body {
+  body,
+  a,
+  button {
     cursor: none;
   }
 }
@@ -617,6 +619,7 @@ img {
 .c-cursor__ring.is-hover {
   width: 56px;
   height: 56px;
+  border: 2px solid #666666;
   margin: -28px 0 0 -28px;
 }
 

@@ -5,7 +5,9 @@
 // カスタムカーソル
 // =====================================
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  body {
+  body,
+  a,
+  button {
     cursor: none;
   }
 }
@@ -44,6 +46,7 @@
   &.is-hover {
     width: 56px;
     height: 56px;
+    border: 2px solid $color-text-sub;
     margin: -28px 0 0 -28px;
   }
 }
