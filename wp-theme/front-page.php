@@ -20,96 +20,49 @@
   <section class="p-fv">
     <canvas class="p-fv__canvas js-fv-canvas" aria-hidden="true"></canvas>
     <div class="p-fv__inner">
-      <!-- <h1 class="p-fv__catch">
-        「職人気質で、<br class="u-sp" />細部まで丁寧に」
-      </h1>  -->
-    
       <div class="p-fv__scroll">
         <span class="p-fv__scroll-text">Scroll</span>
         <span class="p-fv__scroll-line"></span>
       </div>
-
     </div>
   </section>
   <!-- ===================================== -->
   <!-- About -->
   <!-- ===================================== -->
-  <section class="p-about" id="about">
+    <section class="p-about" id="about">
     <div class="p-about__inner">
-
-      <div class="c-heading">
-        <h2 class="c-heading__title">About</h2>
-      </div>
-
-      <div class="p-about__profile">
-        <div class="p-about__photo">
-          <img
-            src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/about-image.webp' ); ?>"
-            alt="Hokoの写真"
-            width="800"
-            height="800"
-            loading="lazy"
-            decoding="async"
-          />
+      <div class="p-about__layout js-reveal">
+        <div class="p-about__visual">
+          <div class="p-about__photo">
+            <div class="p-about__photo-inner js-parallax">
+              <img
+              src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/Hoko-image.webp' ); ?>"
+              alt="ほこたてひろまさの写真"
+              width="1044"
+              height="1567"
+              loading="lazy"
+              decoding="async"
+            />
+            </div>
+          </div>
+          <p class="p-about__copy-sp">想いを引き出し<br />期待を超える提案を</p>
         </div>
-        <div class="p-about__intro">
-          <h3 class="p-about__name-en">Hiromasa Hokotate</h3>
+        <div class="p-about__body">
+          <p class="p-about__copy-pc">想いを引き出し<br />期待を超える提案を</p>
+          <h2 class="p-about__eyebrow">About Me</h2>
+          
+          <p class="p-about__name">鉾立 光将<span>Hokotate Hiromasa</span></p>
           <p class="p-about__text">
-            自動車整備士と設備保全の現場で、長年『見えない不具合』を探し続けてきました。0.01mmのズレ、わずかな音の違和感、小さな配線の異常。それらを見逃さない目と感覚を、Web制作に活かしています。
+            相手も気づいていなかった「こうしたい」を引き出せたときが、私にとって一番うれしい瞬間です。その想いにもっと自由に応えたい。そんな気持ちで、毎日コードと向き合っています。
           </p>
-          <p class="p-about__text">
-            『約束した期日を守る』『進捗をこまめに共有する』。当たり前のことかもしれませんが、自分が逆の立場だったらして欲しいことを、当たり前に貫きます。
-          </p>
-
           <div class="p-about__action">
-            <div class="c-arrows c-arrows--left" aria-hidden="true">
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>"
-                alt=""
-                class="c-arrows__item"
-                decoding="async"
-              />
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>"
-                alt=""
-                class="c-arrows__item"
-                decoding="async"
-              />
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>"
-                alt=""
-                class="c-arrows__item"
-                decoding="async"
-              />
-            </div>
             <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="c-btn p-about__more">More</a>
-            <div class="c-arrows c-arrows--right" aria-hidden="true">
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>"
-                alt=""
-                class="c-arrows__item"
-                decoding="async"
-              />
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>"
-                alt=""
-                class="c-arrows__item"
-                decoding="async"
-              />
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>"
-                alt=""
-                class="c-arrows__item"
-                decoding="async"
-              />
-            </div>
           </div>
         </div>
       </div>
 
     </div>
   </section>
-
   <!-- ===================================== -->
   <!-- Works -->
   <!-- ===================================== -->
@@ -171,7 +124,7 @@
           </li>
         </ul>
 
-        <div class="p-skills__marquee" aria-hidden="true">
+        <!-- <div class="p-skills__marquee" aria-hidden="true">
           <ul class="p-skills__marquee-list">
             <li>HTML</li>
             <li>SCSS</li>
@@ -205,7 +158,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- ===================================== -->
   <!-- Contact -->
   <!-- ===================================== -->
