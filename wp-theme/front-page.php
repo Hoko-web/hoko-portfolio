@@ -34,7 +34,7 @@
       <div class="p-about__layout js-reveal">
         <div class="p-about__visual">
           <div class="p-about__photo">
-            <div class="p-about__photo-inner js-parallax">
+            <div class="p-about__photo-inner">
               <img
               src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/Hoko-image.webp' ); ?>"
               alt="ほこたてひろまさの写真"
