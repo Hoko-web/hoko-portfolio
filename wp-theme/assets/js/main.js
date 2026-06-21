@@ -43,3 +43,30 @@
     });
   }
 })();
+
+(() => {
+  //Reveal: js-revealが画面中央あたりに来たらis-showをつける
+  const targets = document.querySelectorAll(".js-reveal");
+  if (!targets.length) return;
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  if (reduceMotion) {
+    targets.forEach((el) => el.classList.add("is-show"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-show");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -45% 0px" },
+  );
+
+  targets.forEach((el) => observer.observe(el));
+})();

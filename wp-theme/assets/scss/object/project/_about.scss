@@ -49,6 +49,16 @@
   max-height: 500px;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+
+  .is-show & {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   @include mq(tb) {
     aspect-ratio: 3 / 4;
@@ -81,19 +91,52 @@
   }
 }
 
+.p-about__copy-inner {
+  display: block;
+}
+
+.p-about__line {
+  display: block;
+  overflow: hidden;
+
+  > span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .is-show & > span {
+    transform: translateY(0);
+  }
+}
+
 .p-about__copy-sp {
   display: flex;
   justify-content: flex-end;
   max-width: 200px;
   padding: 0 32px 0 0;
   font-family: $font-mincho;
-  font-size: clamp(28px, 22px + 2.7vw, 34px);
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.1em;
   text-align: start;
   writing-mode: vertical-rl;
   color: $color-text-main;
+
+  .p-about__line > span {
+    transform: translateX(-110%);
+  }
+
+  .is-show & .p-about__line:nth-child(1) > span {
+    transform: translateX(0);
+    transition-delay: 0.1s;
+  }
+
+  .is-show & .p-about__line:nth-child(2) > span {
+    transform: translateX(0);
+    transition-delay: 0.25s;
+  }
 
   @include mq(tb) {
     display: none;
@@ -102,6 +145,14 @@
 
 .p-about__copy-pc {
   display: none;
+
+  .is-show & .p-about__line:nth-child(1) > span {
+    transition-delay: 0.1s;
+  }
+
+  .is-show & .p-about__line:nth-child(2) > span {
+    transition-delay: 0.25s;
+  }
 
   @include mq(tb) {
     display: block;

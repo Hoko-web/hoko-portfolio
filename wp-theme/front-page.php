@@ -45,10 +45,18 @@
             />
             </div>
           </div>
-          <p class="p-about__copy-sp">想いを引き出し<br />期待を超える提案を</p>
+          <p class="p-about__copy-sp">
+            <span class="p-about__copy-inner">
+              <span class="p-about__line"><span>想いを引き出し</span></span>
+              <span class="p-about__line"><span>期待を超える提案を</span></span>
+            </span>
+          </p>
         </div>
         <div class="p-about__body">
-          <p class="p-about__copy-pc">想いを引き出し<br />期待を超える提案を</p>
+          <p class="p-about__copy-pc">
+            <span class="p-about__line"><span>想いを引き出し</span></span>
+            <span class="p-about__line"><span>期待を超える提案を</span></span>
+          </p>
           <h2 class="p-about__eyebrow">About Me</h2>
           
           <p class="p-about__name">鉾立 光将<span>Hokotate Hiromasa</span></p>
