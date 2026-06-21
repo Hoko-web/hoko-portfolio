@@ -12,26 +12,17 @@
     padding: 96px 0;
   }
 }
-
-.p-about__inner {
-  width: 100%;
-  // max-width: 1200px;
-  // padding: 0 24px;
-  margin: 0 auto;
-}
-
 // =====================================
 // Section(top)
 // =====================================
 .p-about__layout {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 48px;
   max-width: 1600px;
   margin: 0 auto;
 
-  @include mq(pc) {
+  @include mq(tb) {
     flex-direction: row;
     align-items: center;
     gap: 0;
@@ -39,20 +30,29 @@
 }
 
 .p-about__visual {
-  @include mq(pc) {
+  display: flex;
+
+  @include mq(tb) {
     position: relative;
-    width: 60%;
+    flex: 1;
+  }
+
+  @include mq(pc) {
+    flex: 6;
+    min-width: 0;
   }
 }
 
 .p-about__photo {
-  overflow: hidden;
+  flex: 1;
   aspect-ratio: 4 / 5;
-  max-height: 540px;
-  clip-path: polygon(0 0, 85% 0, 30% 100%, 0 100%);
+  max-height: 500px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
 
-  @include mq(pc) {
-    aspect-ratio: 4 / 3;
+  @include mq(tb) {
+    aspect-ratio: 3 / 4;
+    max-height: 540px;
     clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
   }
 }
@@ -62,14 +62,18 @@
   height: 100%;
 
   img {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 45%;
-    transform: scale(1.4);
-    transform-origin: 80% 65%;
+    object-position: center 35%;
     filter: grayscale(1);
+    transform: scale(1.3);
+    transform-origin: 80% 65%;
+
+    @include mq(tb) {
+      object-position: center 45%;
+      transform: scale(1);
+    }
 
     @include mq(pc) {
       transform: scale(1.1);
@@ -78,20 +82,20 @@
 }
 
 .p-about__copy-sp {
-  position: absolute;
-  right: 7%;
-  top: 19%;
-  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 200px;
+  padding: 0 32px 0 0;
   font-family: $font-mincho;
-  font-size: 36px;
+  font-size: clamp(28px, 22px + 2.7vw, 34px);
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.1em;
-  writing-mode: vertical-rl;
   text-align: start;
+  writing-mode: vertical-rl;
   color: $color-text-main;
 
-  @include mq(pc) {
+  @include mq(tb) {
     display: none;
   }
 }
@@ -99,41 +103,52 @@
 .p-about__copy-pc {
   display: none;
 
-  @include mq(pc) {
+  @include mq(tb) {
     display: block;
     font-family: $font-mincho;
+    font-size: 34px;
     font-weight: 700;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
     text-align: start;
     color: $color-text-main;
-    font-size: 40px;
+  }
+
+  @include mq(pc) {
+    font-size: 36px;
     letter-spacing: 0.15em;
-    line-height: 1.7;
   }
 }
 
 .p-about__body {
-  position: relative;
+  margin: 0 auto;
   padding: 0 24px;
 
-  @include mq(pc) {
-    align-self: self-end;
-    top: 50%;
+  @include mq(tb) {
     flex: 1;
-    padding: 0;
+    padding: 0 32px;
+  }
+
+  @include mq(pc) {
+    flex: 4;
   }
 }
 
 .p-about__eyebrow {
-  font-family: $font-mincho;
+  font-family: $font-en;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.05em;
   color: $color-text-main;
 
-  @include mq(pc) {
+  @include mq(tb) {
+    margin-top: 48px;
     font-size: 24px;
+  }
+
+  @include mq(pc) {
+    margin-top: 42px;
     letter-spacing: 0.01em;
-    margin-top: 24px;
   }
 }
 
@@ -152,8 +167,8 @@
     margin-left: 10px;
     font-family: $font-en;
     font-size: 12px;
-    letter-spacing: 0.05em;
     line-height: 1.7;
+    letter-spacing: 0.05em;
     color: $color-text-sub;
 
     @include mq(pc) {
@@ -165,110 +180,34 @@
 }
 
 .p-about__text {
+  max-width: 440px;
   margin-top: 16px;
   font-size: 14px;
   line-height: 2.2;
   letter-spacing: 0.02em;
   color: $color-text-sub;
-  max-width: 440px;
 
-  @include mq(pc) {
+  @include mq(tb) {
+    margin-top: 20px;
     font-size: 16px;
-    line-height: 2.4;
+    line-height: 2.6;
   }
 }
 
 .p-about__action {
-  max-width: 440px;
   display: flex;
-  margin-top: 10px;
-
   justify-content: flex-end;
+  max-width: 440px;
+  margin-top: 10px;
 }
-// .p-about__profile {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 24px;
-//   margin-top: 40px;
-
-//   @include mq(tb) {
-//     margin-top: 64px;
-//     flex-direction: row;
-//     gap: 120px;
-//   }
-// }
-
-// .p-about__photo {
-//   width: 100%;
-//   max-width: 200px;
-//   margin: 0 auto;
-
-//   @include mq(tb) {
-//     max-width: 400px;
-//     margin: 0 auto;
-//   }
-// }
-
-// .p-about__intro {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .p-about__name-en {
-//   margin-bottom: 24px;
-//   font-size: 24px;
-//   font-weight: 700;
-//   line-height: 1.35;
-//   letter-spacing: -0.01em;
-//   border-bottom: 1px solid $color-text-sub;
-
-//   @include mq(pc) {
-//     margin-bottom: 32px;
-//     font-size: 32px;
-//     line-height: 1.25;
-//     letter-spacing: -0.015em;
-//   }
-// }
-
-// .p-about__text {
-//   font-size: 14px;
-//   line-height: 1.7;
-//   letter-spacing: 0.01em;
-
-//   @include mq(pc) {
-//     font-size: 16px;
-//   }
-
-//   & + & {
-//     margin-top: 8px;
-
-//     @include mq(pc) {
-//       margin-top: 14px;
-//     }
-//   }
-// }
-
-// .p-about__action {
-//   display: flex;
-//   align-items: center;
-//   gap: 24px;
-//   margin-top: 32px;
-
-//   @include mq(pc) {
-//     gap: 32px;
-//     margin-top: 80px;
-//   }
-// }
-
-// .p-about__more {
-//   align-self: flex-end;
-// }
-
 // =====================================
 // Page
 // =====================================
+.p-about__inner {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .p-about--page {
   padding: 64px 0 0;
 
@@ -297,13 +236,13 @@
 }
 
 .p-about__description {
+  margin: 24px 0;
   line-height: 1.7;
   letter-spacing: 0.05em;
-  margin: 24px 0;
 
   @include mq(pc) {
-    font-size: 18px;
     margin: 40px 0;
+    font-size: 18px;
   }
 
   & + & {
@@ -322,13 +261,13 @@
 }
 
 .p-about__meta-label {
+  margin-top: 12px;
+  font-family: $font-mincho;
   font-size: 16px;
   line-height: 1.7;
   letter-spacing: 0.01em;
-  font-family: $font-mincho;
   color: $color-text-sub;
   border-bottom: 1px solid $color-border;
-  margin-top: 12px;
 
   @include mq(pc) {
     font-size: 18px;
@@ -336,11 +275,11 @@
 }
 
 .p-about__meta-value {
+  margin-top: 18px;
   font-size: 18px;
+  font-weight: 500;
   line-height: 1.7;
   letter-spacing: 0.05em;
-  font-weight: 500;
-  margin-top: 18px;
 
   @include mq(pc) {
     font-size: 20px;
