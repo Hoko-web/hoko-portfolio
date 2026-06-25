@@ -70,3 +70,90 @@
 
   targets.forEach((el) => observer.observe(el));
 })();
+
+(() => {
+  // WorksCard　３Dチルト
+  const cards = document.querySelectorAll(".js-tilt");
+  if (!cards.length) return;
+
+  const canHover = window.matchMedia("(hover: hover)").matches;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  if (!canHover || reduceMotion) return;
+
+  const MAX = 15;
+
+  cards.forEach((card) => {
+    let rect = null;
+
+    card.addEventListener("mouseenter", () => {
+      rect = card.getBoundingClientRect();
+      card.style.transition = "transform 0.1s ease";
+    });
+
+    card.addEventListener("mousemove", (e) => {
+      if (!rect) return;
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const offsetX = e.clientX - centerX;
+      const offsetY = e.clientY - centerY;
+      const rotateY = (offsetX / (rect.width / 2)) * MAX;
+      const rotateX = -(offsetY / (rect.height / 2)) * MAX;
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      rect = null;
+      card.style.transition = "transform 0.6s ease";
+      card.style.transform = "rotateX(0deg) rotateY(0deg)";
+    });
+  });
+})();
+
+(() => {
+  // Skillsエディタのタブ切り替え
+  const tabs = [...document.querySelectorAll(".js-skill-tab")];
+  if (!tabs.length) return;
+
+  const panels = document.querySelectorAll(".p-skills__panel");
+
+  const activate = (tab) => {
+    const panel = document.getElementById(tab.dataset.target);
+    if (!panel) return;
+
+    tabs.forEach((t) => {
+      t.classList.remove("is-active");
+      t.setAttribute("aria-selected", "false");
+      t.tabIndex = -1;
+    });
+    panels.forEach((p) => p.classList.remove("is-active"));
+
+    tab.classList.add("is-active");
+    tab.setAttribute("aria-selected", "true");
+    tab.tabIndex = 0;
+    panel.classList.add("is-active");
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => activate(tab));
+
+    tab.addEventListener("keydown", (e) => {
+      let next = null;
+      if (e.key === "ArrowRight") next = tabs[(i + 1) % tabs.length];
+      if (e.key === "ArrowLeft")
+        next = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === "Home") next = tabs[0];
+      if (e.key === "End") next = tabs[tabs.length - 1];
+      if (!next) return;
+
+      e.preventDefault();
+      activate(next);
+      next.focus();
+    });
+  });
+
+  tabs.forEach((t) => {
+    t.tabIndex = t.classList.contains("is-active") ? 0 : -1;
+  });
+})();
