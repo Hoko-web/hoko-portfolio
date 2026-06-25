@@ -14,12 +14,10 @@ $works_query = hoko_get_related_works( $exclude_id );
 <section class="p-works" id="works">
   <div class="p-works__inner">
 
-    <div class="c-heading">
-      <h2 class="c-heading__title">Works</h2>
-    </div>
+    <h2 class="p-works__eyebrow">Works</h2>
 
     <div class="p-works__wrapper">
-      <ul class="p-works__list">
+      <ul class="p-works__list js-reveal">
         <?php if ( $works_query->have_posts() ) : ?>
           <?php while ( $works_query->have_posts() ) : ?>
             <?php
@@ -28,7 +26,7 @@ $works_query = hoko_get_related_works( $exclude_id );
             $tags       = get_the_terms( get_the_ID(), 'works_tag' );
             ?>
             <li class="p-works__item">
-              <article class="p-works__card">
+              <article class="p-works__card js-tilt">
                 <a href="<?php the_permalink(); ?>" class="p-works__link">
                   <div class="p-works__thumb">
                     <?php if ( has_post_thumbnail() ) : ?>
@@ -59,17 +57,9 @@ $works_query = hoko_get_related_works( $exclude_id );
       </ul>
 
       <div class="p-works__action">
-        <div class="c-arrows c-arrows--left" aria-hidden="true">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>" alt="" class="c-arrows__item" decoding="async" />
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>" alt="" class="c-arrows__item" decoding="async" />
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>" alt="" class="c-arrows__item" decoding="async" />
-        </div>
+        
         <a href="<?php echo esc_url( home_url( '/works/' ) ); ?>" class="c-btn p-works__more">More</a>
-        <div class="c-arrows c-arrows--right" aria-hidden="true">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>" alt="" class="c-arrows__item" decoding="async" />
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>" alt="" class="c-arrows__item" decoding="async" />
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/more-arrow.svg' ); ?>" alt="" class="c-arrows__item" decoding="async" />
-        </div>
+        
       </div>
     </div>
   </div>
