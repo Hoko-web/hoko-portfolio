@@ -186,15 +186,16 @@
 }
 
 .p-about__eyebrow {
-  font-family: $font-en;
-  font-size: 18px;
+  font-family: $font-mincho;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: 0.05em;
   color: $color-text-main;
+  border-bottom: 1px solid $color-border;
 
   @include mq(tb) {
     margin-top: 48px;
-    font-size: 24px;
+    font-size: 32px;
   }
 
   @include mq(pc) {
