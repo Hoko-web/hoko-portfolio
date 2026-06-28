@@ -13,8 +13,8 @@
 
 .c-pagination__list {
   display: flex;
-  align-items: center;
   gap: 16px;
+  align-items: center;
   font-family: $font-en;
 }
 
@@ -30,6 +30,6 @@
 }
 
 .c-pagination .current {
-  color: $color-text-main;
   font-weight: 700;
+  color: $color-text-main;
 }

@@ -1,0 +1,12 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"],
+  "ignoreFiles": ["wp-theme/assets/scss/foundation/_reset.scss"],
+  "rules": {
+    "selector-class-pattern": [
+      "^(p|c|u|js|is)-[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)*(?:--[a-z0-9]+(?:-[a-z0-9]+)*)*$|^(wpcf7-[a-z0-9-]+|page-numbers|current|dots|prev|next)$",
+      { "message": "FLOCSS + BEM で命名してください（例: p-about__photo--active）" }
+    ],
+    "keyframes-name-pattern": null,
+    "no-empty-source": null
+  }
+}

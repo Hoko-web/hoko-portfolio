@@ -20,6 +20,19 @@
   margin: 0 auto;
 }
 
+.p-contact__eyebrow {
+  font-family: $font-mincho;
+  font-size: 24px;
+  font-weight: 500;
+  color: $color-text-main;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid $color-border;
+
+  @include mq(tb) {
+    font-size: 32px;
+  }
+}
+
 // =====================================
 // Section(top)
 // =====================================
@@ -31,8 +44,8 @@
 
   @include mq(pc) {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-top: 64px;
   }
 }
@@ -47,14 +60,11 @@
   }
 }
 
-.p-contact__more {
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-
-  @include mq(pc) {
-    margin: 0;
-  }
+.p-contact__action {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 440px;
+  margin-top: 10px;
 }
 
 // =====================================
@@ -93,8 +103,8 @@
 
 .p-contact__label {
   display: flex;
-  align-items: center;
   gap: 8px;
+  align-items: center;
   margin-bottom: 8px;
 
   @include mq(pc) {
@@ -105,8 +115,8 @@
 
 .p-contact__badge {
   display: inline-block;
-  font-size: 12px;
   padding: 2px 8px;
+  font-size: 12px;
   line-height: 1.7;
   letter-spacing: 0.01em;
 
@@ -116,15 +126,15 @@
 }
 
 .p-contact__badge--required {
-  border: 1px solid $color-text-main;
-  background-color: $color-text-main;
   color: $color-bg-main;
+  background-color: $color-text-main;
+  border: 1px solid $color-text-main;
 }
 
 .p-contact__badge--optional {
-  border: 1px solid $color-text-main;
-  background-color: $color-bg-main;
   color: $color-text-main;
+  background-color: $color-bg-main;
+  border: 1px solid $color-text-main;
 }
 
 .p-contact__label-text {
@@ -153,17 +163,17 @@
   position: relative;
 
   &::after {
-    content: "";
     position: absolute;
     top: 50%;
     right: 16px;
-    transform: translateY(-50%);
-    pointer-events: none;
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
+    pointer-events: none;
+    content: "";
     border-top: 6px solid $color-text-main;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    transform: translateY(-50%);
   }
 }
 
@@ -183,14 +193,14 @@
 // =====================================
 .p-contact__textarea {
   width: 100%;
-  padding: 12px 16px;
-  border: 1px solid $color-border;
   min-height: 200px;
+  padding: 12px 16px;
   resize: vertical;
+  border: 1px solid $color-border;
 
   &::placeholder {
-    color: $color-text-sub;
     line-height: 1.7;
+    color: $color-text-sub;
     letter-spacing: 0.01em;
   }
 }
@@ -200,34 +210,33 @@
 // =====================================
 .p-contact__consent {
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   margin-top: 16px;
 
   @include mq(pc) {
-    margin-top: 32px;
     gap: 12px;
+    margin-top: 32px;
   }
 }
 
 .p-contact__consent-input {
   position: relative;
-  appearance: none;
-  -webkit-appearance: none;
   width: 16px;
   height: 16px;
-  border: 1px solid $color-text-main;
-  background-color: #fff;
+  appearance: none;
   cursor: pointer;
+  background-color: #fff;
+  border: 1px solid $color-text-main;
 
   &:checked::after {
-    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     width: 4px;
     height: 8px;
+    content: "";
     border-right: 1.5px solid $color-text-main;
     border-bottom: 1.5px solid $color-text-main;
     transform: translate(-50%, -60%) rotate(45deg);
@@ -247,8 +256,8 @@
 
 .p-contact__consent-link {
   text-decoration: underline;
-  text-decoration-color: $color-text-main;
   text-decoration-thickness: 1px;
+  text-decoration-color: $color-text-main;
   text-underline-offset: 4px;
 
   &:hover {

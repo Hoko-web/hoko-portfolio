@@ -32,8 +32,8 @@
   right: 24px;
   font-family: $font-en;
   font-size: 14px;
-  color: $color-bg-main;
   font-variant-numeric: tabular-nums;
+  color: $color-bg-main;
 
   @include mq(tb) {
     top: 40px;

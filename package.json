@@ -1,0 +1,28 @@
+{
+  "name": "hoko-portfolio",
+  "version": "1.0.0",
+  "description": "Hokoのポートフォリオサイト。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:scss": "stylelint \"wp-theme/assets/scss/**/*.scss\"",
+    "lint:scss:fix": "stylelint \"wp-theme/assets/scss/**/*.scss\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hoko-web/hoko-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hoko-web/hoko-portfolio/issues"
+  },
+  "homepage": "https://github.com/Hoko-web/hoko-portfolio#readme",
+  "devDependencies": {
+    "stylelint": "^17.14.0",
+    "stylelint-config-recess-order": "^7.7.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  }
+}

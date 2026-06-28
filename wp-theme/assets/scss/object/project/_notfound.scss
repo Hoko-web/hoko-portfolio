@@ -22,8 +22,8 @@
 
 .p-notfound__number {
   font-family: $font-mincho;
-  font-weight: 700;
   font-size: 100px;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
 
@@ -37,8 +37,8 @@
   margin-top: 32px;
   font-size: 14px;
   line-height: 1.7;
-  letter-spacing: 0.01em;
   color: $color-text-sub;
+  letter-spacing: 0.01em;
 
   @include mq(pc) {
     margin-top: 48px;

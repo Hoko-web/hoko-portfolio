@@ -60,9 +60,9 @@
 }
 
 .p-works-detail__description {
+  margin-top: 12px;
   line-height: 1.7;
   letter-spacing: 0.01em;
-  margin-top: 12px;
 
   @include mq(pc) {
     font-size: 18px;
@@ -75,13 +75,13 @@
 }
 
 .p-works-detail__meta-label {
+  margin-top: 12px;
+  font-family: $font-mincho;
   font-size: 16px;
   line-height: 1.7;
-  letter-spacing: 0.01em;
-  font-family: $font-mincho;
   color: $color-text-sub;
+  letter-spacing: 0.01em;
   border-bottom: 1px solid $color-border;
-  margin-top: 12px;
 
   @include mq(pc) {
     font-size: 18px;
@@ -89,11 +89,11 @@
 }
 
 .p-works-detail__meta-value {
+  margin-top: 18px;
   font-size: 18px;
+  font-weight: 500;
   line-height: 1.7;
   letter-spacing: 0.05em;
-  font-weight: 500;
-  margin-top: 18px;
 
   @include mq(pc) {
     font-size: 20px;
@@ -101,23 +101,23 @@
 
   a {
     display: block;
-    text-decoration: underline;
-    text-decoration-color: $color-text-main;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
     word-break: break-all;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: $color-text-main;
+    text-underline-offset: 4px;
     transition: text-decoration-color 0.3s ease;
 
     &::after {
-      content: "↗";
       display: inline-block;
+      padding: 4px;
       margin-left: 12px;
       font-size: 14px;
-      padding: 4px;
+      line-height: 1;
+      vertical-align: middle;
+      content: "↗";
       border: 1px solid $color-text-main;
       border-radius: 4px;
-      vertical-align: middle;
-      line-height: 1;
     }
 
     @include mq(pc) {
@@ -146,8 +146,8 @@
   letter-spacing: 0.05em;
 
   @include mq(pc) {
-    font-size: 18px;
     margin: 40px 0;
+    font-size: 18px;
   }
 
   p + p {
@@ -174,8 +174,8 @@
   margin: 24px 0;
 
   @include mq(pc) {
-    font-size: 18px;
     margin: 40px 0;
+    font-size: 18px;
   }
 }
 
@@ -183,10 +183,9 @@
   display: inline;
   font-size: 18px;
   line-height: 1.7;
-  letter-spacing: 0.05em;
   color: $color-text-sub;
+  letter-spacing: 0.05em;
   border-bottom: 2px solid $color-border;
-  -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 
   @include mq(pc) {
@@ -200,7 +199,7 @@
   letter-spacing: 0.05em;
 
   @include mq(pc) {
-    font-size: 18px;
     margin: 12px 0 16px;
+    font-size: 18px;
   }
 }

@@ -12,6 +12,7 @@
     padding: 96px 0;
   }
 }
+
 // =====================================
 // Section(top)
 // =====================================
@@ -24,8 +25,8 @@
 
   @include mq(tb) {
     flex-direction: row;
-    align-items: center;
     gap: 0;
+    align-items: center;
   }
 }
 
@@ -45,11 +46,11 @@
 
 .p-about__photo {
   flex: 1;
-  aspect-ratio: 4 / 5;
   max-height: 500px;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
   opacity: 0;
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
   transform: translateX(-40px);
   transition:
     opacity 0.9s ease,
@@ -61,8 +62,8 @@
   }
 
   @include mq(tb) {
-    aspect-ratio: 3 / 4;
     max-height: 540px;
+    aspect-ratio: 3 / 4;
     clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
   }
 }
@@ -119,10 +120,10 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: 0.1em;
-  text-align: start;
-  writing-mode: vertical-rl;
   color: $color-text-main;
+  text-align: start;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
 
   .p-about__line > span {
     transform: translateX(-110%);
@@ -160,9 +161,9 @@
     font-size: 34px;
     font-weight: 700;
     line-height: 1.7;
-    letter-spacing: 0.1em;
-    text-align: start;
     color: $color-text-main;
+    text-align: start;
+    letter-spacing: 0.1em;
   }
 
   @include mq(pc) {
@@ -172,8 +173,8 @@
 }
 
 .p-about__body {
-  margin: 0 auto;
   padding: 0 24px;
+  margin: 0 auto;
 
   @include mq(tb) {
     flex: 1;
@@ -189,8 +190,8 @@
   font-family: $font-mincho;
   font-size: 24px;
   font-weight: 500;
-  letter-spacing: 0.05em;
   color: $color-text-main;
+  letter-spacing: 0.05em;
   border-bottom: 1px solid $color-border;
 
   @include mq(tb) {
@@ -220,8 +221,8 @@
     font-family: $font-en;
     font-size: 12px;
     line-height: 1.7;
-    letter-spacing: 0.05em;
     color: $color-text-sub;
+    letter-spacing: 0.05em;
 
     @include mq(pc) {
       margin-left: 16px;
@@ -236,8 +237,8 @@
   margin-top: 16px;
   font-size: 14px;
   line-height: 2.2;
-  letter-spacing: 0.02em;
   color: $color-text-sub;
+  letter-spacing: 0.02em;
 
   @include mq(tb) {
     margin-top: 20px;
@@ -252,6 +253,7 @@
   max-width: 440px;
   margin-top: 10px;
 }
+
 // =====================================
 // Page
 // =====================================
@@ -271,8 +273,8 @@
 .p-about__hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 40px;
+  align-items: center;
   margin-top: 32px;
 
   @include mq(tb) {
@@ -317,8 +319,8 @@
   font-family: $font-mincho;
   font-size: 16px;
   line-height: 1.7;
-  letter-spacing: 0.01em;
   color: $color-text-sub;
+  letter-spacing: 0.01em;
   border-bottom: 1px solid $color-border;
 
   @include mq(pc) {

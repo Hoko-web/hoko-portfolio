@@ -3,17 +3,17 @@
 
 .c-heading {
   display: flex;
-  align-items: center;
   gap: 24px;
+  align-items: center;
 
   @include mq(pc) {
     gap: 48px;
   }
 
   &::after {
-    content: "";
     flex: 1;
     height: 1px;
+    content: "";
     background-color: $color-border;
   }
 }

@@ -4,34 +4,35 @@
 .c-btn {
   display: inline-flex;
   align-items: center;
+  padding: 12px 16px;
   font-family: $font-mincho;
   font-weight: 500;
   line-height: 1;
   color: $color-text-main;
-  padding: 12px 16px;
 
   &::before {
-    content: "";
     order: 1;
     width: 28px;
     height: 1px;
     margin-left: 16px;
-    background-color: currentColor;
+    content: "";
+    background-color: currentcolor;
     transform-origin: left;
     transition: transform 0.3s ease;
   }
 
   &::after {
-    content: "";
     order: 2;
     width: 9px;
     height: 9px;
     margin-left: -9px;
-    border-top: 1px solid currentColor;
-    border-right: 1px solid currentColor;
+    content: "";
+    border-top: 1px solid currentcolor;
+    border-right: 1px solid currentcolor;
     transform: rotate(45deg);
     transition: transform 0.3s ease;
   }
+
   @include mq(pc) {
     font-size: 24px;
 

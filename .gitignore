@@ -10,3 +10,6 @@ markdown/
 # Claude Code
 .claude/
 CLAUDE.md
+
+# Node
+node_modules/

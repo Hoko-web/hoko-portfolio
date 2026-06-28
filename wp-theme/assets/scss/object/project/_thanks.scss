@@ -22,8 +22,8 @@
 
 .p-thanks__title {
   font-family: $font-mincho;
-  font-weight: 700;
   font-size: 80px;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.01em;
 
@@ -38,8 +38,8 @@
   margin-top: 32px;
   font-size: 14px;
   line-height: 1.7;
-  letter-spacing: 0.01em;
   color: $color-text-sub;
+  letter-spacing: 0.01em;
 
   @include mq(pc) {
     margin-top: 48px;

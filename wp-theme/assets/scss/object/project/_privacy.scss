@@ -19,8 +19,8 @@
 
 .p-privacy__title {
   font-family: $font-mincho;
-  font-weight: 700;
   font-size: 32px;
+  font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.015em;
 
@@ -52,19 +52,19 @@
 }
 
 .p-privacy__article-title {
+  padding-bottom: 8px;
   font-family: $font-mincho;
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
   line-height: 1.7;
   letter-spacing: 0.03em;
-  padding-bottom: 8px;
   border-bottom: 1px solid $color-border;
 
   @include mq(pc) {
+    padding-bottom: 12px;
     font-size: 24px;
     line-height: 1.35;
     letter-spacing: -0.01em;
-    padding-bottom: 12px;
   }
 }
 
@@ -72,8 +72,8 @@
   margin-top: 16px;
   font-size: 14px;
   line-height: 1.7;
-  letter-spacing: 0.01em;
   color: $color-text-sub;
+  letter-spacing: 0.01em;
 
   @include mq(pc) {
     margin-top: 28px;
@@ -82,12 +82,12 @@
 }
 
 .p-privacy__article-list {
-  margin-top: 16px;
   padding-left: 24px;
+  margin-top: 16px;
   font-size: 14px;
   line-height: 1.7;
-  letter-spacing: 0.01em;
   color: $color-text-sub;
+  letter-spacing: 0.01em;
   list-style: disc;
 
   @include mq(pc) {

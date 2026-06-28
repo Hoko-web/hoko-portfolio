@@ -1660,6 +1660,20 @@ img {
   margin: 0 auto;
 }
 
+.p-contact__eyebrow {
+  font-family: "Shippori Mincho", serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  border-bottom: 1px solid #e0e0e0;
+}
+@media (min-width: 768px) {
+  .p-contact__eyebrow {
+    font-size: 32px;
+  }
+}
+
 .p-contact__wrapper {
   display: flex;
   flex-direction: column;
@@ -1686,16 +1700,11 @@ img {
   }
 }
 
-.p-contact__more {
-  display: block;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-}
-@media (min-width: 1024px) {
-  .p-contact__more {
-    margin: 0;
-  }
+.p-contact__action {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 440px;
+  margin-top: 10px;
 }
 
 .p-contact--page {
