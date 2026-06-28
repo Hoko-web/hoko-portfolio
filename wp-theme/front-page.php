@@ -61,7 +61,7 @@
           
           <p class="p-about__name">鉾立 光将<span>Hokotate Hiromasa</span></p>
           <p class="p-about__text">
-            相手も気づいていなかった「こうしたい」を引き出せたときが、私にとって一番うれしい瞬間です。その想いにもっと自由に応えたい。そんな気持ちで、毎日コードと向き合っています。
+            「うまく形にできずにいた想い」を引き出せたときが、私にとって一番うれしい瞬間です。 <br>その想いにもっと自由に応えたい。そんな気持ちで、毎日コードと向き合っています。
           </p>
           <div class="p-about__action">
             <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="c-btn p-about__more">More</a>
@@ -87,10 +87,8 @@
         <div class="p-skills__tabs" role="tablist" aria-label="スキル">
           <button type="button" class="p-skills__tab js-skill-tab" data-target="s-html" role="tab" aria-selected="false" aria-controls="s-html">index.html</button>
           <button type="button" class="p-skills__tab js-skill-tab" data-target="s-scss" role="tab" aria-selected="false" aria-controls="s-scss">style.scss</button>
-          <button type="button" class="p-skills__tab js-skill-tab" data-target="s-mixin" role="tab" aria-selected="false" aria-controls="s-mixin">_mixin.scss</button>
           <button type="button" class="p-skills__tab js-skill-tab" data-target="s-base" role="tab" aria-selected="false" aria-controls="s-base">_base.scss</button>
           <button type="button" class="p-skills__tab js-skill-tab is-active" data-target="s-main" role="tab" aria-selected="true" aria-controls="s-main">main.js</button>
-          <button type="button" class="p-skills__tab js-skill-tab" data-target="s-fv" role="tab" aria-selected="false" aria-controls="s-fv">fv.js</button>
           <button type="button" class="p-skills__tab js-skill-tab" data-target="s-functions" role="tab" aria-selected="false" aria-controls="s-functions">functions.php</button>
           <button type="button" class="p-skills__tab js-skill-tab" data-target="s-git" role="tab" aria-selected="false" aria-controls="s-git">git log</button>
         </div>
@@ -115,7 +113,6 @@
             <ul class="p-skills__chips">
               <li class="p-skills__chip">IIFE（スコープ隔離）</li>
               <li class="p-skills__chip">null チェック</li>
-              <li class="p-skills__chip">classList.toggle</li>
               <li class="p-skills__chip">aria 同期（a11y）</li>
             </ul>
           </div>
@@ -131,7 +128,7 @@
   &lt;h1 class="u-visually-hidden"&gt;Hoko Portfolio&lt;/h1&gt; <span class="p-skills__comment">&lt;!-- h1は1ページ1つ --&gt;</span>
   &lt;section id="about"&gt;
     &lt;h2&gt;About&lt;/h2&gt; <span class="p-skills__comment">&lt;!-- 見出しは大→小・飛ばさない --&gt;</span>
-    <span class="p-skills__comment">&lt;!-- heroは最優先で読む＝LCP／width・heightでCLS防止 --&gt;</span>
+    <span class="p-skills__comment">&lt;!-- 最優先で読む画像はfetchpriority="high"＝LCP／width・heightでCLS防止 --&gt;</span>
     &lt;img src="about.webp" alt="鉾立光将の作業風景"
         width="1044" 
         height="1567"
@@ -147,7 +144,9 @@
         loading="lazy" 
         decoding="async"&gt;
     <span class="p-skills__comment">&lt;!-- 外部リンクは別タブ＋noopenerで乗っ取り防止 --&gt;</span>
-    &lt;a href="https://github.com/Hoko-web" target="_blank" rel="noopener"&gt;GitHub&lt;/a&gt;
+    &lt;a href="https://github.com/Hoko-web" 
+        target="_blank" 
+        rel="noopener"&gt;GitHub&lt;/a&gt;
   &lt;/section&gt;
 &lt;/main&gt;</code></pre>
             <ul class="p-skills__chips">
@@ -160,53 +159,45 @@
           </div>
           <!-- SCSSのパネル -->
           <div class="p-skills__panel" id="s-scss" role="tabpanel">
-            <pre class="p-skills__code"><code>.c-heading {
+            <pre class="p-skills__code"><code>@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+<span class="p-skills__comment">// =====================================</span>
+<span class="p-skills__comment">// Card</span>
+<span class="p-skills__comment">// =====================================</span>
+.c-card { 
+  position: relative; <span class="p-skills__comment">// プロパティ順は「npm run lint:scss:fix」 で自動整列</span>
   display: flex;
-  gap: 24px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease; 
 
-  <span class="p-skills__comment">// 区切り線を疑似要素で（&amp; ＝ 親参照）</span>
-  &amp;::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background-color: $color-border;
+  @include mq(pc) { <span class="p-skills__comment">// モバイルファースト</span>
+    padding: 24px;
+  }
+  .is-show &amp; {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-<span class="p-skills__comment">// Modifier はフラットな別セレクタ</span>
-.c-heading--no-line {
-  &amp;::after {
-    display: none;
-  }
+.c-card__title {
+  font-size: 16px;
+  color: $color-text-main; <span class="p-skills__comment">// 変数で一元管理</span>
 }
 
-<span class="p-skills__comment">// Element もフラット</span>
-.c-heading__title {
-  font-family: $font-mincho;
+@media (hover: hover) { <span class="p-skills__comment">// hoverできる端末だけ</span>
+  .c-card:hover {
+    transform: translateY(-4px);
+  }
 }</code></pre>
             <ul class="p-skills__chips">
-              <li class="p-skills__chip">FLOCSS（c-）</li>
-              <li class="p-skills__chip">BEM（B__E--M）</li>
-              <li class="p-skills__chip">Modifier/Element はフラット</li>
-              <li class="p-skills__chip">&amp; は親参照</li>
-            </ul>
-          </div>
-          <!-- MIXINのパネル -->
-          <div class="p-skills__panel" id="s-mixin" role="tabpanel">
-            <pre class="p-skills__code"><code>@use "sass:map";
-  @use "variable" as *;
-
-  <span class="p-skills__comment">// ブレイクポイントは変数で一元管理。呼ぶ側は mq(pc) だけ</span>
-  @mixin mq($breakpoint: pc) {
-    @media (min-width: map.get($breakpoints, $breakpoint)) {
-      @content; <span class="p-skills__comment">// 渡されたスタイルをそのまま展開</span>
-    }
-  }</code></pre>
-            <ul class="p-skills__chips">
-              <li class="p-skills__chip">@use（脱@import）</li>
-              <li class="p-skills__chip">sass:map</li>
-              <li class="p-skills__chip">モバイルファースト</li>
-              <li class="p-skills__chip">BP一元管理</li>
+              <li class="p-skills__chip">FLOCSS</li>
+              <li class="p-skills__chip">BEM</li>
+              <li class="p-skills__chip">変数管理</li>
             </ul>
           </div>
           <!-- BASEのパネル -->
@@ -225,21 +216,6 @@
               <li class="p-skills__chip">reduced-motion</li>
               <li class="p-skills__chip">CSS＋JS両対応</li>
               <li class="p-skills__chip">!important は例外運用</li>
-            </ul>
-          </div>
-          <!-- FVのパネル -->
-          <div class="p-skills__panel" id="s-fv" role="tabpanel">
-            <pre class="p-skills__code"><code>const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
-
-<span class="p-skills__comment">// 影響半径の内側だけ反発（0除算もガード）</span>
-if (dist &gt; 0 &amp;&amp; dist &lt; REACH) {
-  const force = (REACH - dist) / REACH; <span class="p-skills__comment">// 中心ほど強く</span>
-  goalX += ((p.x - mouse.x) / dist) * force * PUSH;
-}</code></pre>
-            <ul class="p-skills__chips">
-              <li class="p-skills__chip">自前パーティクル</li>
-              <li class="p-skills__chip">ベクトル計算</li>
-              <li class="p-skills__chip">防御的コード（0除算）</li>
             </ul>
           </div>
           <!-- FUNCTIONのパネル -->
@@ -265,7 +241,6 @@ register_post_type( 'works', [
   'show_in_rest' => true,
 ] );</code></pre>
             <ul class="p-skills__chips">
-              <li class="p-skills__chip">自作テーマ</li>
               <li class="p-skills__chip">必要な所だけ読込</li>
               <li class="p-skills__chip">defer</li>
               <li class="p-skills__chip">CPT・タクソノミー</li>
@@ -274,10 +249,10 @@ register_post_type( 'works', [
           <!-- GITのパネル -->
           <div class="p-skills__panel" id="s-git" role="tabpanel">
             <pre class="p-skills__code"><code>feat(about):    対角レイアウトに刷新（写真bleed・コピー重ね）
-  feat(loading):  ローダーからFVへ継ぎ目なく引き渡す
-  perf(theme):    Contact以外でCF7のJSを読み込まない
-  fix(cursor):    reduced-motion時は標準カーソルに戻す
-  refactor(fv):   冗長な draw(0) を削除</code></pre>
+feat(loading):  ローダーからFVへ継ぎ目なく引き渡す
+perf(theme):    Contact以外でCF7のJSを読み込まない
+fix(cursor):    reduced-motion時は標準カーソルに戻す
+refactor(fv):   冗長な draw(0) を削除</code></pre>
             <ul class="p-skills__chips">
               <li class="p-skills__chip">Conventional Commits</li>
               <li class="p-skills__chip">型（feat/fix/perf/refactor）</li>
@@ -293,16 +268,17 @@ register_post_type( 'works', [
   <!-- ===================================== -->
   <section class="p-contact" id="contact">
     <div class="p-contact__inner">
-      <div class="c-heading">
-        <h2 class="c-heading__title">Contact</h2>
-      </div>
+      <h2 class="p-contact__eyebrow">Contact</h2>
 
       <div class="p-contact__wrapper">
         <p class="p-contact__text">
           ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。
         </p>
 
-        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn p-contact__more">Contact</a>
+        <div class="p-contact__action">
+          <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn p-contact__more">Contact</a>
+        </div>
+        
       </div>
     </div>
   </section>
