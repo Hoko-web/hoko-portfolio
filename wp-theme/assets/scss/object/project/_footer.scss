@@ -52,10 +52,10 @@
     font-size: 100px;
     line-height: 1;
     letter-spacing: -0.03em;
-  }
 
-  &:hover {
-    text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
+    &:hover {
+      text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
+    }
   }
 }
 
@@ -144,10 +144,10 @@
 
   @include mq(pc) {
     font-size: 14px;
-  }
 
-  &:hover {
-    color: $color-text-main;
+    &:hover {
+      color: $color-text-main;
+    }
   }
 }
 

@@ -260,9 +260,11 @@
   text-decoration-color: $color-text-main;
   text-underline-offset: 4px;
 
-  &:hover {
-    color: $color-text-sub;
-    text-decoration-color: $color-text-sub;
+  @include mq(pc) {
+    &:hover {
+      color: $color-text-sub;
+      text-decoration-color: $color-text-sub;
+    }
   }
 }
 
