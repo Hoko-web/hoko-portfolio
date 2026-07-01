@@ -119,7 +119,7 @@
   const panels = document.querySelectorAll(".p-skills__panel");
 
   const activate = (tab) => {
-    const panel = document.getElementById(tab.dataset.target);
+    const panel = document.getElementById(tab.getAttribute("aria-controls"));
     if (!panel) return;
 
     tabs.forEach((t) => {

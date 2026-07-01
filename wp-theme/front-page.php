@@ -85,12 +85,12 @@
       <div class="p-skills__editor">
         <!-- Tab -->
         <div class="p-skills__tabs" role="tablist" aria-label="スキル">
-          <button type="button" class="p-skills__tab js-skill-tab" data-target="s-html" role="tab" aria-selected="false" aria-controls="s-html">index.html</button>
-          <button type="button" class="p-skills__tab js-skill-tab" data-target="s-scss" role="tab" aria-selected="false" aria-controls="s-scss">style.scss</button>
-          <button type="button" class="p-skills__tab js-skill-tab" data-target="s-base" role="tab" aria-selected="false" aria-controls="s-base">_base.scss</button>
-          <button type="button" class="p-skills__tab js-skill-tab is-active" data-target="s-main" role="tab" aria-selected="true" aria-controls="s-main">main.js</button>
-          <button type="button" class="p-skills__tab js-skill-tab" data-target="s-functions" role="tab" aria-selected="false" aria-controls="s-functions">functions.php</button>
-          <button type="button" class="p-skills__tab js-skill-tab" data-target="s-git" role="tab" aria-selected="false" aria-controls="s-git">git log</button>
+          <button type="button" class="p-skills__tab js-skill-tab" role="tab" aria-selected="false" aria-controls="s-html">index.html</button>
+          <button type="button" class="p-skills__tab js-skill-tab" role="tab" aria-selected="false" aria-controls="s-scss">style.scss</button>
+          <button type="button" class="p-skills__tab js-skill-tab" role="tab" aria-selected="false" aria-controls="s-base">_base.scss</button>
+          <button type="button" class="p-skills__tab js-skill-tab is-active" role="tab" aria-selected="true" aria-controls="s-main">main.js</button>
+          <button type="button" class="p-skills__tab js-skill-tab" role="tab" aria-selected="false" aria-controls="s-functions">functions.php</button>
+          <button type="button" class="p-skills__tab js-skill-tab" role="tab" aria-selected="false" aria-controls="s-git">git log</button>
         </div>
         <div class="p-skills__panels">
           <!-- JSのタブパネル -->
