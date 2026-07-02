@@ -163,14 +163,3 @@
     margin-top: 64px;
   }
 }
-
-// =====================================
-// Page(archive)
-// =====================================
-.p-works--archive {
-  padding: 64px 0;
-
-  @include mq(pc) {
-    padding: 128px 0;
-  }
-}

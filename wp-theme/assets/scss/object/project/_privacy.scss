@@ -2,11 +2,11 @@
 @use "../../foundation/mixin" as *;
 
 .p-privacy {
-  padding: 96px 0 64px;
+  padding: 96px 0 0;
   background-color: $color-bg-main;
 
   @include mq(pc) {
-    padding: 128px 0 96px;
+    padding: 128px 0 0;
   }
 }
 

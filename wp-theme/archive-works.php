@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <main id="top">
-  <section class="p-works p-works--archive">
+  <section class="p-works">
     <div class="p-works__inner">
       <h1 class="c-eyebrow">All Works</h1>
       <div class="p-works__wrapper">

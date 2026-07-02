@@ -1410,15 +1410,6 @@ img {
   }
 }
 
-.p-works--archive {
-  padding: 64px 0;
-}
-@media (min-width: 1024px) {
-  .p-works--archive {
-    padding: 128px 0;
-  }
-}
-
 .p-skills {
   padding: 96px 0 0;
   background-color: #fff;
@@ -2128,12 +2119,12 @@ img {
 }
 
 .p-privacy {
-  padding: 96px 0 64px;
+  padding: 96px 0 0;
   background-color: #fff;
 }
 @media (min-width: 1024px) {
   .p-privacy {
-    padding: 128px 0 96px;
+    padding: 128px 0 0;
   }
 }
 
@@ -2242,7 +2233,7 @@ img {
 }
 
 .p-works-detail {
-  padding: 64px 0 0;
+  padding: 96px 0 0;
   background-color: #fff;
 }
 @media (min-width: 1024px) {
