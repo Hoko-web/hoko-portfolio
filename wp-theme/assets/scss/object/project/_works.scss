@@ -5,11 +5,11 @@
 // Common
 // =====================================
 .p-works {
-  padding: 64px 0;
+  padding: 96px 0 0;
   background-color: $color-bg-main;
 
   @include mq(pc) {
-    padding: 96px 0;
+    padding: 128px 0 0;
   }
 }
 
@@ -155,10 +155,11 @@
 .p-works__action {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 48px;
 
   @include mq(pc) {
+    justify-content: flex-end;
     margin-top: 64px;
   }
 }

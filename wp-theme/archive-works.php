@@ -62,7 +62,9 @@
         <p class="p-contact__text">
           ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。
         </p>
-        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn p-contact__more">Contact</a>
+        <div class="p-contact__action">
+          <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn">Contact</a>
+        </div>
       </div>
     </div>
   </section>

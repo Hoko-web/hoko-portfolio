@@ -5,11 +5,11 @@
 // Common
 // =====================================
 .p-skills {
-  padding: 64px 0;
+  padding: 96px 0 0;
   background-color: $color-bg-main;
 
   @include mq(pc) {
-    padding: 96px 0;
+    padding: 128px 0 0;
   }
 }
 

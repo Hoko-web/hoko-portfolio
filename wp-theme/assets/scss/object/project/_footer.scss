@@ -6,10 +6,12 @@
 // =====================================
 .p-footer {
   padding: 48px 0 16px;
+  margin: 64px 0 0;
   background-color: $color-bg-sub;
 
   @include mq(pc) {
     padding: 72px 0 24px;
+    margin: 96px 0 0;
   }
 }
 

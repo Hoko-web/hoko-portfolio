@@ -5,11 +5,11 @@
 // Common
 // =====================================
 .p-about {
-  padding: 64px 0;
+  padding: 96px 0 0;
   background-color: $color-bg-main;
 
   @include mq(pc) {
-    padding: 96px 0;
+    padding: 128px 0 0;
   }
 }
 
@@ -247,9 +247,13 @@
 
 .p-about__action {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   max-width: 440px;
   margin-top: 10px;
+
+  @include mq(tb) {
+    justify-content: flex-end;
+  }
 }
 
 // =====================================
@@ -261,7 +265,7 @@
 }
 
 .p-about--page {
-  padding: 64px 0 0;
+  padding: 96px 0 0;
 
   @include mq(pc) {
     padding: 128px 0 0;

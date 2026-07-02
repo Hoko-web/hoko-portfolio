@@ -5,11 +5,11 @@
 // Common
 // =====================================
 .p-contact {
-  padding: 64px 0;
+  padding: 96px 0 0;
   background-color: $color-bg-main;
 
   @include mq(pc) {
-    padding: 96px 0;
+    padding: 128px 0 0;
   }
 }
 
@@ -29,7 +29,7 @@
   gap: 40px;
   margin-top: 40px;
 
-  @include mq(pc) {
+  @include mq(tb) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -47,21 +47,14 @@
   }
 }
 
-.p-contact__action {
-  display: flex;
-  justify-content: flex-end;
-  max-width: 440px;
-  margin-top: 10px;
-}
-
 // =====================================
 // Page
 // =====================================
 .p-contact--page {
-  padding: 96px 0 64px;
+  padding: 96px 0 0;
 
   @include mq(pc) {
-    padding: 128px 0 96px;
+    padding: 128px 0 0;
   }
 }
 
@@ -256,15 +249,23 @@
 }
 
 // =====================================
-// Actions
+// Action（CTAボタン：SP中央 / PC右寄せ）
 // =====================================
-.p-contact__actions {
-  margin-top: 24px;
-  text-align: center;
+.p-contact__action {
+  display: flex;
+  justify-content: center;
 
   @include mq(pc) {
-    margin-top: 64px;
+    justify-content: flex-end;
   }
+}
+
+// =====================================
+// Send（送信ボタン：常に中央）
+// =====================================
+.p-contact__send {
+  display: flex;
+  justify-content: center;
 }
 
 // =====================================
