@@ -6,16 +6,10 @@
 <?php get_header(); ?>
 
 <main id="top">
-  <!-- ===================================== -->
-  <!-- About Me -->
-  <!-- ===================================== -->
   <section class="p-about p-about--page">
-    <div class="p-about__inner">
-      <div class="c-heading">
-        <h1 class="c-heading__title">About Me</h1>
-      </div>
-
-      <div class="p-about__hero">
+    <div class="p-about-detail__inner">
+      <h1 class="c-eyebrow">About Me</h1>
+      <div class="p-about__hero js-reveal">
         <div class="p-about__photo">
           <?php if ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'large', [
@@ -52,9 +46,7 @@
         </div>
       </div>
       <div class="p-about__block">
-        <div class="c-heading">
-          <h2 class="c-heading__title">Profile</h2>
-        </div>
+        <h2 class="c-eyebrow">Profile</h2>
         <p class="p-about__description">
           高校卒業後の12年間は、工場設備の保全（8年）と自動車整備士（4年）として、Webとは無縁の現場に身を置いてきました。整備士時代に体へ染み込んだのは、「ボルト1本の締め忘れが、時速100kmで走る車では人の命に関わる」という責任の重さです。おかしいと感じたら、手間を惜しまず確かめ直す。その姿勢は、PCに向き合う今も変わりません。設備保全の仕事では、製造ラインが故障で止まるほど損失がふくらんでいくなか、夜勤や緊急対応に追われていました。担当の方から状況を聞き出し、仮説を立てて原因を突き止め、一刻も早く設備を復旧させる。そして、同じ故障を繰り返さないところまで手を入れる。正確に、速く。その仕事の流儀を、この12年で身につけてきました。
         </p>
@@ -63,9 +55,7 @@
         </p>
       </div>
       <div class="p-about__block">
-        <div class="c-heading">
-          <h2 class="c-heading__title">Personality</h2>
-        </div>
+        <h2 class="c-eyebrow">Personality</h2>
         <p class="p-about__description">
           「目の前の人を、いちばん良い方へ」これが、私が一番大事にしている考え方です。自分の意見を押し付けるのではなく、相手が何を求め、どう感じているかをまず汲み取る。そのうえで、損得を抜きにして、その人にとって本当に良い方を、まっすぐ伝えたい。前職でも、目先の売上より「このお客さんにとって本当に良い選び方」を正直に伝えることを大事にしていました。それが、相手との信頼につながると考えているからです。技術も知識も、誰かの役に立ってこそ意味がある。その姿勢は、Web制作でも変わりません。
         </p>
@@ -87,10 +77,7 @@
   <!-- ===================================== -->
   <section class="p-contact" id="contact">
     <div class="p-contact__inner">
-      <div class="c-heading">
-        <h2 class="c-heading__title">Contact</h2>
-      </div>
-
+      <h2 class="c-eyebrow">Contact</h2>
       <div class="p-contact__wrapper">
         <p class="p-contact__text">
           ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。

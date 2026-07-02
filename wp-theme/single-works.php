@@ -6,15 +6,10 @@
 <?php get_header(); ?>
 
 <main id="top">
-  <!-- ===================================== -->
-  <!-- Works Detail -->
-  <!-- ===================================== -->
   <section class="p-works-detail">
-
     <?php if ( have_posts() ) : 
       while ( have_posts() ) :
         the_post();
-
         $description = get_field( 'description' );
         $client      = get_field( 'client' );
         $role        = get_field( 'role' );
@@ -29,7 +24,6 @@
     ?>
 
     <div class="p-works-detail__inner">
-
       <div class="p-works-detail__hero">
         <div class="p-works-detail__thumb">
           <?php if ( has_post_thumbnail() ) : ?>
@@ -67,18 +61,14 @@
       </div>
 
       <section class="p-works-detail__overview">
-        <div class="c-heading">
-          <h2 class="c-heading__title">Overview</h2>
-        </div>
+        <h2 class="c-eyebrow">Overview</h2>
         <div class="p-works-detail__overview-body">
           <?php the_content(); ?>
         </div>
       </section>
 
       <section class="p-works-detail__points">
-        <div class="c-heading">
-          <h2 class="c-heading__title">Points</h2>
-        </div>
+        <h2 class="c-eyebrow">Points</h2>
         <div class="p-works-detail__points-list">
           <?php foreach ( $points as $point ) : ?>
             <?php if ( $point['title'] || $point['text'] ) : ?>
@@ -108,15 +98,11 @@
   <!-- ===================================== -->
   <section class="p-contact" id="contact">
     <div class="p-contact__inner">
-      <div class="c-heading">
-        <h2 class="c-heading__title">Contact</h2>
-      </div>
-
+      <h2 class="c-eyebrow">Contact</h2>
       <div class="p-contact__wrapper">
         <p class="p-contact__text">
           ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。
         </p>
-
         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn p-contact__more">Contact</a>
       </div>
     </div>

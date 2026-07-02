@@ -49,6 +49,7 @@
       <span class="c-cursor__ring js-cursor-ring"></span>
       <span class="c-cursor__dot js-cursor-dot"></span>
     </div>
+
     <header class="p-header">
       <div class="p-header__inner">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="p-header__logo" aria-label="トップへ戻る">Hoko</a>
@@ -105,5 +106,4 @@
           <?php get_template_part( 'template-parts/sns-list' ); ?>
         </nav>
       </div>
-      
     </header>

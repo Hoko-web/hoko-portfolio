@@ -11,7 +11,6 @@
           >
           <p class="p-footer__text">Portfolio</p>
         </div>
-
         <div class="p-footer__menus">
           <nav class="p-footer__nav" aria-label="フッターナビ">
             <ul class="p-footer__nav-list">
@@ -31,7 +30,6 @@
           </nav>
           <!-- SNS -->
           <?php get_template_part( 'template-parts/sns-list' ); ?>
-
           <a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>" class="p-footer__privacy">Privacy Policy</a>
         </div>
       </div>

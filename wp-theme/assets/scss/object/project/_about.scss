@@ -13,6 +13,13 @@
   }
 }
 
+.p-about-detail__inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
 // =====================================
 // Section(top)
 // =====================================
@@ -187,21 +194,12 @@
 }
 
 .p-about__eyebrow {
-  font-family: $font-mincho;
-  font-size: 24px;
-  font-weight: 500;
-  color: $color-text-main;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid $color-border;
-
   @include mq(tb) {
     margin-top: 48px;
-    font-size: 32px;
   }
 
   @include mq(pc) {
     margin-top: 42px;
-    letter-spacing: 0.01em;
   }
 }
 

@@ -20,19 +20,6 @@
   margin: 0 auto;
 }
 
-.p-skills__eyebrow {
-  font-family: $font-mincho;
-  font-size: 24px;
-  font-weight: 500;
-  color: $color-text-main;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid $color-border;
-
-  @include mq(tb) {
-    font-size: 32px;
-  }
-}
-
 .p-skills__hint {
   max-width: 1000px;
   margin: 0 auto;

@@ -6,9 +6,6 @@
 <?php get_header(); ?>
 
 <main id="top">
-  <!-- ===================================== -->
-  <!-- Thanks -->
-  <!-- ===================================== -->
   <section class="p-thanks">
     <div class="p-thanks__inner">
       <h1 class="p-thanks__title">Thank You!</h1>
@@ -18,7 +15,6 @@
           返信がない場合は、お手数ですが迷惑メールフォルダをご確認ください。
         </p>
       </div>
-
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-btn p-thanks__back">Back To Home</a>
     </div>
   </section>

@@ -13,9 +13,7 @@ $works_query = hoko_get_related_works( $exclude_id );
 <!-- ===================================== -->
 <section class="p-works" id="works">
   <div class="p-works__inner">
-
-    <h2 class="p-works__eyebrow">Works</h2>
-
+    <h2 class="c-eyebrow">Works</h2>
     <div class="p-works__wrapper">
       <ul class="p-works__list js-reveal">
         <?php if ( $works_query->have_posts() ) : ?>

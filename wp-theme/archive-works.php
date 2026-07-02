@@ -8,21 +8,17 @@
 <main id="top">
   <section class="p-works p-works--archive">
     <div class="p-works__inner">
-      <div class="c-heading">
-        <h1 class="c-heading__title">All Works</h1>
-      </div>
-
+      <h1 class="c-eyebrow">All Works</h1>
       <div class="p-works__wrapper">
-        <ul class="p-works__list">
+        <ul class="p-works__list js-reveal">
           <?php if ( have_posts() ) :
             while ( have_posts() ) :
               the_post();
               $categories = get_the_terms( get_the_ID(), 'works_category' );
               $tags       = get_the_terms( get_the_ID(), 'works_tag' );
           ?>
-
           <li class="p-works__item">
-            <article class="p-works__card">
+            <article class="p-works__card js-tilt">
               <a href="<?php the_permalink(); ?>" class="p-works__link">
                 <div class="p-works__thumb">
                   <?php if ( has_post_thumbnail() ) : ?>
@@ -52,26 +48,20 @@
           endif; 
           ?>
         </ul>
-
         <?php hoko_pagination(); ?>
       </div>
     </div>
   </section>
-
   <!-- ===================================== -->
   <!-- Contact -->
   <!-- ===================================== -->
   <section class="p-contact" id="contact">
     <div class="p-contact__inner">
-      <div class="c-heading">
-        <h2 class="c-heading__title">Contact</h2>
-      </div>
-
+      <h2 class="c-eyebrow">Contact</h2>
       <div class="p-contact__wrapper">
         <p class="p-contact__text">
           ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。
         </p>
-
         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn p-contact__more">Contact</a>
       </div>
     </div>

@@ -59,13 +59,13 @@
             <span class="p-about__line"><span>想いを引き出し</span></span>
             <span class="p-about__line"><span>期待を超える提案を</span></span>
           </p>
-          <h2 class="p-about__eyebrow">About Me</h2>
+          <h2 class="c-eyebrow p-about__eyebrow">About Me</h2>
           <p class="p-about__name">鉾立 光将<span>Hokotate Hiromasa</span></p>
           <p class="p-about__text">
             「うまく形にできずにいた想い」を引き出せたときが、私にとって一番うれしい瞬間です。 <br>その想いにもっと自由に応えたい。そんな気持ちで、毎日コードと向き合っています。
           </p>
           <div class="p-about__action">
-            <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="c-btn p-about__more">More</a>
+            <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="c-btn">More</a>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@
   <!-- ===================================== -->
   <section class="p-skills" id="skills">
     <div class="p-skills__inner">
-      <h2 class="p-skills__eyebrow">Skills</h2>
+      <h2 class="c-eyebrow">Skills</h2>
       <p class="p-skills__hint">// click a tab to read the code</p>
       <div class="p-skills__editor">
         <!-- Tab -->
@@ -270,17 +270,14 @@ refactor(fv):   冗長な draw(0) を削除</code></pre>
   <!-- ===================================== -->
   <section class="p-contact" id="contact">
     <div class="p-contact__inner">
-      <h2 class="p-contact__eyebrow">Contact</h2>
-
+      <h2 class="c-eyebrow">Contact</h2>
       <div class="p-contact__wrapper">
         <p class="p-contact__text">
           ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。
         </p>
-
         <div class="p-contact__action">
-          <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn p-contact__more">Contact</a>
+          <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn">Contact</a>
         </div>
-        
       </div>
     </div>
   </section>
