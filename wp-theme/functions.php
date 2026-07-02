@@ -1,5 +1,4 @@
 <?php
-
 /**
  * テーマセットアップ（メニュー登録、テーマサポート）
  */
@@ -26,19 +25,27 @@ function hoko_setup() {
 add_action( 'after_setup_theme', 'hoko_setup' );
 
 /**
+ * アセットのバージョン（更新時刻）を返す
+ */
+function hoko_asset_ver( $relative_path ) {
+  $file = get_template_directory() . $relative_path;
+  return file_exists( $file ) ? filemtime( $file ) : '1.0.0';
+}
+
+/**
  * CSS / JS の読み込み
  */
 function hoko_enqueue_assets() {
-  wp_enqueue_style( 'hoko-style', get_template_directory_uri() . '/assets/css/style.css', [], '1.0.0' );
-  wp_enqueue_script( 'hoko-main', get_template_directory_uri() . '/assets/js/main.js', [], '1.0.0', true );
+  wp_enqueue_style( 'hoko-style', get_template_directory_uri() . '/assets/css/style.css', [], hoko_asset_ver( '/assets/css/style.css' )  );
+  wp_enqueue_script( 'hoko-main', get_template_directory_uri() . '/assets/js/main.js', [], hoko_asset_ver( '/assets/js/main.js' ), true );
   wp_script_add_data( 'hoko-main', 'strategy', 'defer' );
-  wp_enqueue_script( 'hoko-cursor', get_template_directory_uri() . '/assets/js/cursor.js', [], '1.0.0', true );
+  wp_enqueue_script( 'hoko-cursor', get_template_directory_uri() . '/assets/js/cursor.js', [], hoko_asset_ver( '/assets/js/cursor.js' ), true );
   wp_script_add_data( 'hoko-cursor', 'strategy', 'defer' );
-  // FVパーティクル
+  // FVパーティクル(front-pageのみ読み込み)
   if ( is_front_page() ) {
-    wp_enqueue_script( 'hoko-fv', get_template_directory_uri() . '/assets/js/fv.js', [], '1.0.0', true );
+    wp_enqueue_script( 'hoko-fv', get_template_directory_uri() . '/assets/js/fv.js', [], hoko_asset_ver( '/assets/js/fv.js' ), true );
     wp_script_add_data( 'hoko-fv', 'strategy', 'defer' );
-    wp_enqueue_script( 'hoko-loader', get_template_directory_uri() . '/assets/js/loader.js', [ 'hoko-fv' ], '1.0.0', true );
+    wp_enqueue_script( 'hoko-loader', get_template_directory_uri() . '/assets/js/loader.js', [ 'hoko-fv' ], hoko_asset_ver( '/assets/js/loader.js' ), true );
     wp_script_add_data( 'hoko-loader', 'strategy', 'defer' );
   }
 }
