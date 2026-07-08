@@ -62,7 +62,7 @@
           <h2 class="c-eyebrow p-about__eyebrow">About Me</h2>
           <p class="p-about__name">鉾立 光将<span>Hokotate Hiromasa</span></p>
           <p class="p-about__text">
-            「うまく形にできずにいた想い」を引き出せたときが、私にとって一番うれしい瞬間です。 <br>その想いにもっと自由に応えたい。そんな気持ちで、毎日コードと向き合っています。
+            「うまく形にできずにいた想い」を形にし、「ありがとう」をもらえた時が、私にとって一番うれしい瞬間です。 <br>その想いにもっと自由に応えたい。そんな気持ちで、毎日コードと向き合っています。
           </p>
           <div class="p-about__action">
             <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="c-btn">More</a>
