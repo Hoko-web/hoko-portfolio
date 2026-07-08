@@ -20,4 +20,12 @@
 
 .c-eyebrow--sm {
   font-size: 20px;
+  white-space: nowrap;
+
+  @include mq(pc) {
+    min-width: 350px;
+    padding-top: 12px;
+    font-size: 24px;
+    border-bottom: none;
+  }
 }

@@ -436,6 +436,15 @@ img {
 
 .c-eyebrow--sm {
   font-size: 20px;
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .c-eyebrow--sm {
+    min-width: 350px;
+    padding-top: 12px;
+    font-size: 24px;
+    border-bottom: none;
+  }
 }
 
 .c-btn {
@@ -2458,21 +2467,17 @@ img {
   display: flex;
   flex-direction: column-reverse;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .p-about-detail__hero {
     flex-direction: row;
+    gap: 16px;
+    align-items: center;
     margin-top: 64px;
   }
 }
 
 .p-about-detail__hero-body {
   flex: 1;
-}
-@media (min-width: 1024px) {
-  .p-about-detail__hero-body {
-    display: flex;
-    align-items: center;
-  }
 }
 
 .p-about-detail__meta {
@@ -2488,7 +2493,7 @@ img {
 }
 @media (min-width: 1024px) {
   .p-about-detail__meta-born {
-    margin-top: 32px;
+    margin-top: 40px;
     font-size: 16px;
   }
 }
@@ -2520,9 +2525,12 @@ img {
 @media (min-width: 1024px) {
   .p-about-detail__meta-lead {
     max-width: 457px;
-    padding: 12px 0;
+    padding: 16px 0;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.9;
+  }
+  .p-about-detail__meta-lead p + p {
+    margin-top: 20px;
   }
 }
 
@@ -2539,16 +2547,16 @@ img {
   opacity: 1;
   transform: translateX(0);
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .p-about-detail__photo {
     max-width: none;
-    margin-top: 0;
+    margin: 0;
   }
 }
 
 .p-about-detail__photo-inner {
   overflow: hidden;
-  clip-path: polygon(5% 0, 100% 0, 100% 100%, 20% 100%);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 5% 100%);
 }
 .p-about-detail__photo-inner img {
   width: 100%;
@@ -2570,7 +2578,7 @@ img {
 
 .p-about-detail__photo-name {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   font-family: "Shippori Mincho", serif;
   font-size: 32px;
@@ -2587,49 +2595,81 @@ img {
 .p-about-detail__photo-name-en {
   position: absolute;
   bottom: 0;
-  left: 65px;
+  left: 24px;
   font-family: "Inter", sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.7;
   color: #fff;
   letter-spacing: 0.05em;
 }
 @media (min-width: 1024px) {
   .p-about-detail__photo-name-en {
-    left: 126px;
+    left: 46px;
     font-size: 24px;
     letter-spacing: 0.01em;
   }
 }
 
 .p-about-detail__blocks {
-  max-width: 800px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-top: 64px;
+}
+@media (min-width: 1024px) {
+  .p-about-detail__blocks {
+    gap: 96px;
+    margin-top: 96px;
+  }
 }
 
-.p-about-detail__block {
-  padding: 0 24px;
-  margin-top: 48px;
+@media (min-width: 1024px) {
+  .p-about-detail__block {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
 }
 
 .p-about-detail__description {
   margin-top: 16px;
   font-size: 14px;
   line-height: 1.9;
+  color: #666;
   letter-spacing: 0.1em;
+}
+@media (min-width: 1024px) {
+  .p-about-detail__description {
+    margin: 0;
+    font-size: 16px;
+    line-height: 2.2;
+  }
 }
 
 .p-about-detail__strong {
+  display: inline-block;
   font-family: "Shippori Mincho", serif;
   font-size: 24px;
+  color: #1a1a1a;
   letter-spacing: 0.05em;
+}
+@media (min-width: 1024px) {
+  .p-about-detail__strong {
+    font-size: 26px;
+  }
 }
 
 .p-about-detail__strong--box {
+  display: inline-block;
   padding: 0 8px;
   font-size: 22px;
   color: #1a1a1a;
   background: #e0e0e0;
+}
+@media (min-width: 1024px) {
+  .p-about-detail__strong--box {
+    font-size: 24px;
+  }
 }
 
 @media (min-width: 768px) {
