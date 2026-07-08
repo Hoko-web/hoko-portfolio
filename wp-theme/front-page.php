@@ -268,19 +268,7 @@ refactor(fv):   冗長な draw(0) を削除</code></pre>
   <!-- ===================================== -->
   <!-- Contact -->
   <!-- ===================================== -->
-  <section class="p-contact" id="contact">
-    <div class="p-contact__inner">
-      <h2 class="c-eyebrow">Contact</h2>
-      <div class="p-contact__wrapper">
-        <p class="p-contact__text">
-          ご相談・お問い合わせは、内容を問わずお気軽にご連絡ください。
-        </p>
-        <div class="p-contact__action">
-          <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn">Contact</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php get_template_part( 'template-parts/section-contact' ); ?>
 </main>
 
 <?php get_footer(); ?>

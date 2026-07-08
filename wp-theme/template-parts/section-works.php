@@ -8,9 +8,6 @@ $exclude_id  = $args['exclude_id'] ?? null;
 $works_query = hoko_get_related_works( $exclude_id );
 ?>
 
-<!-- ===================================== -->
-<!-- Works -->
-<!-- ===================================== -->
 <section class="p-works" id="works">
   <div class="p-works__inner">
     <h2 class="c-eyebrow">Works</h2>
