@@ -1,9 +1,6 @@
 @use "../../foundation/variable" as *;
 @use "../../foundation/mixin" as *;
 
-// =====================================
-// Common
-// =====================================
 .p-about {
   padding: 96px 0 0;
   background-color: $color-bg-main;
@@ -13,16 +10,11 @@
   }
 }
 
-.p-about-detail__inner {
+.p-about__inner {
   width: 100%;
-  max-width: 1200px;
-  padding: 0 24px;
   margin: 0 auto;
 }
 
-// =====================================
-// Section(top)
-// =====================================
 .p-about__layout {
   display: flex;
   flex-direction: column;
@@ -253,99 +245,5 @@
 
   @include mq(tb) {
     justify-content: flex-end;
-  }
-}
-
-// =====================================
-// Page
-// =====================================
-.p-about__inner {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.p-about--page {
-  padding: 96px 0 0;
-
-  @include mq(pc) {
-    padding: 128px 0 0;
-  }
-}
-
-.p-about__hero {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  margin-top: 32px;
-
-  @include mq(tb) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    margin-top: 64px;
-  }
-
-  @include mq(pc) {
-    gap: 180px;
-  }
-}
-
-.p-about__description {
-  margin: 24px 0;
-  line-height: 1.7;
-  letter-spacing: 0.05em;
-
-  @include mq(pc) {
-    margin: 40px 0;
-    font-size: 18px;
-  }
-
-  & + & {
-    margin-top: 12px;
-
-    @include mq(pc) {
-      margin-top: 16px;
-    }
-  }
-}
-
-.p-about__meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.p-about__meta-label {
-  margin-top: 12px;
-  font-family: $font-mincho;
-  font-size: 16px;
-  line-height: 1.7;
-  color: $color-text-sub;
-  letter-spacing: 0.01em;
-  border-bottom: 1px solid $color-border;
-
-  @include mq(pc) {
-    font-size: 18px;
-  }
-}
-
-.p-about__meta-value {
-  margin-top: 18px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.7;
-  letter-spacing: 0.05em;
-
-  @include mq(pc) {
-    font-size: 20px;
-  }
-}
-
-.p-about__block {
-  margin-top: 48px;
-
-  @include mq(pc) {
-    margin-top: 96px;
   }
 }

@@ -817,20 +817,6 @@ img {
   margin: 0 auto;
 }
 
-.p-fv__catch {
-  font-family: "Shippori Mincho", serif;
-  font-size: 26px;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-}
-@media (min-width: 1024px) {
-  .p-fv__catch {
-    font-size: 36px;
-    line-height: 1.7;
-    letter-spacing: 0.08em;
-  }
-}
-
 .p-fv__scroll {
   position: absolute;
   top: -20%;
@@ -922,10 +908,8 @@ img {
   }
 }
 
-.p-about-detail__inner {
+.p-about__inner {
   width: 100%;
-  max-width: 1200px;
-  padding: 0 24px;
   margin: 0 auto;
 }
 
@@ -1166,104 +1150,6 @@ img {
 @media (min-width: 768px) {
   .p-about__action {
     justify-content: flex-end;
-  }
-}
-
-.p-about__inner {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.p-about--page {
-  padding: 96px 0 0;
-}
-@media (min-width: 1024px) {
-  .p-about--page {
-    padding: 128px 0 0;
-  }
-}
-
-.p-about__hero {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  margin-top: 32px;
-}
-@media (min-width: 768px) {
-  .p-about__hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    margin-top: 64px;
-  }
-}
-@media (min-width: 1024px) {
-  .p-about__hero {
-    gap: 180px;
-  }
-}
-
-.p-about__description {
-  margin: 24px 0;
-  line-height: 1.7;
-  letter-spacing: 0.05em;
-}
-@media (min-width: 1024px) {
-  .p-about__description {
-    margin: 40px 0;
-    font-size: 18px;
-  }
-}
-.p-about__description + .p-about__description {
-  margin-top: 12px;
-}
-@media (min-width: 1024px) {
-  .p-about__description + .p-about__description {
-    margin-top: 16px;
-  }
-}
-
-.p-about__meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.p-about__meta-label {
-  margin-top: 12px;
-  font-family: "Shippori Mincho", serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #666;
-  letter-spacing: 0.01em;
-  border-bottom: 1px solid #e0e0e0;
-}
-@media (min-width: 1024px) {
-  .p-about__meta-label {
-    font-size: 18px;
-  }
-}
-
-.p-about__meta-value {
-  margin-top: 18px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.7;
-  letter-spacing: 0.05em;
-}
-@media (min-width: 1024px) {
-  .p-about__meta-value {
-    font-size: 20px;
-  }
-}
-
-.p-about__block {
-  margin-top: 48px;
-}
-@media (min-width: 1024px) {
-  .p-about__block {
-    margin-top: 96px;
   }
 }
 

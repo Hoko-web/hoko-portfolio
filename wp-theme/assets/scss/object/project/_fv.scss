@@ -1,9 +1,6 @@
 @use "../../foundation/variable" as *;
 @use "../../foundation/mixin" as *;
 
-// =====================================
-// Common
-// =====================================
 .p-fv {
   position: relative;
   display: flex;
@@ -11,10 +8,6 @@
   justify-content: flex-end;
   min-height: 100svh;
   padding-bottom: 170px;
-
-  // background-image: url("../img/fv-bg.svg");
-  // background-repeat: repeat;
-  // background-position: center;
 
   @include mq(pc) {
     padding-bottom: 200px;
@@ -37,19 +30,6 @@
   max-width: 1200px;
   padding: 0 24px;
   margin: 0 auto;
-}
-
-.p-fv__catch {
-  font-family: $font-mincho;
-  font-size: 26px;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-
-  @include mq(pc) {
-    font-size: 36px;
-    line-height: 1.7;
-    letter-spacing: 0.08em;
-  }
 }
 
 // =====================================
