@@ -130,7 +130,7 @@ function hoko_redirect_to_thanks() {
   $thanks_url = esc_url( home_url( '/contact/thanks/' ) );
   echo <<<EOD
 <script>
-  document.addEventListener( 'wpcf7mailsent', function () {
+  document.addEventListener( 'wpcf7mailsent', () => {
     window.location = '{$thanks_url}';
   });
 </script>
